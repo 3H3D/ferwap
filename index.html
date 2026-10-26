@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,30 +20,26 @@
         h1, h2, h3 {
             font-family: 'Space Grotesk', sans-serif;
         }
-        /* Modal Animation */
-        .modal-active {
-            display: flex !important;
-        }
     </style>
 </head>
 <body class="bg-black text-white min-h-screen flex flex-col justify-between overflow-x-hidden">
 
-    <!-- TOP NAVIGATION -->
-    <header class="w-full absolute top-0 left-0 z-50 px-4 md:px-12 py-5 flex items-center justify-between bg-gradient-to-b from-black/90 via-black/50 to-transparent">
+    <!-- TOP NAVIGATION (Langsung terhubung ke bagian bawah saat diklik) -->
+    <header class="w-full fixed top-0 left-0 z-50 px-4 md:px-12 py-5 flex items-center justify-between bg-black/90 backdrop-blur-md border-b border-zinc-900">
         <a href="#" class="flex items-center gap-2 md:gap-3">
             <div class="w-7 h-7 md:w-8 md:h-8 bg-white text-black rounded-lg flex items-center justify-center font-bold text-xs md:text-sm">W</div>
             <span class="font-extrabold tracking-widest uppercase text-xs md:text-sm">Ferwap Music</span>
         </a>
         <nav class="flex items-center gap-3 sm:gap-6 md:gap-8 text-[10px] sm:text-xs font-semibold tracking-wider uppercase text-zinc-300">
-            <button onclick="openModal('modal-about')" class="hover:text-white transition focus:outline-none">About</button>
-            <button onclick="openModal('modal-news')" class="hover:text-white transition focus:outline-none">News</button>
-            <button onclick="openModal('modal-artists')" class="hover:text-white transition focus:outline-none">Artists</button>
-            <button onclick="openModal('modal-faq')" class="hover:text-white transition focus:outline-none">FAQ</button>
+            <a href="#about" class="hover:text-white transition">About</a>
+            <a href="#news" class="hover:text-white transition">News</a>
+            <a href="#artists" class="hover:text-white transition">Artists</a>
+            <a href="#faq" class="hover:text-white transition">FAQ</a>
         </nav>
     </header>
 
-    <!-- MAIN HERO SLIDER (Halaman Utama Bersih & Sinematik) -->
-    <main class="relative w-full h-screen flex items-center justify-center overflow-hidden">
+    <!-- HERO SLIDER BANNER (Tampilan Depan Utama) -->
+    <main class="relative w-full h-screen flex items-center justify-center overflow-hidden pt-16">
         
         <!-- Background Image -->
         <div class="absolute inset-0 z-0">
@@ -57,7 +53,7 @@
         </button>
 
         <!-- Konten Teks di Tengah Banner -->
-        <div class="relative z-10 text-center space-y-4 px-6 max-w-2xl mx-auto pt-16">
+        <div class="relative z-10 text-center space-y-4 px-6 max-w-2xl mx-auto">
             <p id="artist-subtitle" class="text-[10px] sm:text-xs md:text-sm uppercase tracking-[0.3em] text-white font-bold drop-shadow-md">Featured Artist &bull; Independent Singer Songwriter</p>
             <h1 id="artist-name" class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white drop-shadow-xl">3H3D</h1>
             <div class="pt-4">
@@ -78,7 +74,50 @@
         </div>
     </main>
 
-    <!-- SECTION BAWAH: LABELS / ROSTER LOGOS -->
+    <!-- BAGIAN 1: ABOUT (Dituju saat menu About diklik) -->
+    <section id="about" class="py-24 px-6 md:px-12 bg-zinc-950 border-t border-zinc-900">
+        <div class="max-w-4xl mx-auto space-y-4">
+            <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Corporate Profile</span>
+            <h2 class="text-3xl font-bold text-white">About Ferwap Music</h2>
+            <div class="text-zinc-400 text-sm md:text-base leading-relaxed font-light space-y-3">
+                <p>Ferwap Music Entertainment adalah label musik independen dan rumah produksi audio yang berfokus pada pengembangan katalog, hak cipta, serta karya independen.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- BAGIAN 2: NEWS (Dituju saat menu News diklik) -->
+    <section id="news" class="py-24 px-6 md:px-12 bg-black border-t border-zinc-900">
+        <div class="max-w-4xl mx-auto space-y-4">
+            <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Updates & Press</span>
+            <h2 class="text-3xl font-bold text-white">Latest News</h2>
+            <div class="text-zinc-400 text-sm md:text-base leading-relaxed font-light space-y-3">
+                <p>Ikuti informasi terbaru, pengumuman rilisan lagu, dan pembaruan seputar aktivitas label di sini.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- BAGIAN 3: ARTISTS (Dituju saat menu Artists diklik) -->
+    <section id="artists" class="py-24 px-6 md:px-12 bg-zinc-950 border-t border-zinc-900">
+        <div class="max-w-4xl mx-auto space-y-6">
+            <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Roster</span>
+            <h2 class="text-3xl font-bold text-white">Our Artists</h2>
+            <div class="text-zinc-400 text-sm md:text-base leading-relaxed font-light space-y-3">
+                <p>Jelajahi daftar talenta dan seniman independen di naungan Ferwap Music Entertainment.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- BAGIAN 4: FAQ (Dituju saat menu FAQ diklik) -->
+    <section id="faq" class="py-24 px-6 md:px-12 bg-black border-t border-zinc-900">
+        <div class="max-w-4xl mx-auto space-y-4">
+            <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Questions</span>
+            <h2 class="text-3xl font-bold text-white">Frequently Asked Questions</h2>
+            <div class="text-zinc-400 text-sm md:text-base leading-relaxed font-light space-y-3">
+                <p>Pertanyaan umum seputar distribusi musik, lisensi, dan manajemen hak cipta.</p>
+            </div>
+        </div>
+    </section>
+    <!-- BARISAN LOGO PARTNER / LABELS -->
     <section class="bg-white text-black py-16 px-6 md:px-12">
         <div class="max-w-6xl mx-auto space-y-8 text-center md:text-left">
             <h2 class="text-2xl md:text-3xl font-bold tracking-tight">Labels & Partners</h2>
@@ -91,8 +130,23 @@
                 </div>
                 <div class="flex justify-center p-4 border border-zinc-200 rounded-xl">
                     <span class="font-bold tracking-widest text-xs">ANDER</span>
-                </div> 
+                </div>
             </div>
+        </div>
+    </section>
+
+    <!-- BAGIAN LEGAL (PRIVACY & TERMS) -->
+    <section id="privacy" class="py-16 px-6 md:px-12 bg-black border-t border-zinc-900">
+        <div class="max-w-4xl mx-auto space-y-3">
+            <h3 class="text-xl font-bold text-white">Privacy Policy</h3>
+            <p class="text-zinc-400 text-xs leading-relaxed font-light">Kebijakan privasi pengunjung dan perlindungan data di Ferwap Music Entertainment.</p>
+        </div>
+    </section>
+
+    <section id="terms" class="py-16 px-6 md:px-12 bg-zinc-950 border-t border-zinc-900">
+        <div class="max-w-4xl mx-auto space-y-3">
+            <h3 class="text-xl font-bold text-white">Terms of Service</h3>
+            <p class="text-zinc-400 text-xs leading-relaxed font-light">Syarat dan ketentuan layanan serta hak cipta konten situs Ferwap Music Entertainment.</p>
         </div>
     </section>
 
@@ -100,112 +154,13 @@
     <footer class="bg-black text-zinc-500 py-8 px-6 text-center text-xs space-y-3 border-t border-zinc-900">
         <p>&copy; 2026 Ferwap Music Entertainment. All Rights Reserved.</p>
         <div class="flex justify-center gap-6 text-zinc-400">
-            <button onclick="openModal('modal-privacy')" class="hover:text-white transition focus:outline-none">Privacy Policy</button>
-            <button onclick="openModal('modal-terms')" class="hover:text-white transition focus:outline-none">Terms of Service</button>
+            <a href="#privacy" class="hover:text-white transition">Privacy Policy</a>
+            <a href="#terms" class="hover:text-white transition">Terms of Service</a>
         </div>
     </footer>
 
-
-    <!-- ==================== POP-UP MODAL CONTAINER (TERSEMBUNYI SECARA DEFAULT) ==================== -->
-
-    <!-- MODAL 1: ABOUT -->
-    <div id="modal-about" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/90 backdrop-blur-md p-6">
-        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl max-w-2xl w-full p-6 md:p-8 relative space-y-4 shadow-2xl">
-            <button onclick="closeModal('modal-about')" class="absolute top-4 right-4 text-zinc-400 hover:text-white text-xl p-2"><i class="fa-solid fa-xmark"></i></button>
-            <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Corporate Profile</span>
-            <h2 class="text-2xl md:text-3xl font-bold text-white">About Ferwap Music</h2>
-            <div class="text-zinc-300 text-sm md:text-base leading-relaxed font-light space-y-3 max-h-[60vh] overflow-y-auto pr-2">
-                <p>Isi teks halaman About milik Ferwap Music Entertainment dapat Anda letakkan di bagian ini.</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- MODAL 2: NEWS -->
-    <div id="modal-news" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/90 backdrop-blur-md p-6">
-        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl max-w-2xl w-full p-6 md:p-8 relative space-y-4 shadow-2xl">
-            <button onclick="closeModal('modal-news')" class="absolute top-4 right-4 text-zinc-400 hover:text-white text-xl p-2"><i class="fa-solid fa-xmark"></i></button>
-            <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Updates & Press</span>
-            <h2 class="text-2xl md:text-3xl font-bold text-white">Latest News</h2>
-            <div class="text-zinc-300 text-sm md:text-base leading-relaxed font-light space-y-3 max-h-[60vh] overflow-y-auto pr-2">
-                <p>Isi berita terbaru atau press release dari Ferwap Music Entertainment dapat Anda letakkan di bagian ini.</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- MODAL 3: ARTISTS -->
-    <div id="modal-artists" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/90 backdrop-blur-md p-6">
-        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl max-w-2xl w-full p-6 md:p-8 relative space-y-4 shadow-2xl">
-            <button onclick="closeModal('modal-artists')" class="absolute top-4 right-4 text-zinc-400 hover:text-white text-xl p-2"><i class="fa-solid fa-xmark"></i></button>
-            <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Roster</span>
-            <h2 class="text-2xl md:text-3xl font-bold text-white">Our Artists</h2>
-            <div class="text-zinc-300 text-sm md:text-base leading-relaxed font-light space-y-3 max-h-[60vh] overflow-y-auto pr-2">
-                <p>Daftar artis atau profil lengkap rilisan para seniman independen dapat Anda letakkan di bagian ini.</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- MODAL 4: FAQ -->
-    <div id="modal-faq" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/90 backdrop-blur-md p-6">
-        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl max-w-2xl w-full p-6 md:p-8 relative space-y-4 shadow-2xl">
-            <button onclick="closeModal('modal-faq')" class="absolute top-4 right-4 text-zinc-400 hover:text-white text-xl p-2"><i class="fa-solid fa-xmark"></i></button>
-            <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Questions</span>
-            <h2 class="text-2xl md:text-3xl font-bold text-white">Frequently Asked Questions</h2>
-            <div class="text-zinc-300 text-sm md:text-base leading-relaxed font-light space-y-3 max-h-[60vh] overflow-y-auto pr-2">
-                <p>Pertanyaan yang sering diajukan beserta jawabannya dapat Anda letakkan di bagian ini.</p>
-            </div>
-        </div>
-    </div>
-    
-    <!-- MODAL 6: PRIVACY POLICY -->
-    <div id="modal-privacy" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/90 backdrop-blur-md p-6">
-        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl max-w-2xl w-full p-6 md:p-8 relative space-y-4 shadow-2xl">
-            <button onclick="closeModal('modal-privacy')" class="absolute top-4 right-4 text-zinc-400 hover:text-white text-xl p-2"><i class="fa-solid fa-xmark"></i></button>
-            <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Legal</span>
-            <h2 class="text-2xl md:text-3xl font-bold text-white">Privacy Policy</h2>
-            <div class="text-zinc-300 text-sm md:text-base leading-relaxed font-light space-y-3 max-h-[60vh] overflow-y-auto pr-2">
-                <p>Teks Kebijakan Privasi (Privacy Policy) milik Ferwap Music Entertainment dapat Anda isi di sini.</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- MODAL 7: TERMS OF SERVICE -->
-    <div id="modal-terms" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/90 backdrop-blur-md p-6">
-        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl max-w-2xl w-full p-6 md:p-8 relative space-y-4 shadow-2xl">
-            <button onclick="closeModal('modal-terms')" class="absolute top-4 right-4 text-zinc-400 hover:text-white text-xl p-2"><i class="fa-solid fa-xmark"></i></button>
-            <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Legal</span>
-            <h2 class="text-2xl md:text-3xl font-bold text-white">Terms of Service</h2>
-            <div class="text-zinc-300 text-sm md:text-base leading-relaxed font-light space-y-3 max-h-[60vh] overflow-y-auto pr-2">
-                <p>Teks Syarat dan Ketentuan Layanan (Terms of Service) milik Ferwap Music Entertainment dapat Anda isi di sini.</p>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- SCRIPT SLIDER & SYSTEM MODAL -->
+    <!-- SCRIPT SLIDER -->
     <script>
-        // System Modal (Buka / Tutup)
-        function openModal(id) {
-            const el = document.getElementById(id);
-            if(el) {
-                el.classList.add('modal-active');
-            }
-        }
-
-        function closeModal(id) {
-            const el = document.getElementById(id);
-            if(el) {
-                el.classList.remove('modal-active');
-            }
-        }
-
-        // Tutup modal jika klik di luar area dialog
-        window.onclick = function(event) {
-            if (event.target.classList.contains('fixed')) {
-                event.target.classList.remove('modal-active');
-            }
-        }
-
-        // Slider Logic
         const slides = [
             {
                 name: "3H3D",
