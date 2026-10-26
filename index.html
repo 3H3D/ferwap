@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,145 +20,148 @@
         h1, h2, h3 {
             font-family: 'Space Grotesk', sans-serif;
         }
-        /* Mengatur agar setiap section tersembunyi dengan pas dan berjarak saat di-klik dari navigasi */
-        section[id] {
-            scroll-margin-top: 90px;
-            min-height: 100vh;
+        /* Kelas untuk menyembunyikan halaman */
+        .page-section {
+            display: none;
+        }
+        .page-section.active {
             display: flex;
-            align-items: center;
-            justify-content: center;
         }
     </style>
 </head>
 <body class="bg-black text-white min-h-screen flex flex-col justify-between overflow-x-hidden">
 
-    <!-- TOP NAVIGATION (Terhubung langsung ke bagian bawah saat diklik) -->
+    <!-- TOP NAVIGATION (Menggunakan Sistem Pindah Halaman Instan) -->
     <header class="w-full fixed top-0 left-0 z-50 px-4 md:px-12 py-5 flex items-center justify-between bg-black/90 backdrop-blur-md border-b border-zinc-900">
-        <a href="#" class="flex items-center gap-2 md:gap-3">
+        <a href="#" onclick="switchPage('home')" class="flex items-center gap-2 md:gap-3 cursor-pointer">
             <div class="w-7 h-7 md:w-8 md:h-8 bg-white text-black rounded-lg flex items-center justify-center font-bold text-xs md:text-sm">W</div>
             <span class="font-extrabold tracking-widest uppercase text-xs md:text-sm">Ferwap Music</span>
         </a>
         <nav class="flex items-center gap-3 sm:gap-6 md:gap-8 text-[10px] sm:text-xs font-semibold tracking-wider uppercase text-zinc-300">
-            <a href="#" class="hover:text-white transition">Home</a>
-            <a href="#about" class="hover:text-white transition">About</a>
-            <a href="#news" class="hover:text-white transition">News</a>
-            <a href="#artists" class="hover:text-white transition">Artists</a>
-            <a href="#faq" class="hover:text-white transition">FAQ</a>
+            <button onclick="switchPage('home')" class="hover:text-white transition focus:outline-none">Home</button>
+            <button onclick="switchPage('about')" class="hover:text-white transition focus:outline-none">About</button>
+            <button onclick="switchPage('news')" class="hover:text-white transition focus:outline-none">News</button>
+            <button onclick="switchPage('artists')" class="hover:text-white transition focus:outline-none">Artists</button>
+            <button onclick="switchPage('faq')" class="hover:text-white transition focus:outline-none">FAQ</button>
+            <button onclick="switchPage('for-artists')" class="hover:text-white transition focus:outline-none hidden sm:inline-block">For Artists</button>
         </nav>
     </header>
 
-    <!-- HERO SLIDER BANNER (Halaman Utama yang Bersih) -->
-    <main class="relative w-full h-screen flex items-center justify-center overflow-hidden pt-16">
-        
-        <!-- Background Image -->
-        <div class="absolute inset-0 z-0">
-            <img id="banner-image" src="3H3D.jpeg" alt="Featured Artist" class="w-full h-full object-cover filter brightness-75">
-            <div class="absolute inset-0 bg-black/50"></div>
-        </div>
+    <!-- KONTEN UTAMA YANG BERPINDAH (SINGLE PAGE VIEW) -->
+    <div class="flex-grow pt-20">
 
-        <!-- Tombol Kiri -->
-        <button id="prev-slide" class="absolute left-2 md:left-8 z-20 text-white/80 hover:text-white text-3xl md:text-5xl p-4 focus:outline-none transition">
-            <i class="fa-solid fa-angle-left"></i>
-        </button>
-
-        <!-- Konten Teks di Tengah Banner -->
-        <div class="relative z-10 text-center space-y-4 px-6 max-w-2xl mx-auto">
-            <p id="artist-subtitle" class="text-[10px] sm:text-xs md:text-sm uppercase tracking-[0.3em] text-white font-bold drop-shadow-md">Featured Artist &bull; Independent Singer Songwriter</p>
-            <h1 id="artist-name" class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white drop-shadow-xl">3H3D</h1>
-            <div class="pt-4">
-                <a id="artist-link" href="https://3h3dofficial.web.id" target="_blank" class="inline-block px-7 py-3 bg-white text-black font-bold rounded-full text-[11px] md:text-xs uppercase tracking-widest hover:bg-zinc-200 transition shadow-xl">Explore Artist</a>
+        <!-- HALAMAN 1: HOME (HERO SLIDER) -->
+        <main id="page-home" class="page-section active relative w-full h-[calc(100vh-80px)] items-center justify-center overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <img id="banner-image" src="3H3D.jpeg" alt="Featured Artist" class="w-full h-full object-cover filter brightness-75">
+                <div class="absolute inset-0 bg-black/50"></div>
             </div>
-        </div>
 
-        <!-- Tombol Kanan -->
-        <button id="next-slide" class="absolute right-2 md:right-8 z-20 text-white/80 hover:text-white text-3xl md:text-5xl p-4 focus:outline-none transition">
-            <i class="fa-solid fa-angle-right"></i>
-        </button>
+            <!-- Tombol Kiri -->
+            <button id="prev-slide" class="absolute left-2 md:left-8 z-20 text-white/80 hover:text-white text-3xl md:text-5xl p-4 focus:outline-none transition">
+                <i class="fa-solid fa-angle-left"></i>
+            </button>
 
-        <!-- Titik Indikator -->
-        <div class="absolute bottom-8 z-20 flex items-center justify-center gap-3">
-            <span class="dot w-2.5 h-2.5 rounded-full bg-red-600 transition-all cursor-pointer" onclick="currentSlide(1)"></span>
-            <span class="dot w-2.5 h-2.5 rounded-full bg-white/40 transition-all cursor-pointer" onclick="currentSlide(2)"></span>
-            <span class="dot w-2.5 h-2.5 rounded-full bg-white/40 transition-all cursor-pointer" onclick="currentSlide(3)"></span>
-        </div>
-    </main>
-
-    <!-- BAGIAN 1: ABOUT (Tersembunyi rapi, muncul saat menu About diklik) -->
-    <section id="about" class="px-6 md:px-12 bg-zinc-950 border-t border-zinc-900">
-        <div class="max-w-4xl mx-auto space-y-4 w-full py-12">
-            <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Corporate Profile</span>
-            <h2 class="text-3xl font-bold text-white">About Ferwap Music</h2>
-            <div class="text-zinc-400 text-sm md:text-base leading-relaxed font-light space-y-3">
-                <p>Ferwap Music Entertainment adalah label musik independen dan rumah produksi audio yang berfokus pada pengembangan katalog, hak cipta, serta karya independen.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- BAGIAN 2: NEWS (Tersembunyi rapi, muncul saat menu News diklik) -->
-    <section id="news" class="px-6 md:px-12 bg-black border-t border-zinc-900">
-        <div class="max-w-4xl mx-auto space-y-4 w-full py-12">
-            <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Updates & Press</span>
-            <h2 class="text-3xl font-bold text-white">Latest News</h2>
-            <div class="text-zinc-400 text-sm md:text-base leading-relaxed font-light space-y-3">
-                <p>Ikuti informasi terbaru, pengumuman rilisan lagu, dan pembaruan seputar aktivitas label di sini.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- BAGIAN 3: ARTISTS (Tersembunyi rapi, muncul saat menu Artists diklik) -->
-    <section id="artists" class="px-6 md:px-12 bg-zinc-950 border-t border-zinc-900">
-        <div class="max-w-4xl mx-auto space-y-6 w-full py-12">
-            <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Roster</span>
-            <h2 class="text-3xl font-bold text-white">Our Artists</h2>
-            <div class="text-zinc-400 text-sm md:text-base leading-relaxed font-light space-y-3">
-                <p>Jelajahi daftar talenta dan seniman independen di naungan Ferwap Music Entertainment.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- BAGIAN 4: FAQ (Tersembunyi rapi, muncul saat menu FAQ diklik) -->
-    <section id="faq" class="px-6 md:px-12 bg-black border-t border-zinc-900">
-        <div class="max-w-4xl mx-auto space-y-4 w-full py-12">
-            <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Questions</span>
-            <h2 class="text-3xl font-bold text-white">Frequently Asked Questions</h2>
-            <div class="text-zinc-400 text-sm md:text-base leading-relaxed font-light space-y-3">
-                <p>Pertanyaan umum seputar distribusi musik, lisensi, dan manajemen hak cipta.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- BARISAN LOGO PARTNER / LABELS -->
-    <section class="bg-white text-black py-16 px-6 md:px-12">
-        <div class="max-w-6xl mx-auto space-y-8 text-center md:text-left">
-            <h2 class="text-2xl md:text-3xl font-bold tracking-tight">Labels & Partners</h2>
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 items-center">
-                <div class="flex justify-center p-4 border border-zinc-200 rounded-xl">
-                    <span class="font-bold tracking-widest text-xs">FERWAP</span>
-                </div>
-                <div class="flex justify-center p-4 border border-zinc-200 rounded-xl">
-                    <span class="font-bold tracking-widest text-xs">3H3D</span>
-                </div>
-                <div class="flex justify-center p-4 border border-zinc-200 rounded-xl">
-                    <span class="font-bold tracking-widest text-xs">ANDER</span>
+            <!-- Teks di Tengah -->
+            <div class="relative z-10 text-center space-y-4 px-6 max-w-2xl mx-auto">
+                <p id="artist-subtitle" class="text-[10px] sm:text-xs md:text-sm uppercase tracking-[0.3em] text-white font-bold drop-shadow-md">Featured Artist &bull; Independent Singer Songwriter</p>
+                <h1 id="artist-name" class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white drop-shadow-xl">3H3D</h1>
+                <div class="pt-4">
+                    <a id="artist-link" href="https://3h3dofficial.web.id" target="_blank" class="inline-block px-7 py-3 bg-white text-black font-bold rounded-full text-[11px] md:text-xs uppercase tracking-widest hover:bg-zinc-200 transition shadow-xl">Explore Artist</a>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- BAGIAN LEGAL -->
-    <section id="privacy" class="px-6 md:px-12 bg-black border-t border-zinc-900">
-        <div class="max-w-4xl mx-auto space-y-3 w-full py-12">
-            <h3 class="text-xl font-bold text-white">Privacy Policy</h3>
-            <p class="text-zinc-400 text-xs leading-relaxed font-light">Kebijakan privasi pengunjung dan perlindungan data di Ferwap Music Entertainment.</p>
-        </div>
-    </section>
+            <!-- Tombol Kanan -->
+            <button id="next-slide" class="absolute right-2 md:right-8 z-20 text-white/80 hover:text-white text-3xl md:text-5xl p-4 focus:outline-none transition">
+                <i class="fa-solid fa-angle-right"></i>
+            </button>
 
-    <section id="terms" class="px-6 md:px-12 bg-zinc-950 border-t border-zinc-900">
-        <div class="max-w-4xl mx-auto space-y-3 w-full py-12">
-            <h3 class="text-xl font-bold text-white">Terms of Service</h3>
-            <p class="text-zinc-400 text-xs leading-relaxed font-light">Syarat dan ketentuan layanan serta hak cipta konten situs Ferwap Music Entertainment.</p>
-        </div>
-    </section>
+            <!-- Indikator Dot -->
+            <div class="absolute bottom-8 z-20 flex items-center justify-center gap-3 w-full">
+                <span class="dot w-2.5 h-2.5 rounded-full bg-red-600 transition-all cursor-pointer" onclick="currentSlide(1)"></span>
+                <span class="dot w-2.5 h-2.5 rounded-full bg-white/40 transition-all cursor-pointer" onclick="currentSlide(2)"></span>
+                <span class="dot w-2.5 h-2.5 rounded-full bg-white/40 transition-all cursor-pointer" onclick="currentSlide(3)"></span>
+            </div>
+        </main>
+
+        <!-- HALAMAN 2: ABOUT -->
+        <section id="page-about" class="page-section min-h-[70vh] items-center justify-center px-6 md:px-12 py-20 bg-black">
+            <div class="max-w-3xl mx-auto space-y-4 text-center">
+                <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Corporate Profile</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white">About Ferwap Music</h2>
+                <p class="text-zinc-400 text-sm md:text-base leading-relaxed font-light">
+                    Ferwap Music Entertainment adalah label musik independen dan rumah produksi audio yang berfokus pada pengembangan katalog, hak cipta, serta karya independen.
+                </p>
+            </div>
+        </section>
+
+        <!-- HALAMAN 3: NEWS -->
+        <section id="page-news" class="page-section min-h-[70vh] items-center justify-center px-6 md:px-12 py-20 bg-black">
+            <div class="max-w-3xl mx-auto space-y-4 text-center">
+                <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Updates & Press</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white">Latest News</h2>
+                <p class="text-zinc-400 text-sm md:text-base leading-relaxed font-light">
+                    Ikuti informasi terbaru, pengumuman rilisan lagu, dan pembaruan seputar aktivitas label di sini.
+                </p>
+            </div>
+        </section>
+
+        <!-- HALAMAN 4: ARTISTS -->
+        <section id="page-artists" class="page-section min-h-[70vh] items-center justify-center px-6 md:px-12 py-20 bg-black">
+            <div class="max-w-3xl mx-auto space-y-4 text-center">
+                <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Roster</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white">Our Artists</h2>
+                <p class="text-zinc-400 text-sm md:text-base leading-relaxed font-light">
+                    Jelajahi daftar talenta dan seniman independen di naungan Ferwap Music Entertainment.
+                </p>
+            </div>
+        </section>
+
+        <!-- HALAMAN 5: FAQ -->
+        <section id="page-faq" class="page-section min-h-[70vh] items-center justify-center px-6 md:px-12 py-20 bg-black">
+            <div class="max-w-3xl mx-auto space-y-4 text-center">
+                <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Questions</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white">Frequently Asked Questions</h2>
+                <p class="text-zinc-400 text-sm md:text-base leading-relaxed font-light">
+                    Pertanyaan umum seputar distribusi musik, lisensi, dan manajemen hak cipta.
+                </p>
+            </div>
+        </section>
+
+        <!-- HALAMAN 6: FOR ARTISTS -->
+        <section id="page-for-artists" class="page-section min-h-[70vh] items-center justify-center px-6 md:px-12 py-20 bg-black">
+            <div class="max-w-3xl mx-auto space-y-4 text-center">
+                <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Submissions</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white">For Artists & Demo Submissions</h2>
+                <p class="text-zinc-400 text-sm md:text-base leading-relaxed font-light">
+                    Panduan bagi musisi baru yang ingin mengirimkan demo lagu atau mengajukan kerja sama.
+                </p>
+            </div>
+        </section>
+
+        <!-- HALAMAN 7: PRIVACY POLICY -->
+        <section id="page-privacy" class="page-section min-h-[70vh] items-center justify-center px-6 md:px-12 py-20 bg-black">
+            <div class="max-w-3xl mx-auto space-y-4 text-center">
+                <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Legal</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white">Privacy Policy</h2>
+                <p class="text-zinc-400 text-sm md:text-base leading-relaxed font-light">
+                    Kebijakan privasi pengunjung dan perlindungan data di Ferwap Music Entertainment.
+                </p>
+            </div>
+        </section>
+
+        <!-- HALAMAN 8: TERMS OF SERVICE -->
+        <section id="page-terms" class="page-section min-h-[70vh] items-center justify-center px-6 md:px-12 py-20 bg-black">
+            <div class="max-w-3xl mx-auto space-y-4 text-center">
+                <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Legal</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white">Terms of Service</h2>
+                <p class="text-zinc-400 text-sm md:text-base leading-relaxed font-light">
+                    Syarat dan ketentuan layanan serta hak cipta konten situs Ferwap Music Entertainment.
+                </p>
+            </div>
+        </section>
+
+    </div>
 
     <!-- FOOTER DENGAN IKON MEDIA SOSIAL -->
     <footer class="bg-black text-zinc-500 py-10 px-6 text-center text-xs space-y-4 border-t border-zinc-900">
@@ -174,13 +177,28 @@
         <p>&copy; 2026 Ferwap Music Entertainment. All Rights Reserved.</p>
         
         <div class="flex justify-center gap-6 text-zinc-400">
-            <a href="#privacy" class="hover:text-white transition">Privacy Policy</a>
-            <a href="#terms" class="hover:text-white transition">Terms of Service</a>
+            <button onclick="switchPage('privacy')" class="hover:text-white transition focus:outline-none">Privacy Policy</button>
+            <button onclick="switchPage('terms')" class="hover:text-white transition focus:outline-none">Terms of Service</button>
         </div>
     </footer>
 
-    <!-- SCRIPT SLIDER -->
+    <!-- SCRIPT PISAH HALAMAN & SLIDER -->
     <script>
+        // Fungsi untuk berpindah halaman secara instan
+        function switchPage(pageName) {
+            // Sembunyikan semua section halaman
+            const sections = document.querySelectorAll('.page-section');
+            sections.forEach(sec => sec.classList.remove('active'));
+
+            // Tampilkan halaman yang dipilih
+            const target = document.getElementById('page-' + pageName);
+            if(target) {
+                target.classList.add('active');
+            }
+            window.scrollTo(0, 0); // Kembalikan posisi scroll ke atas
+        }
+
+        // Script Slider Banner Utama
         const slides = [
             {
                 name: "3H3D",
