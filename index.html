@@ -20,17 +20,26 @@
         h1, h2, h3 {
             font-family: 'Space Grotesk', sans-serif;
         }
+        /* Mengatur agar setiap section tersembunyi dengan pas dan berjarak saat di-klik dari navigasi */
+        section[id] {
+            scroll-margin-top: 90px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
     </style>
 </head>
 <body class="bg-black text-white min-h-screen flex flex-col justify-between overflow-x-hidden">
 
-    <!-- TOP NAVIGATION (Langsung terhubung ke bagian bawah saat diklik) -->
+    <!-- TOP NAVIGATION (Terhubung langsung ke bagian bawah saat diklik) -->
     <header class="w-full fixed top-0 left-0 z-50 px-4 md:px-12 py-5 flex items-center justify-between bg-black/90 backdrop-blur-md border-b border-zinc-900">
         <a href="#" class="flex items-center gap-2 md:gap-3">
             <div class="w-7 h-7 md:w-8 md:h-8 bg-white text-black rounded-lg flex items-center justify-center font-bold text-xs md:text-sm">W</div>
             <span class="font-extrabold tracking-widest uppercase text-xs md:text-sm">Ferwap Music</span>
         </a>
         <nav class="flex items-center gap-3 sm:gap-6 md:gap-8 text-[10px] sm:text-xs font-semibold tracking-wider uppercase text-zinc-300">
+            <a href="#" class="hover:text-white transition">Home</a>
             <a href="#about" class="hover:text-white transition">About</a>
             <a href="#news" class="hover:text-white transition">News</a>
             <a href="#artists" class="hover:text-white transition">Artists</a>
@@ -38,7 +47,7 @@
         </nav>
     </header>
 
-    <!-- HERO SLIDER BANNER (Tampilan Depan Utama) -->
+    <!-- HERO SLIDER BANNER (Halaman Utama yang Bersih) -->
     <main class="relative w-full h-screen flex items-center justify-center overflow-hidden pt-16">
         
         <!-- Background Image -->
@@ -74,9 +83,9 @@
         </div>
     </main>
 
-    <!-- BAGIAN 1: ABOUT (Dituju saat menu About diklik) -->
-    <section id="about" class="py-24 px-6 md:px-12 bg-zinc-950 border-t border-zinc-900">
-        <div class="max-w-4xl mx-auto space-y-4">
+    <!-- BAGIAN 1: ABOUT (Tersembunyi rapi, muncul saat menu About diklik) -->
+    <section id="about" class="px-6 md:px-12 bg-zinc-950 border-t border-zinc-900">
+        <div class="max-w-4xl mx-auto space-y-4 w-full py-12">
             <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Corporate Profile</span>
             <h2 class="text-3xl font-bold text-white">About Ferwap Music</h2>
             <div class="text-zinc-400 text-sm md:text-base leading-relaxed font-light space-y-3">
@@ -85,9 +94,9 @@
         </div>
     </section>
 
-    <!-- BAGIAN 2: NEWS (Dituju saat menu News diklik) -->
-    <section id="news" class="py-24 px-6 md:px-12 bg-black border-t border-zinc-900">
-        <div class="max-w-4xl mx-auto space-y-4">
+    <!-- BAGIAN 2: NEWS (Tersembunyi rapi, muncul saat menu News diklik) -->
+    <section id="news" class="px-6 md:px-12 bg-black border-t border-zinc-900">
+        <div class="max-w-4xl mx-auto space-y-4 w-full py-12">
             <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Updates & Press</span>
             <h2 class="text-3xl font-bold text-white">Latest News</h2>
             <div class="text-zinc-400 text-sm md:text-base leading-relaxed font-light space-y-3">
@@ -96,9 +105,9 @@
         </div>
     </section>
 
-    <!-- BAGIAN 3: ARTISTS (Dituju saat menu Artists diklik) -->
-    <section id="artists" class="py-24 px-6 md:px-12 bg-zinc-950 border-t border-zinc-900">
-        <div class="max-w-4xl mx-auto space-y-6">
+    <!-- BAGIAN 3: ARTISTS (Tersembunyi rapi, muncul saat menu Artists diklik) -->
+    <section id="artists" class="px-6 md:px-12 bg-zinc-950 border-t border-zinc-900">
+        <div class="max-w-4xl mx-auto space-y-6 w-full py-12">
             <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Roster</span>
             <h2 class="text-3xl font-bold text-white">Our Artists</h2>
             <div class="text-zinc-400 text-sm md:text-base leading-relaxed font-light space-y-3">
@@ -107,9 +116,9 @@
         </div>
     </section>
 
-    <!-- BAGIAN 4: FAQ (Dituju saat menu FAQ diklik) -->
-    <section id="faq" class="py-24 px-6 md:px-12 bg-black border-t border-zinc-900">
-        <div class="max-w-4xl mx-auto space-y-4">
+    <!-- BAGIAN 4: FAQ (Tersembunyi rapi, muncul saat menu FAQ diklik) -->
+    <section id="faq" class="px-6 md:px-12 bg-black border-t border-zinc-900">
+        <div class="max-w-4xl mx-auto space-y-4 w-full py-12">
             <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Questions</span>
             <h2 class="text-3xl font-bold text-white">Frequently Asked Questions</h2>
             <div class="text-zinc-400 text-sm md:text-base leading-relaxed font-light space-y-3">
@@ -117,6 +126,7 @@
             </div>
         </div>
     </section>
+
     <!-- BARISAN LOGO PARTNER / LABELS -->
     <section class="bg-white text-black py-16 px-6 md:px-12">
         <div class="max-w-6xl mx-auto space-y-8 text-center md:text-left">
@@ -135,24 +145,34 @@
         </div>
     </section>
 
-    <!-- BAGIAN LEGAL (PRIVACY & TERMS) -->
-    <section id="privacy" class="py-16 px-6 md:px-12 bg-black border-t border-zinc-900">
-        <div class="max-w-4xl mx-auto space-y-3">
+    <!-- BAGIAN LEGAL -->
+    <section id="privacy" class="px-6 md:px-12 bg-black border-t border-zinc-900">
+        <div class="max-w-4xl mx-auto space-y-3 w-full py-12">
             <h3 class="text-xl font-bold text-white">Privacy Policy</h3>
             <p class="text-zinc-400 text-xs leading-relaxed font-light">Kebijakan privasi pengunjung dan perlindungan data di Ferwap Music Entertainment.</p>
         </div>
     </section>
 
-    <section id="terms" class="py-16 px-6 md:px-12 bg-zinc-950 border-t border-zinc-900">
-        <div class="max-w-4xl mx-auto space-y-3">
+    <section id="terms" class="px-6 md:px-12 bg-zinc-950 border-t border-zinc-900">
+        <div class="max-w-4xl mx-auto space-y-3 w-full py-12">
             <h3 class="text-xl font-bold text-white">Terms of Service</h3>
             <p class="text-zinc-400 text-xs leading-relaxed font-light">Syarat dan ketentuan layanan serta hak cipta konten situs Ferwap Music Entertainment.</p>
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="bg-black text-zinc-500 py-8 px-6 text-center text-xs space-y-3 border-t border-zinc-900">
+    <!-- FOOTER DENGAN IKON MEDIA SOSIAL -->
+    <footer class="bg-black text-zinc-500 py-10 px-6 text-center text-xs space-y-4 border-t border-zinc-900">
+        <!-- Ikon Media Sosial -->
+        <div class="flex justify-center gap-6 text-lg text-zinc-400">
+            <a href="#" class="hover:text-white transition" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" class="hover:text-white transition" aria-label="Spotify"><i class="fa-brands fa-spotify"></i></a>
+            <a href="#" class="hover:text-white transition" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="hover:text-white transition" aria-label="SoundCloud"><i class="fa-brands fa-soundcloud"></i></a>
+            <a href="#" class="hover:text-white transition" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        </div>
+        
         <p>&copy; 2026 Ferwap Music Entertainment. All Rights Reserved.</p>
+        
         <div class="flex justify-center gap-6 text-zinc-400">
             <a href="#privacy" class="hover:text-white transition">Privacy Policy</a>
             <a href="#terms" class="hover:text-white transition">Terms of Service</a>
