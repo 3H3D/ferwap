@@ -58,7 +58,7 @@
         
         <!-- Background Banner / Artist Featured Image -->
         <div class="absolute inset-0 z-0">
-            <img src="3H3D.jpeg" alt="Featured Artist" class="w-full h-full object-cover filter brightness-75">
+            <img id="banner-image" src="3H3D.jpeg" alt="Featured Artist" class="w-full h-full object-cover filter brightness-75 transition-all duration-700">
             <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/50"></div>
         </div>
 
@@ -69,10 +69,10 @@
 
         <!-- Konten / Nama Artis di Tengah Slider -->
         <div class="relative z-10 text-center space-y-4 px-4 max-w-2xl">
+            <p id="artist-subtitle" class="text-xs md:text-sm uppercase tracking-[0.3em] text-white font-semibold drop-shadow-md">Featured Artist &bull; Independent Singer Songwriter</p>
             <h1 id="artist-name" class="text-4xl md:text-7xl font-extrabold tracking-tight text-white drop-shadow-lg">3H3D</h1>
-            <p id="artist-subtitle" class="text-xs md:text-sm uppercase tracking-[0.3em] text-zinc-300">Featured Artist &bull; Latest Release</p>
             <div class="pt-4">
-                <a id="artist-link" href="#" target="_blank" class="inline-block px-8 py-3 bg-white text-black font-bold rounded-full text-xs uppercase tracking-widest hover:bg-zinc-200 transition shadow-xl">Explore Artist</a>
+                <a id="artist-link" href="https://3h3dofficial.web.id" target="_blank" class="inline-block px-8 py-3 bg-white text-black font-bold rounded-full text-xs uppercase tracking-widest hover:bg-zinc-200 transition shadow-xl">Explore Artist</a>
             </div>
         </div>
 
@@ -135,7 +135,6 @@
 
     <!-- SCRIPT SEDERHANA UNTUK SLIDER -->
     <script>
-        // Data slide bisa Anda ubah nanti sesuai kebutuhan
         const slides = [
             {
                 name: "3H3D",
@@ -151,7 +150,7 @@
             },
             {
                 name: "FERWAP MUSIC",
-                subtitle: "Independent Record Label & Audio Production House",
+                subtitle: "Independent Record Label &bull; Audio Production House",
                 image: "3H3D.jpeg",
                 link: "#"
             }
@@ -161,7 +160,7 @@
         const nameEl = document.getElementById('artist-name');
         const subEl = document.getElementById('artist-subtitle');
         const linkEl = document.getElementById('artist-link');
-        const bannerImg = document.querySelector('.absolute.inset-0.z-0 img');
+        const bannerImg = document.getElementById('banner-image');
 
         function updateSlide(index) {
             nameEl.innerHTML = slides[index].name;
