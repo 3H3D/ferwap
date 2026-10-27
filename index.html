@@ -1057,21 +1057,33 @@
         }
         <!-- JAVASCRIPT KONTROL -->
     <script>
-        // Fungsi untuk membuka modal saat ikon bulat diklik
-        function openCookieModal() {
-            document.getElementById('cookieOverlay').style.display = 'flex';
+            // Fungsi untuk membuka modal saat ikon bulat diklik
+    function openCookieModal() {
+        const modal = document.getElementById('cookieOverlay');
+        if (modal) {
+            modal.style.display = 'flex';
+            console.log('Modal cookie berhasil dibuka!'); // Cek di Console Browser (F12)
+        } else {
+            alert('Elemen cookieOverlay tidak ditemukan oleh sistem!');
         }
+    }
 
-        // Fungsi saat tombol konfirmasi ditekan
-        function acceptCookies() {
-            localStorage.setItem('ferwap_cookie_consent', 'true');
-            document.getElementById('cookieOverlay').style.display = 'none';
+    // Fungsi saat tombol konfirmasi ditekan
+    function acceptCookies() {
+        localStorage.setItem('ferwap_cookie_consent', 'true');
+        const modal = document.getElementById('cookieOverlay');
+        if (modal) {
+            modal.style.display = 'none';
         }
+    }
 
-        // Fungsi untuk menutup modal
-        function closeCookieModal() {
-            document.getElementById('cookieOverlay').style.display = 'none';
+    // Fungsi untuk menutup modal
+    function closeCookieModal() {
+        const modal = document.getElementById('cookieOverlay');
+        if (modal) {
+            modal.style.display = 'none';
         }
+    }
     </script>
 </body>
 </html>
