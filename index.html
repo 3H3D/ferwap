@@ -108,7 +108,48 @@
                 max-width: 180px !important;
             }
         }
-        /* CSS COOKIE BANNER */
+        margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+        }
+
+        .main-content {
+            padding: 40px;
+            text-align: center;
+        }
+
+        /* Tombol Ikon Bulat Kecil di Pojok Bawah */
+        .cookie-trigger-btn {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 45px;
+            height: 45px;
+            background-color: #000000;
+            border: 1px solid #333333;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 999;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.2s ease;
+        }
+
+        .cookie-trigger-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .cookie-trigger-btn svg {
+            width: 22px;
+            height: 22px;
+            fill: #ffffff;
+        }
+
+        /* Overlay Latar Belakang Cookie (Awalnya Disembunyikan / display: none) */
         .cookie-modal-overlay {
             position: fixed;
             top: 0;
@@ -116,12 +157,13 @@
             width: 100%;
             height: 100%;
             background-color: rgba(0, 0, 0, 0.75);
-            display: flex;
+            display: none; /* Sembunyikan saat halaman dimuat */
             justify-content: center;
             align-items: center;
             z-index: 99999;
         }
 
+        /* Kotak Pop-up Cookie */
         .cookie-modal {
             background-color: #000000;
             color: #ffffff;
@@ -235,35 +277,6 @@
             align-self: flex-end;
         }
     </style>
-    <!-- POP-UP COOKIE MELAYANG -->
-    <div id="cookieOverlay" class="cookie-modal-overlay">
-        <div class="cookie-modal">
-            
-            <div class="cookie-header">
-                <span class="cookie-brand">FERWAP MUSIC ENTERTAINMENT</span>
-                <button class="cookie-close-btn" onclick="closeCookieModal()">&times;</button>
-            </div>
-
-            <div class="cookie-body">
-                <h3>Cookie Settings</h3>
-                <p>
-                    When you visit our website, we store cookies on your browser to collect information. The information collected might relate to you, your preferences or your device, and is mostly used to make the site work as you expect it to and to provide a more personalized web experience. However, you can choose not to allow certain types of cookies, which may impact your experience of the site and the services we are able to offer. Click on the different category headings to find out more and change our default settings according to your preference. You cannot opt-out of our First Party Strictly Necessary Cookies as they are deployed in order to ensure the proper functioning of our website (such as prompting the cookie banner and remembering your settings, to log into your account, to redirect you when you log out, etc.). For more information, please follow this link:
-                </p>
-                <p>
-                    <a href="/privacy-policy" class="cookie-privacy-link">Privacy Policy</a>
-                </p>
-                <div class="cookie-manage-pref">
-                    <a href="#">Manage Consent Preferences</a>
-                </div>
-            </div>
-
-            <div class="cookie-footer">
-                <button class="cookie-btn-confirm" onclick="acceptCookies()">Confirm My Choices</button>
-                <span class="cookie-powered">Powered by Ferwap Music</span>
-            </div>
-
-        </div>
-    </div>
 </head>
 <body 
     class="bg-black text-white flex flex-col justify-between min-h-screen">
@@ -935,6 +948,48 @@
         </section>
 
     </div>
+    <!-- ISI UTAMA WEBSITE ANDA -->
+    <div class="main-content">
+        <h1>Ferwap Music Entertainment</h1>
+        <p>Selamat datang di situs resmi kami.</p>
+    </div>
+
+    <!-- TOMBOL BULAT KECIL DI POJOK BAWAH (UNTUK MEMBUKA KOTAK COOKIE) -->
+    <div class="cookie-trigger-btn" onclick="openCookieModal()" title="Cookie Settings">
+        <svg viewBox="0 0 24 24">
+            <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c0.92 0 1.5-.78 1.5-1.5 0-.39-0.15-0.74-0.39-1.01-0.23-0.26-0.38-0.61-0.38-0.99 0-0.83 0.67-1.5 1.5-1.5H16c2.76 0 5-2.24 5-5 0-4.42-4.03-8-9-8zm-5.5 9c-0.83 0-1.5-0.67-1.5-1.5S5.67 8 6.5 8 8 8.67 8 9.5 7.33 11 6.5 11zm3 4c-0.83 0-1.5-0.67-1.5-1.5S8.67 12 9.5 12s1.5 0.67 1.5 1.5S10.33 15 9.5 15zm5 0c-0.83 0-1.5-0.67-1.5-1.5s0.67-1.5 1.5-1.5 1.5 0.67 1.5 1.5-0.67 1.5-1.5 1.5zm2-4c-0.83 0-1.5-0.67-1.5-1.5S15.67 8 16.5 8s1.5 0.67 1.5 1.5S17.33 11 16.5 11z"/>
+        </svg>
+    </div>
+
+    <!-- POP-UP COOKIE SETTINGS (MELAYANG) -->
+    <div id="cookieOverlay" class="cookie-modal-overlay">
+        <div class="cookie-modal">
+            
+            <div class="cookie-header">
+                <span class="cookie-brand">FERWAP MUSIC ENTERTAINMENT</span>
+                <button class="cookie-close-btn" onclick="closeCookieModal()">&times;</button>
+            </div>
+
+            <div class="cookie-body">
+                <h3>Cookie Settings</h3>
+                <p>
+                    When you visit our website, we store cookies on your browser to collect information. The information collected might relate to you, your preferences or your device, and is mostly used to make the site work as you expect it to and to provide a more personalized web experience. However, you can choose not to allow certain types of cookies, which may impact your experience of the site and the services we are able to offer. Click on the different category headings to find out more and change our default settings according to your preference. You cannot opt-out of our First Party Strictly Necessary Cookies as they are deployed in order to ensure the proper functioning of our website (such as prompting the cookie banner and remembering your settings, to log into your account, to redirect you when you log out, etc.). For more information, please follow this link:
+                </p>
+                <p>
+                    <a href="/privacy-policy" class="cookie-privacy-link">Privacy Policy</a>
+                </p>
+                <div class="cookie-manage-pref">
+                    <a href="#">Manage Consent Preferences</a>
+                </div>
+            </div>
+
+            <div class="cookie-footer">
+                <button class="cookie-btn-confirm" onclick="acceptCookies()">Confirm My Choices</button>
+                <span class="cookie-powered">Powered by Ferwap Music</span>
+            </div>
+
+        </div>
+    </div>
 
     <!-- SCRIPT PISAH HALAMAN & SLIDER -->
     <script>
@@ -1007,19 +1062,20 @@
             currentIndex = n - 1;
             updateSlide(currentIndex);
         }
-        // JAVASCRIPT KONTROL COOKIE
-        document.addEventListener('DOMContentLoaded', function () {
-            const isAccepted = localStorage.getItem('ferwap_cookie_consent');
-            if (isAccepted === 'true') {
-                document.getElementById('cookieOverlay').style.display = 'none';
-            }
-        });
+        <!-- JAVASCRIPT KONTROL -->
+    <script>
+        // Fungsi untuk membuka modal saat ikon bulat diklik
+        function openCookieModal() {
+            document.getElementById('cookieOverlay').style.display = 'flex';
+        }
 
+        // Fungsi saat tombol konfirmasi ditekan
         function acceptCookies() {
             localStorage.setItem('ferwap_cookie_consent', 'true');
             document.getElementById('cookieOverlay').style.display = 'none';
         }
 
+        // Fungsi untuk menutup modal
         function closeCookieModal() {
             document.getElementById('cookieOverlay').style.display = 'none';
         }
