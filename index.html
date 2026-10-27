@@ -53,7 +53,6 @@
         }
         .page-section.active {
             display: flex;
-            animation: fadeInUp 0.4s ease-out forwards;
         }
 
         /* Gradasi hitam super pekat melingkar foto slider */
@@ -147,11 +146,10 @@
     <!-- KONTEN UTAMA -->
     <div class="flex-grow pt-14 relative w-full">
 
-        <!-- HALAMAN 1: HOME (TERKUNCI SETINGGI LAYAR) -->
+        <!-- HALAMAN 1: HOME -->
         <main id="page-home" class="page-section active w-full flex-col justify-between items-center bg-black px-4 md:px-12">
             <div class="relative w-full flex-grow flex items-center justify-center my-auto">
                 <div id="artist-name-container" class="p-1">
-                    <!-- NAMA ARTIS WARNA PUTIH BERSIH -->
                     <h1 id="artist-name" class="text-xs sm:text-sm md:text-lg font-bold tracking-widest text-white uppercase drop-shadow-lg text-left leading-none transition duration-300">3H3D</h1>
                 </div>
 
@@ -225,23 +223,22 @@
             </footer>
         </section>
 
-        <!-- HALAMAN: EXECUTIVES (LATAR COKELAT WARM) -->
+        <!-- HALAMAN: EXECUTIVES (KARTU LEBAR & PROPORSIONAL) -->
         <section id="page-executive" class="page-section w-full flex-col justify-between px-6 md:px-12 py-10 bg-black">
-            <div class="max-w-4xl mx-auto space-y-8 my-auto pt-6 pb-12 text-left animate-fade-in">
+            <div class="max-w-5xl mx-auto space-y-8 my-auto pt-6 pb-12 text-left animate-fade-in w-full">
                 <div>
                     <h2 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight">Executives</h2>
                 </div>
                 
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                    <div class="bg-zinc-900 border border-amber-900/30 rounded overflow-hidden shadow-lg brown-card group">
-                        <div class="w-full h-64 bg-zinc-800 overflow-hidden relative">
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                    <div class="bg-zinc-900 border border-amber-900/30 rounded-lg overflow-hidden shadow-lg brown-card group">
+                        <div class="w-full aspect-square bg-zinc-800 overflow-hidden relative">
                             <img src="3H3D.jpeg" alt="Abednego Totouw" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500 filter grayscale contrast-125 group-hover:grayscale-0">
                         </div>
-                        <!-- Latar Bawah Cokelat Warm -->
-                        <div class="bg-amber-900 p-4 text-center">
-                            <h3 class="text-lg font-bold text-white leading-snug">Abednego Totouw</h3>
-                            <p class="text-xs text-amber-200 font-medium">Founder & Executive Director</p>
-                            <p class="text-[10px] text-amber-300/80">Ferwap Music Entertainment</p>
+                        <div class="bg-amber-900 p-5 text-center">
+                            <h3 class="text-xl font-bold text-white leading-snug">Abednego Totouw</h3>
+                            <p class="text-xs text-amber-200 font-medium mt-1">Founder & Executive Director</p>
+                            <p class="text-[11px] text-amber-300/80">Ferwap Music Entertainment</p>
                         </div>
                     </div>
                 </div>
@@ -288,36 +285,35 @@
             </footer>
         </section>
 
-        <!-- HALAMAN 4: FEATURED ARTISTS (LATAR KARTU COKELAT WARM) -->
+        <!-- HALAMAN 4: FEATURED ARTISTS (KARTU LEBAR DENGAN FOTO ASPECT-SQUARE/PROPORSIONAL) -->
         <section id="page-artists" class="page-section w-full flex-col justify-between px-6 md:px-12 py-10 bg-black">
-            <div class="max-w-6xl mx-auto space-y-8 my-auto pt-6 pb-12 text-left animate-fade-in">
+            <div class="max-w-5xl mx-auto space-y-8 my-auto pt-6 pb-12 text-left animate-fade-in w-full">
                 <div>
                     <h2 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight">Featured Artists</h2>
                 </div>
 
+                <!-- Grid Kartu Artis yang Lebih Lebar & Gagah -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                     
                     <!-- Artist 1: 3H3D -->
-                    <div class="bg-zinc-900 border border-amber-900/30 rounded overflow-hidden shadow-lg brown-card group">
-                        <a href="https://3h3dofficial.web.id" target="_blank" class="block w-full h-72 bg-zinc-800 overflow-hidden relative">
+                    <div class="bg-zinc-900 border border-amber-900/30 rounded-lg overflow-hidden shadow-lg brown-card group">
+                        <a href="https://3h3dofficial.web.id" target="_blank" class="block w-full aspect-square bg-zinc-800 overflow-hidden relative">
                             <img src="3H3D.jpeg" alt="3H3D" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500">
                         </a>
-                        <!-- Latar Bawah Cokelat Warm -->
-                        <div class="bg-amber-900 p-4 text-center">
-                            <h3 class="text-lg font-bold text-white leading-snug">3H3D</h3>
-                            <a href="https://3h3dofficial.web.id" target="_blank" class="text-xs text-amber-200 hover:text-white hover:underline font-medium transition">3H3D Official Site</a>
+                        <div class="bg-amber-900 p-5 text-center">
+                            <h3 class="text-xl font-bold text-white leading-snug">3H3D</h3>
+                            <a href="https://3h3dofficial.web.id" target="_blank" class="text-xs text-amber-200 hover:text-white hover:underline font-medium transition inline-block mt-1">3H3D Official Site</a>
                         </div>
                     </div>
 
                     <!-- Artist 2: ANDER -->
-                    <div class="bg-zinc-900 border border-amber-900/30 rounded overflow-hidden shadow-lg brown-card group">
-                        <div class="w-full h-72 bg-zinc-800 overflow-hidden relative">
+                    <div class="bg-zinc-900 border border-amber-900/30 rounded-lg overflow-hidden shadow-lg brown-card group">
+                        <div class="w-full aspect-square bg-zinc-800 overflow-hidden relative">
                             <img src="ANDER.jpg" alt="ANDER" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500">
                         </div>
-                        <!-- Latar Bawah Cokelat Warm -->
-                        <div class="bg-amber-900 p-4 text-center">
-                            <h3 class="text-lg font-bold text-white leading-snug">ANDER</h3>
-                            <p class="text-xs text-amber-200 font-medium">ANDER Official Site</p>
+                        <div class="bg-amber-900 p-5 text-center">
+                            <h3 class="text-xl font-bold text-white leading-snug">ANDER</h3>
+                            <p class="text-xs text-amber-200 font-medium mt-1">ANDER Official Site</p>
                         </div>
                     </div>
 
