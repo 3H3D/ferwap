@@ -28,9 +28,11 @@
             font-family: 'Space Grotesk', sans-serif;
         }
         
-        /* Pengaturan Halaman */
+        /* Pengaturan Halaman: Sembunyikan jika tidak aktif, aktifkan scroll jika konten panjang */
         .page-section {
             display: none;
+            width: 100%;
+            min-height: calc(100vh - 56px);
         }
         .page-section.active {
             display: flex;
@@ -49,21 +51,20 @@
             pointer-events: none;
         }
 
-        /* Posisi Nama Artis */
+        /* Posisi Nama Artis di Home */
         #artist-name-container {
             position: absolute;
             z-index: 20;
             pointer-events: none;
         }
 
+        /* Halaman Home Terkunci Pas Setinggi Layar Tanpa Scroll */
+        #page-home {
+            height: calc(100vh - 56px);
+            overflow: hidden;
+        }
+
         @media (min-width: 769px) {
-            html, body {
-                height: 100vh;
-                overflow: hidden;
-            }
-            #page-home {
-                height: calc(100vh - 56px);
-            }
             #artist-name-container {
                 left: 32px;
                 top: calc(50% - 56px);
@@ -82,7 +83,7 @@
         }
     </style>
 </head>
-<body class="bg-black text-white flex flex-col justify-between">
+<body class="bg-black text-white flex flex-col justify-between min-h-screen">
 
     <!-- TOP NAVIGATION -->
     <header class="w-full fixed top-0 left-0 z-50 px-4 md:px-12 py-0 flex items-center justify-between bg-black border-b border-zinc-900 h-14">
@@ -116,10 +117,10 @@
     </header>
 
     <!-- KONTEN UTAMA -->
-    <div class="flex-grow pt-14 relative">
+    <div class="flex-grow pt-14 relative w-full">
 
-        <!-- HALAMAN 1: HOME -->
-        <main id="page-home" class="page-section active w-full flex-col justify-between items-center bg-black px-4 md:px-12 h-[calc(100vh-56px)]">
+        <!-- HALAMAN 1: HOME (TERKUNCI SETINGGI LAYAR) -->
+        <main id="page-home" class="page-section active w-full flex-col justify-between items-center bg-black px-4 md:px-12">
             <div class="relative w-full flex-grow flex items-center justify-center my-auto">
                 <div id="artist-name-container" class="p-1">
                     <h1 id="artist-name" class="text-xs sm:text-sm md:text-lg font-bold tracking-widest text-white/90 uppercase drop-shadow-lg text-left leading-none">3H3D</h1>
@@ -164,9 +165,9 @@
             </div>
         </main>
 
-        <!-- HALAMAN 2: ABOUT -->
-        <section id="page-about" class="page-section w-full flex-col justify-between px-6 md:px-12 py-10 bg-black min-h-[calc(100vh-56px)]">
-            <div class="max-w-3xl mx-auto space-y-4 text-center my-auto pt-8 pb-8">
+        <!-- HALAMAN 2: ABOUT (LANCAR DI-SCROLL) -->
+        <section id="page-about" class="page-section w-full flex-col justify-between px-6 md:px-12 py-10 bg-black">
+            <div class="max-w-3xl mx-auto space-y-4 text-center my-auto pt-8 pb-12">
                 <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Corporate Profile</span>
                 <h2 class="text-3xl md:text-4xl font-bold text-white">About Ferwap Music</h2>
                 <p class="text-zinc-300 text-sm md:text-base leading-relaxed font-light">
@@ -195,14 +196,13 @@
             </footer>
         </section>
 
-        <!-- HALAMAN: EXECUTIVES (DENGAN TAMPILAN KARTU MERAH / ABU-ABU SEPERTI SONY MUSIC) -->
-        <section id="page-executive" class="page-section w-full flex-col justify-between px-6 md:px-12 py-10 bg-black min-h-[calc(100vh-56px)]">
-            <div class="max-w-4xl mx-auto space-y-8 my-auto pt-6 pb-8 text-left">
+        <!-- HALAMAN: EXECUTIVES (LANCAR DI-SCROLL) -->
+        <section id="page-executive" class="page-section w-full flex-col justify-between px-6 md:px-12 py-10 bg-black">
+            <div class="max-w-4xl mx-auto space-y-8 my-auto pt-6 pb-12 text-left">
                 <div>
                     <h2 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight">Executives</h2>
                 </div>
                 
-                <!-- Kartu Eksekutif (Foto + Teks Merah Bawah seperti Rujukan Sony Music) -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                     <div class="bg-zinc-900 border border-zinc-800 rounded overflow-hidden shadow-lg group">
                         <div class="w-full h-64 bg-zinc-800 overflow-hidden relative">
@@ -233,9 +233,9 @@
             </footer>
         </section>
 
-        <!-- HALAMAN 3: NEWS -->
-        <section id="page-news" class="page-section w-full flex-col justify-between px-6 md:px-12 py-10 bg-black min-h-[calc(100vh-56px)]">
-            <div class="max-w-3xl mx-auto space-y-4 text-center my-auto pt-8 pb-8">
+        <!-- HALAMAN 3: NEWS (LANCAR DI-SCROLL) -->
+        <section id="page-news" class="page-section w-full flex-col justify-between px-6 md:px-12 py-10 bg-black">
+            <div class="max-w-3xl mx-auto space-y-4 text-center my-auto pt-8 pb-12">
                 <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Updates & Press</span>
                 <h2 class="text-3xl md:text-4xl font-bold text-white">Latest News</h2>
                 <p class="text-zinc-400 text-sm md:text-base leading-relaxed font-light">
@@ -258,9 +258,9 @@
             </footer>
         </section>
 
-        <!-- HALAMAN 4: ARTISTS -->
-        <section id="page-artists" class="page-section w-full flex-col justify-between px-6 md:px-12 py-10 bg-black min-h-[calc(100vh-56px)]">
-            <div class="max-w-3xl mx-auto space-y-4 text-center my-auto pt-8 pb-8">
+        <!-- HALAMAN 4: ARTISTS (LANCAR DI-SCROLL) -->
+        <section id="page-artists" class="page-section w-full flex-col justify-between px-6 md:px-12 py-10 bg-black">
+            <div class="max-w-3xl mx-auto space-y-4 text-center my-auto pt-8 pb-12">
                 <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Roster</span>
                 <h2 class="text-3xl md:text-4xl font-bold text-white">Our Artists</h2>
                 <p class="text-zinc-400 text-sm md:text-base leading-relaxed font-light">
@@ -283,9 +283,9 @@
             </footer>
         </section>
 
-        <!-- HALAMAN 5: FAQ -->
-        <section id="page-faq" class="page-section w-full flex-col justify-between px-6 md:px-12 py-10 bg-black min-h-[calc(100vh-56px)]">
-            <div class="max-w-3xl mx-auto space-y-4 text-center pt-8">
+        <!-- HALAMAN 5: FAQ / MUSIC LICENSING (LANCAR DI-SCROLL SANGAT BISA DIPUTAR KE BAWAH) -->
+        <section id="page-faq" class="page-section w-full flex-col justify-between px-6 md:px-12 py-10 bg-black">
+            <div class="max-w-3xl mx-auto space-y-4 text-center pt-8 pb-12">
                 <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Questions</span>
                 <h2 class="text-3xl md:text-4xl font-bold text-white">Frequently Asked Questions</h2>
                 <div id="home-licensing" class="space-y-6 text-sm md:text-base pt-6 border-t border-zinc-900 text-left">
@@ -317,7 +317,7 @@
                     </div>
                 </div>
             </div>
-            <footer class="w-full bg-black border-t border-zinc-900 py-4 px-6 flex flex-col items-center justify-center gap-1.5 mt-12">
+            <footer class="w-full bg-black border-t border-zinc-900 py-4 px-6 flex flex-col items-center justify-center gap-1.5 mt-auto">
                 <div class="flex justify-center gap-5 text-sm text-zinc-400">
                     <a href="https://www.facebook.com/ferwapmusic" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-facebook-f"></i></a>
                     <a href="https://www.instagram.com/ferwapmusic" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
@@ -333,9 +333,9 @@
             </footer>
         </section>
 
-        <!-- HALAMAN 6: PRIVACY POLICY -->
-        <section id="page-privacy" class="page-section w-full flex-col justify-between px-6 md:px-12 py-10 bg-black min-h-[calc(100vh-56px)]">
-            <div class="max-w-3xl mx-auto space-y-4 text-center pt-8">
+        <!-- HALAMAN 6: PRIVACY POLICY (LANCAR DI-SCROLL) -->
+        <section id="page-privacy" class="page-section w-full flex-col justify-between px-6 md:px-12 py-10 bg-black">
+            <div class="max-w-3xl mx-auto space-y-4 text-center pt-8 pb-12">
                 <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Legal</span>
                 <h2 class="text-3xl md:text-4xl font-bold text-white">Privacy Policy</h2>
                 <div class="space-y-4 text-zinc-300 leading-relaxed font-light text-left pt-4">
@@ -350,7 +350,7 @@
                     </ul>
                 </div>
             </div>
-            <footer class="w-full bg-black border-t border-zinc-900 py-4 px-6 flex flex-col items-center justify-center gap-1.5 mt-12">
+            <footer class="w-full bg-black border-t border-zinc-900 py-4 px-6 flex flex-col items-center justify-center gap-1.5 mt-auto">
                 <div class="flex justify-center gap-5 text-sm text-zinc-400">
                     <a href="https://www.facebook.com/ferwapmusic" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-facebook-f"></i></a>
                     <a href="https://www.instagram.com/ferwapmusic" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
@@ -366,9 +366,9 @@
             </footer>
         </section>
 
-        <!-- HALAMAN 7: TERMS OF SERVICE -->
-        <section id="page-terms" class="page-section w-full flex-col justify-between px-6 md:px-12 py-10 bg-black min-h-[calc(100vh-56px)]">
-            <div class="max-w-3xl mx-auto space-y-4 text-center pt-8">
+        <!-- HALAMAN 7: TERMS OF SERVICE (LANCAR DI-SCROLL) -->
+        <section id="page-terms" class="page-section w-full flex-col justify-between px-6 md:px-12 py-10 bg-black">
+            <div class="max-w-3xl mx-auto space-y-4 text-center pt-8 pb-12">
                 <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Legal</span>
                 <h2 class="text-3xl md:text-4xl font-bold text-white">Terms of Service</h2>
                 <div class="space-y-4 text-zinc-300 leading-relaxed font-light text-left pt-4">
@@ -384,7 +384,7 @@
                     </ul>
                 </div>
             </div>
-            <footer class="w-full bg-black border-t border-zinc-900 py-4 px-6 flex flex-col items-center justify-center gap-1.5 mt-12">
+            <footer class="w-full bg-black border-t border-zinc-900 py-4 px-6 flex flex-col items-center justify-center gap-1.5 mt-auto">
                 <div class="flex justify-center gap-5 text-sm text-zinc-400">
                     <a href="https://www.facebook.com/ferwapmusic" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-facebook-f"></i></a>
                     <a href="https://www.instagram.com/ferwapmusic" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
