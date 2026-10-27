@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
     <style>
         html, body {
             background-color: #000000;
@@ -24,10 +25,26 @@
             overflow-x: hidden;
             min-height: 100vh;
         }
-        h1, h2, h3 {
+        h1, h2, h3, h4 {
             font-family: 'Space Grotesk', sans-serif;
         }
         
+        /* Pengaturan Animasi Global */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeInUp 0.5s ease-out forwards;
+        }
+
         /* Pengaturan Halaman */
         .page-section {
             display: none;
@@ -36,6 +53,7 @@
         }
         .page-section.active {
             display: flex;
+            animation: fadeInUp 0.4s ease-out forwards;
         }
 
         /* Gradasi hitam super pekat melingkar foto slider */
@@ -64,6 +82,16 @@
             overflow: hidden;
         }
 
+        /* Efek Hover Kartu Cokelat */
+        .brown-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+        .brown-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px -5px rgba(180, 83, 9, 0.25);
+            border-color: #b45309;
+        }
+
         @media (min-width: 769px) {
             #artist-name-container {
                 left: 32px;
@@ -86,46 +114,48 @@
 <body class="bg-black text-white flex flex-col justify-between min-h-screen">
 
     <!-- TOP NAVIGATION -->
-    <header class="w-full fixed top-0 left-0 z-50 px-4 md:px-12 py-0 flex items-center justify-between bg-black border-b border-zinc-900 h-14">
-        <a href="#" onclick="switchPage('home')" class="flex items-center gap-2 md:gap-3 cursor-pointer">
-            <div class="w-6 h-6 md:w-7 md:h-7 bg-white text-black rounded-lg flex items-center justify-center font-bold text-xs">W</div>
-            <span class="font-extrabold tracking-widest uppercase text-xs">Ferwap Music</span>
+    <header class="w-full fixed top-0 left-0 z-50 px-4 md:px-12 py-0 flex items-center justify-between bg-black/90 backdrop-blur-md border-b border-zinc-900 h-14">
+        <a href="#" onclick="switchPage('home')" class="flex items-center gap-2 md:gap-3 cursor-pointer group">
+            <div class="w-6 h-6 md:w-7 md:h-7 bg-white text-black rounded-lg flex items-center justify-center font-bold text-xs group-hover:bg-amber-600 group-hover:text-white transition duration-300">W</div>
+            <span class="font-extrabold tracking-widest uppercase text-xs text-white group-hover:text-amber-500 transition duration-300">Ferwap Music</span>
         </a>
 
         <nav class="flex items-center gap-1 sm:gap-4 md:gap-6 text-[11px] sm:text-xs font-semibold tracking-wider text-zinc-300">
-            <!-- DROPDOWN ABOUT -->
+            <!-- DROPDOWN ABOUT DENGAN TAMPILAN ELEGAN -->
             <div class="relative group h-14 flex items-center">
-                <button onclick="switchPage('about')" class="px-3 py-1.5 rounded transition text-zinc-300 group-hover:text-red-500 group-hover:bg-zinc-800/80 flex items-center gap-1 focus:outline-none">
-                    About
+                <button onclick="switchPage('about')" class="px-3 py-1.5 rounded transition text-zinc-300 group-hover:text-amber-400 group-hover:bg-zinc-900/80 flex items-center gap-1 focus:outline-none">
+                    About <i class="fa-solid fa-chevron-down text-[9px] opacity-70 group-hover:rotate-180 transition-transform duration-300"></i>
                 </button>
                 
-                <div class="absolute left-0 top-14 hidden group-hover:flex flex-col bg-zinc-800/95 border border-zinc-700/60 shadow-2xl min-w-[190px] py-1 z-50 text-[11px]">
-                    <button onclick="switchPage('artists')" class="px-4 py-2 text-left text-zinc-300 hover:text-white hover:bg-zinc-700/60 transition">Featured Artists</button>
-                    <button onclick="switchPage('about')" class="px-4 py-2 text-left text-zinc-300 hover:text-white hover:bg-zinc-700/60 transition">Labels & Content Divisions</button>
-                    <button onclick="switchPage('executive')" class="px-4 py-2 text-left text-zinc-300 hover:text-white hover:bg-zinc-700/60 transition">Executives</button>
-                    <button onclick="switchPage('faq')" class="px-4 py-2 text-left text-zinc-300 hover:text-white hover:bg-zinc-700/60 transition">Contacts</button>
-                    <button onclick="switchPage('about')" class="px-4 py-2 text-left text-zinc-300 hover:text-white hover:bg-zinc-700/60 transition">Diversity, Equity & Inclusion</button>
-                    <button onclick="switchPage('about')" class="px-4 py-2 text-left text-zinc-300 hover:text-white hover:bg-zinc-700/60 transition">Giving Back</button>
+                <!-- Sub-Menu Melayang Kebawah -->
+                <div class="absolute left-0 top-14 hidden group-hover:flex flex-col bg-zinc-950/95 border border-amber-900/40 backdrop-blur-lg shadow-2xl min-w-[200px] py-1.5 z-50 text-[11px] rounded-b-lg animate-fade-in">
+                    <button onclick="switchPage('artists')" class="px-4 py-2 text-left text-zinc-300 hover:text-amber-400 hover:bg-zinc-900 transition">Featured Artists</button>
+                    <button onclick="switchPage('about')" class="px-4 py-2 text-left text-zinc-300 hover:text-amber-400 hover:bg-zinc-900 transition">Labels & Content Divisions</button>
+                    <button onclick="switchPage('executive')" class="px-4 py-2 text-left text-zinc-300 hover:text-amber-400 hover:bg-zinc-900 transition">Executives</button>
+                    <button onclick="switchPage('faq')" class="px-4 py-2 text-left text-zinc-300 hover:text-amber-400 hover:bg-zinc-900 transition">Contacts</button>
+                    <button onclick="switchPage('about')" class="px-4 py-2 text-left text-zinc-300 hover:text-amber-400 hover:bg-zinc-900 transition">Diversity, Equity & Inclusion</button>
+                    <button onclick="switchPage('about')" class="px-4 py-2 text-left text-zinc-300 hover:text-amber-400 hover:bg-zinc-900 transition">Giving Back</button>
                 </div>
             </div>
 
-            <button onclick="switchPage('news')" class="px-3 py-1.5 hover:text-white transition focus:outline-none">News</button>
-            <button onclick="switchPage('artists')" class="px-3 py-1.5 hover:text-white transition focus:outline-none">Artists</button>
-            <button onclick="switchPage('faq')" class="px-3 py-1.5 hover:text-white transition focus:outline-none">FAQ</button>
+            <button onclick="switchPage('news')" class="px-3 py-1.5 hover:text-amber-400 transition focus:outline-none">News</button>
+            <button onclick="switchPage('artists')" class="px-3 py-1.5 hover:text-amber-400 transition focus:outline-none">Artists</button>
+            <button onclick="switchPage('faq')" class="px-3 py-1.5 hover:text-amber-400 transition focus:outline-none">FAQ</button>
         </nav>
     </header>
 
     <!-- KONTEN UTAMA -->
     <div class="flex-grow pt-14 relative w-full">
 
-        <!-- HALAMAN 1: HOME -->
+        <!-- HALAMAN 1: HOME (TERKUNCI SETINGGI LAYAR) -->
         <main id="page-home" class="page-section active w-full flex-col justify-between items-center bg-black px-4 md:px-12">
             <div class="relative w-full flex-grow flex items-center justify-center my-auto">
                 <div id="artist-name-container" class="p-1">
-                    <h1 id="artist-name" class="text-xs sm:text-sm md:text-lg font-bold tracking-widest text-white/90 uppercase drop-shadow-lg text-left leading-none">3H3D</h1>
+                    <!-- NAMA ARTIS WARNA PUTIH BERSIH -->
+                    <h1 id="artist-name" class="text-xs sm:text-sm md:text-lg font-bold tracking-widest text-white uppercase drop-shadow-lg text-left leading-none transition duration-300">3H3D</h1>
                 </div>
 
-                <button id="prev-slide" class="absolute left-1 md:left-6 z-20 text-white/70 hover:text-white text-3xl md:text-5xl p-2 focus:outline-none transition">
+                <button id="prev-slide" class="absolute left-1 md:left-6 z-20 text-white/70 hover:text-amber-400 text-3xl md:text-5xl p-2 focus:outline-none transition duration-300">
                     <i class="fa-solid fa-angle-left"></i>
                 </button>
 
@@ -137,21 +167,21 @@
                     </div>
                 </div>
 
-                <button id="next-slide" class="absolute right-1 md:right-6 z-20 text-white/70 hover:text-white text-3xl md:text-5xl p-2 focus:outline-none transition">
+                <button id="next-slide" class="absolute right-1 md:right-6 z-20 text-white/70 hover:text-amber-400 text-3xl md:text-5xl p-2 focus:outline-none transition duration-300">
                     <i class="fa-solid fa-angle-right"></i>
                 </button>
             </div>
 
             <div class="w-full flex flex-col items-center justify-center gap-1.5 z-20 pb-3 pt-1">
                 <div class="flex items-center justify-center gap-1.5">
-                    <span class="dot w-1.5 h-1.5 rounded-full bg-red-600 transition-all cursor-pointer" onclick="currentSlide(1)"></span>
-                    <span class="dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all cursor-pointer" onclick="currentSlide(2)"></span>
+                    <span class="dot w-1.5 h-1.5 rounded-full bg-amber-600 transition-all duration-300 cursor-pointer" onclick="currentSlide(1)"></span>
+                    <span class="dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300 cursor-pointer" onclick="currentSlide(2)"></span>
                 </div>
 
                 <div class="flex justify-center gap-4 text-xs text-zinc-400">
-                    <a href="https://www.facebook.com/ferwapmusic" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/ferwapmusic" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="mailto:ferwapmusic.info@gmail.com" class="hover:text-white transition"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="https://www.facebook.com/ferwapmusic" target="_blank" class="hover:text-amber-400 transition"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/ferwapmusic" target="_blank" class="hover:text-amber-400 transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="mailto:ferwapmusic.info@gmail.com" class="hover:text-amber-400 transition"><i class="fa-solid fa-envelope"></i></a>
                 </div>
 
                 <p class="text-[9px] text-zinc-500 text-center">&copy; 2026 Ferwap Music Entertainment. All Rights Reserved.</p>
@@ -166,8 +196,8 @@
 
         <!-- HALAMAN 2: ABOUT -->
         <section id="page-about" class="page-section w-full flex-col justify-between px-6 md:px-12 py-10 bg-black">
-            <div class="max-w-3xl mx-auto space-y-4 text-center my-auto pt-8 pb-12">
-                <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Corporate Profile</span>
+            <div class="max-w-3xl mx-auto space-y-4 text-center my-auto pt-8 pb-12 animate-fade-in">
+                <span class="text-xs font-bold tracking-widest text-amber-600 uppercase">Corporate Profile</span>
                 <h2 class="text-3xl md:text-4xl font-bold text-white">About Ferwap Music</h2>
                 <p class="text-zinc-300 text-sm md:text-base leading-relaxed font-light">
                     Ferwap Music Entertainment is an independent record label, creative hub, and audio production house dedicated to empowering visionary music creators, audio engineers, and recording artists. Built on a foundation of creative independence and artistic integrity, we focus on long-term catalog development, audio engineering excellence, and strategic global distribution.
@@ -181,9 +211,9 @@
             </div>
             <footer class="w-full bg-black border-t border-zinc-900 py-4 px-6 flex flex-col items-center justify-center gap-1.5 mt-auto">
                 <div class="flex justify-center gap-5 text-sm text-zinc-400">
-                    <a href="https://www.facebook.com/ferwapmusic" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/ferwapmusic" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="mailto:ferwapmusic.info@gmail.com" class="hover:text-white transition"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="https://www.facebook.com/ferwapmusic" target="_blank" class="hover:text-amber-400 transition"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/ferwapmusic" target="_blank" class="hover:text-amber-400 transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="mailto:ferwapmusic.info@gmail.com" class="hover:text-amber-400 transition"><i class="fa-solid fa-envelope"></i></a>
                 </div>
                 <div class="flex items-center gap-3 text-xs text-zinc-500">
                     <span>&copy; 2026 Ferwap Music Entertainment. All Rights Reserved.</span>
@@ -195,22 +225,23 @@
             </footer>
         </section>
 
-        <!-- HALAMAN: EXECUTIVES -->
+        <!-- HALAMAN: EXECUTIVES (LATAR COKELAT WARM) -->
         <section id="page-executive" class="page-section w-full flex-col justify-between px-6 md:px-12 py-10 bg-black">
-            <div class="max-w-4xl mx-auto space-y-8 my-auto pt-6 pb-12 text-left">
+            <div class="max-w-4xl mx-auto space-y-8 my-auto pt-6 pb-12 text-left animate-fade-in">
                 <div>
                     <h2 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight">Executives</h2>
                 </div>
                 
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                    <div class="bg-zinc-900 border border-zinc-800 rounded overflow-hidden shadow-lg group">
+                    <div class="bg-zinc-900 border border-amber-900/30 rounded overflow-hidden shadow-lg brown-card group">
                         <div class="w-full h-64 bg-zinc-800 overflow-hidden relative">
                             <img src="3H3D.jpeg" alt="Abednego Totouw" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500 filter grayscale contrast-125 group-hover:grayscale-0">
                         </div>
-                        <div class="bg-red-700 p-4 text-center">
+                        <!-- Latar Bawah Cokelat Warm -->
+                        <div class="bg-amber-900 p-4 text-center">
                             <h3 class="text-lg font-bold text-white leading-snug">Abednego Totouw</h3>
-                            <p class="text-xs text-white/90 font-medium">Founder & Executive Director</p>
-                            <p class="text-[10px] text-white/80">Ferwap Music Entertainment</p>
+                            <p class="text-xs text-amber-200 font-medium">Founder & Executive Director</p>
+                            <p class="text-[10px] text-amber-300/80">Ferwap Music Entertainment</p>
                         </div>
                     </div>
                 </div>
@@ -218,9 +249,9 @@
 
             <footer class="w-full bg-black border-t border-zinc-900 py-4 px-6 flex flex-col items-center justify-center gap-1.5 mt-auto">
                 <div class="flex justify-center gap-5 text-sm text-zinc-400">
-                    <a href="https://www.facebook.com/ferwapmusic" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/ferwapmusic" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="mailto:ferwapmusic.info@gmail.com" class="hover:text-white transition"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="https://www.facebook.com/ferwapmusic" target="_blank" class="hover:text-amber-400 transition"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/ferwapmusic" target="_blank" class="hover:text-amber-400 transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="mailto:ferwapmusic.info@gmail.com" class="hover:text-amber-400 transition"><i class="fa-solid fa-envelope"></i></a>
                 </div>
                 <div class="flex items-center gap-3 text-xs text-zinc-500">
                     <span>&copy; 2026 Ferwap Music Entertainment. All Rights Reserved.</span>
@@ -234,8 +265,8 @@
 
         <!-- HALAMAN 3: NEWS -->
         <section id="page-news" class="page-section w-full flex-col justify-between px-6 md:px-12 py-10 bg-black">
-            <div class="max-w-3xl mx-auto space-y-4 text-center my-auto pt-8 pb-12">
-                <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Updates & Press</span>
+            <div class="max-w-3xl mx-auto space-y-4 text-center my-auto pt-8 pb-12 animate-fade-in">
+                <span class="text-xs font-bold tracking-widest text-amber-600 uppercase">Updates & Press</span>
                 <h2 class="text-3xl md:text-4xl font-bold text-white">Latest News</h2>
                 <p class="text-zinc-400 text-sm md:text-base leading-relaxed font-light">
                     Ikuti informasi terbaru, pengumuman rilisan lagu, dan pembaruan seputar aktivitas label di sini.
@@ -243,9 +274,9 @@
             </div>
             <footer class="w-full bg-black border-t border-zinc-900 py-4 px-6 flex flex-col items-center justify-center gap-1.5 mt-auto">
                 <div class="flex justify-center gap-5 text-sm text-zinc-400">
-                    <a href="https://www.facebook.com/ferwapmusic" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/ferwapmusic" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="mailto:ferwapmusic.info@gmail.com" class="hover:text-white transition"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="https://www.facebook.com/ferwapmusic" target="_blank" class="hover:text-amber-400 transition"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/ferwapmusic" target="_blank" class="hover:text-amber-400 transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="mailto:ferwapmusic.info@gmail.com" class="hover:text-amber-400 transition"><i class="fa-solid fa-envelope"></i></a>
                 </div>
                 <div class="flex items-center gap-3 text-xs text-zinc-500">
                     <span>&copy; 2026 Ferwap Music Entertainment. All Rights Reserved.</span>
@@ -257,35 +288,36 @@
             </footer>
         </section>
 
-        <!-- HALAMAN 4: FEATURED ARTISTS (GAYA SONY MUSIC) -->
+        <!-- HALAMAN 4: FEATURED ARTISTS (LATAR KARTU COKELAT WARM) -->
         <section id="page-artists" class="page-section w-full flex-col justify-between px-6 md:px-12 py-10 bg-black">
-            <div class="max-w-6xl mx-auto space-y-8 my-auto pt-6 pb-12 text-left">
+            <div class="max-w-6xl mx-auto space-y-8 my-auto pt-6 pb-12 text-left animate-fade-in">
                 <div>
                     <h2 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight">Featured Artists</h2>
                 </div>
 
-                <!-- Grid Kartu Artis ala Sony Music -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                     
                     <!-- Artist 1: 3H3D -->
-                    <div class="bg-zinc-900 border border-zinc-800 rounded overflow-hidden shadow-lg group">
+                    <div class="bg-zinc-900 border border-amber-900/30 rounded overflow-hidden shadow-lg brown-card group">
                         <a href="https://3h3dofficial.web.id" target="_blank" class="block w-full h-72 bg-zinc-800 overflow-hidden relative">
                             <img src="3H3D.jpeg" alt="3H3D" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500">
                         </a>
-                        <div class="bg-red-700 p-4 text-center">
+                        <!-- Latar Bawah Cokelat Warm -->
+                        <div class="bg-amber-900 p-4 text-center">
                             <h3 class="text-lg font-bold text-white leading-snug">3H3D</h3>
-                            <a href="https://3h3dofficial.web.id" target="_blank" class="text-xs text-white/90 hover:underline font-medium">3H3D Official Site</a>
+                            <a href="https://3h3dofficial.web.id" target="_blank" class="text-xs text-amber-200 hover:text-white hover:underline font-medium transition">3H3D Official Site</a>
                         </div>
                     </div>
 
                     <!-- Artist 2: ANDER -->
-                    <div class="bg-zinc-900 border border-zinc-800 rounded overflow-hidden shadow-lg group">
+                    <div class="bg-zinc-900 border border-amber-900/30 rounded overflow-hidden shadow-lg brown-card group">
                         <div class="w-full h-72 bg-zinc-800 overflow-hidden relative">
                             <img src="ANDER.jpg" alt="ANDER" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500">
                         </div>
-                        <div class="bg-red-700 p-4 text-center">
+                        <!-- Latar Bawah Cokelat Warm -->
+                        <div class="bg-amber-900 p-4 text-center">
                             <h3 class="text-lg font-bold text-white leading-snug">ANDER</h3>
-                            <p class="text-xs text-white/90 font-medium">ANDER Official Site</p>
+                            <p class="text-xs text-amber-200 font-medium">ANDER Official Site</p>
                         </div>
                     </div>
 
@@ -294,9 +326,9 @@
 
             <footer class="w-full bg-black border-t border-zinc-900 py-4 px-6 flex flex-col items-center justify-center gap-1.5 mt-auto">
                 <div class="flex justify-center gap-5 text-sm text-zinc-400">
-                    <a href="https://www.facebook.com/ferwapmusic" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/ferwapmusic" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="mailto:ferwapmusic.info@gmail.com" class="hover:text-white transition"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="https://www.facebook.com/ferwapmusic" target="_blank" class="hover:text-amber-400 transition"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/ferwapmusic" target="_blank" class="hover:text-amber-400 transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="mailto:ferwapmusic.info@gmail.com" class="hover:text-amber-400 transition"><i class="fa-solid fa-envelope"></i></a>
                 </div>
                 <div class="flex items-center gap-3 text-xs text-zinc-500">
                     <span>&copy; 2026 Ferwap Music Entertainment. All Rights Reserved.</span>
@@ -310,12 +342,12 @@
 
         <!-- HALAMAN 5: FAQ -->
         <section id="page-faq" class="page-section w-full flex-col justify-between px-6 md:px-12 py-10 bg-black">
-            <div class="max-w-3xl mx-auto space-y-4 text-center pt-8 pb-12">
-                <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Questions</span>
+            <div class="max-w-3xl mx-auto space-y-4 text-center pt-8 pb-12 animate-fade-in">
+                <span class="text-xs font-bold tracking-widest text-amber-600 uppercase">Questions</span>
                 <h2 class="text-3xl md:text-4xl font-bold text-white">Frequently Asked Questions</h2>
                 <div id="home-licensing" class="space-y-6 text-sm md:text-base pt-6 border-t border-zinc-900 text-left">
                     <div class="border-b border-zinc-900 pb-4 text-center">
-                        <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Commercial Services</span>
+                        <span class="text-xs font-bold tracking-widest text-amber-600 uppercase">Commercial Services</span>
                         <h2 class="text-2xl md:text-3xl font-bold text-white mt-1">Music Licensing</h2>
                     </div>
                     <div class="space-y-4 text-zinc-300 leading-relaxed font-light">
@@ -337,16 +369,16 @@
                             <li>Term/Duration of the license and your estimated budget.</li>
                         </ul>
                         <p class="pt-2">
-                            For all licensing inquiries, master clearance requests, or custom audio production briefs, please contact our rights management team directly at <a href="https://docs.google.com/forms/d/e/1FAIpQLSdbYKWGxVxConGT_ZM7iNHtU_khpwcnkkauiSij5mD1BbqOxg/viewform?usp=publish-editor" class="underline text-white font-medium">licensing@ferwapmusic.com</a>.
+                            For all licensing inquiries, master clearance requests, or custom audio production briefs, please contact our rights management team directly at <a href="https://docs.google.com/forms/d/e/1FAIpQLSdbYKWGxVxConGT_ZM7iNHtU_khpwcnkkauiSij5mD1BbqOxg/viewform?usp=publish-editor" class="underline text-amber-400 font-medium hover:text-amber-300 transition">licensing@ferwapmusic.com</a>.
                         </p>
                     </div>
                 </div>
             </div>
             <footer class="w-full bg-black border-t border-zinc-900 py-4 px-6 flex flex-col items-center justify-center gap-1.5 mt-auto">
                 <div class="flex justify-center gap-5 text-sm text-zinc-400">
-                    <a href="https://www.facebook.com/ferwapmusic" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/ferwapmusic" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="mailto:ferwapmusic.info@gmail.com" class="hover:text-white transition"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="https://www.facebook.com/ferwapmusic" target="_blank" class="hover:text-amber-400 transition"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/ferwapmusic" target="_blank" class="hover:text-amber-400 transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="mailto:ferwapmusic.info@gmail.com" class="hover:text-amber-400 transition"><i class="fa-solid fa-envelope"></i></a>
                 </div>
                 <div class="flex items-center gap-3 text-xs text-zinc-500">
                     <span>&copy; 2026 Ferwap Music Entertainment. All Rights Reserved.</span>
@@ -360,8 +392,8 @@
 
         <!-- HALAMAN 6: PRIVACY POLICY -->
         <section id="page-privacy" class="page-section w-full flex-col justify-between px-6 md:px-12 py-10 bg-black">
-            <div class="max-w-3xl mx-auto space-y-4 text-center pt-8 pb-12">
-                <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Legal</span>
+            <div class="max-w-3xl mx-auto space-y-4 text-center pt-8 pb-12 animate-fade-in">
+                <span class="text-xs font-bold tracking-widest text-amber-600 uppercase">Legal</span>
                 <h2 class="text-3xl md:text-4xl font-bold text-white">Privacy Policy</h2>
                 <div class="space-y-4 text-zinc-300 leading-relaxed font-light text-left pt-4">
                     <p>
@@ -377,9 +409,9 @@
             </div>
             <footer class="w-full bg-black border-t border-zinc-900 py-4 px-6 flex flex-col items-center justify-center gap-1.5 mt-auto">
                 <div class="flex justify-center gap-5 text-sm text-zinc-400">
-                    <a href="https://www.facebook.com/ferwapmusic" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/ferwapmusic" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="mailto:ferwapmusic.info@gmail.com" class="hover:text-white transition"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="https://www.facebook.com/ferwapmusic" target="_blank" class="hover:text-amber-400 transition"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/ferwapmusic" target="_blank" class="hover:text-amber-400 transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="mailto:ferwapmusic.info@gmail.com" class="hover:text-amber-400 transition"><i class="fa-solid fa-envelope"></i></a>
                 </div>
                 <div class="flex items-center gap-3 text-xs text-zinc-500">
                     <span>&copy; 2026 Ferwap Music Entertainment. All Rights Reserved.</span>
@@ -393,8 +425,8 @@
 
         <!-- HALAMAN 7: TERMS OF SERVICE -->
         <section id="page-terms" class="page-section w-full flex-col justify-between px-6 md:px-12 py-10 bg-black">
-            <div class="max-w-3xl mx-auto space-y-4 text-center pt-8 pb-12">
-                <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Legal</span>
+            <div class="max-w-3xl mx-auto space-y-4 text-center pt-8 pb-12 animate-fade-in">
+                <span class="text-xs font-bold tracking-widest text-amber-600 uppercase">Legal</span>
                 <h2 class="text-3xl md:text-4xl font-bold text-white">Terms of Service</h2>
                 <div class="space-y-4 text-zinc-300 leading-relaxed font-light text-left pt-4">
                     <p>
@@ -411,9 +443,9 @@
             </div>
             <footer class="w-full bg-black border-t border-zinc-900 py-4 px-6 flex flex-col items-center justify-center gap-1.5 mt-auto">
                 <div class="flex justify-center gap-5 text-sm text-zinc-400">
-                    <a href="https://www.facebook.com/ferwapmusic" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/ferwapmusic" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="mailto:ferwapmusic.info@gmail.com" class="hover:text-white transition"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="https://www.facebook.com/ferwapmusic" target="_blank" class="hover:text-amber-400 transition"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/ferwapmusic" target="_blank" class="hover:text-amber-400 transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="mailto:ferwapmusic.info@gmail.com" class="hover:text-amber-400 transition"><i class="fa-solid fa-envelope"></i></a>
                 </div>
                 <div class="flex items-center gap-3 text-xs text-zinc-500">
                     <span>&copy; 2026 Ferwap Music Entertainment. All Rights Reserved.</span>
@@ -466,9 +498,9 @@
             document.querySelectorAll('.dot').forEach((dot, idx) => {
                 if(idx === index) {
                     dot.classList.remove('bg-white/40');
-                    dot.classList.add('bg-red-600');
+                    dot.classList.add('bg-amber-600');
                 } else {
-                    dot.classList.remove('bg-red-600');
+                    dot.classList.remove('bg-amber-600');
                     dot.classList.add('bg-white/40');
                 }
             });
