@@ -108,6 +108,125 @@
                 max-width: 180px !important;
             }
         }
+        /* Overlay latar belakang modal */
+.cookie-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+}
+
+/* Kontainer utama modal */
+.cookie-modal {
+  background-color: #000000;
+  color: #ffffff;
+  width: 90%;
+  max-width: 520px;
+  max-height: 85vh;
+  border: 1px solid #333333;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Header modal */
+.cookie-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid #222222;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cookie-brand {
+  font-size: 0.85rem;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.cookie-close-btn {
+  background: none;
+  border: none;
+  color: #888888;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+}
+
+.cookie-close-btn:hover {
+  color: #ffffff;
+}
+
+/* Area isi/deskripsi modal */
+.cookie-body {
+  padding: 20px;
+  overflow-y: auto;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: #cccccc;
+}
+
+.cookie-body h3 {
+  color: #ffffff;
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+}
+
+.cookie-body p {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.cookie-privacy-link {
+  color: #ff3333;
+  text-decoration: underline;
+}
+
+/* Footer & Tombol */
+.cookie-footer {
+  padding: 16px 20px;
+  border-top: 1px solid #222222;
+  background-color: #050505;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.cookie-btn-confirm {
+  width: 100%;
+  padding: 12px;
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  font-weight: bold;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: background-color 0.2s ease;
+}
+
+.cookie-btn-confirm:hover {
+  background-color: #dddddd;
+}
+
+.cookie-powered {
+  font-size: 0.7rem;
+  color: #666666;
+}
     </style>
 </head>
 <body class="bg-black text-white flex flex-col justify-between min-h-screen">
@@ -851,6 +970,58 @@
             currentIndex = n - 1;
             updateSlide(currentIndex);
         }
+        <!-- Cookie Consent Modal -->
+<div id="cookieOverlay" class="cookie-modal-overlay">
+  <div class="cookie-modal">
+    
+    <div class="cookie-header">
+      <span class="cookie-brand">FERWAP</span>
+      <button class="cookie-close-btn" onclick="closeCookieModal()">&times;</button>
+    </div>
+
+    <div class="cookie-body">
+      <h3>Cookie Settings</h3>
+      <p>
+        When you visit our website, we store cookies on your browser to collect information. 
+        The information collected might relate to you, your preferences or your device, and is 
+        mostly used to make the site work as you expect it to and to provide a more personalized web experience.
+      </p>
+      <p>
+        However, you can choose not to allow certain types of cookies, which may impact your experience 
+        of the site and the services we are able to offer. You cannot opt-out of our First Party Strictly 
+        Necessary Cookies as they are deployed in order to ensure the proper functioning of our website.
+      </p>
+      <p>
+        For more information, please follow this link: 
+        <a href="/privacy-policy" class="cookie-privacy-link">Privacy Policy</a>
+      </p>
+    </div>
+
+    <div class="cookie-footer">
+      <button class="cookie-btn-confirm" onclick="acceptCookies()">Confirm My Choices</button>
+      <span class="cookie-powered">Powered by Ferwap Music</span>
+    </div>
+
+  </div>
+</div>
     </script>
+    // Cek persetujuan cookie saat halaman selesai dimuat
+document.addEventListener('DOMContentLoaded', function () {
+  const isAccepted = localStorage.getItem('ferwap_cookie_consent');
+  if (isAccepted === 'true') {
+    document.getElementById('cookieOverlay').style.display = 'none';
+  }
+});
+
+// Simpan pilihan ke localStorage dan sembunyikan modal
+function acceptCookies() {
+  localStorage.setItem('ferwap_cookie_consent', 'true');
+  document.getElementById('cookieOverlay').style.display = 'none';
+}
+
+// Tutup modal sementara (tanpa menyimpan status permanen)
+function closeCookieModal() {
+  document.getElementById('cookieOverlay').style.display = 'none';
+}
 </body>
 </html>
