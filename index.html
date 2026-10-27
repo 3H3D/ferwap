@@ -116,17 +116,16 @@
     <header class="w-full fixed top-0 left-0 z-50 px-4 md:px-12 py-0 flex items-center justify-between bg-black/90 backdrop-blur-md border-b border-zinc-900 h-14">
         <a href="#" onclick="switchPage('home')" class="flex items-center gap-2 md:gap-3 cursor-pointer group">
             <div class="w-6 h-6 md:w-7 md:h-7 bg-white text-black rounded-lg flex items-center justify-center font-bold text-xs group-hover:bg-amber-600 group-hover:text-white transition duration-300">W</div>
-            <span class="font-extrabold tracking-widest uppercase text-xs text-white group-hover:text-amber-500 transition duration-300">Ferwap Music</span>
+            <span class="font-extrabold tracking-widest uppercase text-xs text-white group-hover:text-amber-500 transition duration-300">Ferwap</span>
         </a>
 
         <nav class="flex items-center gap-1 sm:gap-4 md:gap-6 text-[11px] sm:text-xs font-semibold tracking-wider text-zinc-300">
-            <!-- DROPDOWN ABOUT DENGAN TAMPILAN ELEGAN -->
+            <!-- DROPDOWN ABOUT -->
             <div class="relative group h-14 flex items-center">
                 <button onclick="switchPage('about')" class="px-3 py-1.5 rounded transition text-zinc-300 group-hover:text-amber-400 group-hover:bg-zinc-900/80 flex items-center gap-1 focus:outline-none">
                     About <i class="fa-solid fa-chevron-down text-[9px] opacity-70 group-hover:rotate-180 transition-transform duration-300"></i>
                 </button>
                 
-                <!-- Sub-Menu Melayang Kebawah -->
                 <div class="absolute left-0 top-14 hidden group-hover:flex flex-col bg-zinc-950/95 border border-amber-900/40 backdrop-blur-lg shadow-2xl min-w-[200px] py-1.5 z-50 text-[11px] rounded-b-lg animate-fade-in">
                     <button onclick="switchPage('artists')" class="px-4 py-2 text-left text-zinc-300 hover:text-amber-400 hover:bg-zinc-900 transition">Featured Artists</button>
                     <button onclick="switchPage('about')" class="px-4 py-2 text-left text-zinc-300 hover:text-amber-400 hover:bg-zinc-900 transition">Labels & Content Divisions</button>
@@ -223,24 +222,40 @@
             </footer>
         </section>
 
-        <!-- HALAMAN: EXECUTIVES (KARTU LEBAR & PROPORSIONAL) -->
+        <!-- HALAMAN: EXECUTIVES -->
         <section id="page-executive" class="page-section w-full flex-col justify-between px-6 md:px-12 py-10 bg-black">
-            <div class="max-w-5xl mx-auto space-y-8 my-auto pt-6 pb-12 text-left animate-fade-in w-full">
+            <div class="max-w-6xl mx-auto my-auto pt-6 pb-12 text-left animate-fade-in w-full space-y-8">
                 <div>
                     <h2 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight">Executives</h2>
                 </div>
                 
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-                    <div class="bg-zinc-900 border border-amber-900/30 rounded-lg overflow-hidden shadow-lg brown-card group">
-                        <div class="w-full aspect-square bg-zinc-800 overflow-hidden relative">
-                            <img src="3H3D.jpeg" alt="Abednego Totouw" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500 filter grayscale contrast-125 group-hover:grayscale-0">
-                        </div>
-                        <div class="bg-amber-900 p-5 text-center">
-                            <h3 class="text-xl font-bold text-white leading-snug">Abednego Totouw</h3>
-                            <p class="text-xs text-amber-200 font-medium mt-1">Founder & Executive Director</p>
-                            <p class="text-[11px] text-amber-300/80">Ferwap Music Entertainment</p>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+                    
+                    <div class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+                        <div class="bg-zinc-900 border border-amber-900/30 rounded overflow-hidden shadow-lg brown-card group max-w-[260px]">
+                            <div class="w-full aspect-square bg-zinc-800 overflow-hidden relative">
+                                <img src="3H3D.jpeg" alt="Abednego Totouw" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500">
+                            </div>
+                            <div class="bg-amber-900 p-4 text-center">
+                                <h3 class="text-lg font-bold text-white leading-snug">Abednego Totouw</h3>
+                                <p class="text-xs text-amber-200 font-medium mt-0.5">Founder & Executive Director</p>
+                                <p class="text-[10px] text-amber-300/80">Ferwap Music Entertainment</p>
+                            </div>
                         </div>
                     </div>
+
+                    <div class="lg:col-span-1 space-y-8 max-w-[320px]">
+                        <div class="bg-zinc-900 border border-zinc-800 rounded p-6 text-center space-y-4">
+                            <h3 class="text-xl font-bold text-amber-500">Have a Question for Ferwap Music?</h3>
+                            <p class="text-xs text-zinc-300 leading-relaxed">
+                                Visit our FAQ page for information regarding demo policy, licensing, and press contacts.
+                            </p>
+                            <button onclick="switchPage('faq')" class="w-full py-2.5 bg-amber-800 hover:bg-amber-700 text-white font-bold text-xs uppercase tracking-wider rounded transition duration-300">
+                                View Our FAQs &raquo;
+                            </button>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
@@ -285,35 +300,112 @@
             </footer>
         </section>
 
-        <!-- HALAMAN 4: FEATURED ARTISTS (KARTU LEBAR DENGAN FOTO ASPECT-SQUARE/PROPORSIONAL) -->
+        <!-- HALAMAN 4: FEATURED ARTISTS (DENGAN DAFTAR LAGU PARALEL DI KANAN) -->
         <section id="page-artists" class="page-section w-full flex-col justify-between px-6 md:px-12 py-10 bg-black">
-            <div class="max-w-5xl mx-auto space-y-8 my-auto pt-6 pb-12 text-left animate-fade-in w-full">
+            <div class="max-w-6xl mx-auto space-y-8 my-auto pt-6 pb-12 text-left animate-fade-in w-full">
                 <div>
                     <h2 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight">Featured Artists</h2>
                 </div>
 
-                <!-- Grid Kartu Artis yang Lebih Lebar & Gagah -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                <!-- LAYOUT 2 KOLOM: KIRI PROFIL ARTIS, KANAN DAFTAR LAGU -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
                     
-                    <!-- Artist 1: 3H3D -->
-                    <div class="bg-zinc-900 border border-amber-900/30 rounded-lg overflow-hidden shadow-lg brown-card group">
-                        <a href="https://3h3dofficial.web.id" target="_blank" class="block w-full aspect-square bg-zinc-800 overflow-hidden relative">
-                            <img src="3H3D.jpeg" alt="3H3D" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500">
-                        </a>
-                        <div class="bg-amber-900 p-5 text-center">
-                            <h3 class="text-xl font-bold text-white leading-snug">3H3D</h3>
-                            <a href="https://3h3dofficial.web.id" target="_blank" class="text-xs text-amber-200 hover:text-white hover:underline font-medium transition inline-block mt-1">3H3D Official Site</a>
+                    <!-- KOLOM KIRI: DAFTAR ARTIS -->
+                    <div class="lg:col-span-1 flex flex-wrap gap-4 items-start">
+                        <!-- Artist 1: 3H3D -->
+                        <div class="bg-zinc-900 border border-amber-900/30 rounded overflow-hidden shadow-lg brown-card group w-full max-w-[260px]">
+                            <a href="https://3h3dofficial.web.id" target="_blank" class="block w-full aspect-square bg-zinc-800 overflow-hidden relative">
+                                <img src="3H3D.jpeg" alt="3H3D" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500">
+                            </a>
+                            <div class="bg-amber-900 p-4 text-center">
+                                <h3 class="text-lg font-bold text-white leading-snug">3H3D</h3>
+                                <a href="https://3h3dofficial.web.id" target="_blank" class="text-xs text-amber-200 hover:text-white hover:underline font-medium transition inline-block mt-0.5">3H3D Official Site</a>
+                            </div>
+                        </div>
+
+                        <!-- Artist 2: ANDER -->
+                        <div class="bg-zinc-900 border border-amber-900/30 rounded overflow-hidden shadow-lg brown-card group w-full max-w-[260px]">
+                            <a href="https://open.spotify.com/artist/4M9kCzOOtJrz94ZlqyiZ5g" target="_blank" class="block w-full aspect-square bg-zinc-800 overflow-hidden relative">
+                                <img src="ANDER.jpg" alt="ANDER" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500">
+                            </a>
+                            <div class="bg-amber-900 p-4 text-center">
+                                <h3 class="text-lg font-bold text-white leading-snug">ANDER</h3>
+                                <a href="https://open.spotify.com/artist/4M9kCzOOtJrz94ZlqyiZ5g" target="_blank" class="text-xs text-amber-200 hover:text-white hover:underline font-medium transition inline-block mt-0.5">ANDER Official Site</a>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Artist 2: ANDER -->
-                    <div class="bg-zinc-900 border border-amber-900/30 rounded-lg overflow-hidden shadow-lg brown-card group">
-                        <div class="w-full aspect-square bg-zinc-800 overflow-hidden relative">
-                            <img src="ANDER.jpg" alt="ANDER" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500">
+                    <!-- KOLOM KANAN: DAFTAR LAGU (DISCOGRAPHY / RELEASES) PARALEL KE BAWAH -->
+                    <div class="lg:col-span-2 space-y-4">
+                        <div class="border-b border-zinc-800 pb-3 flex items-center justify-between">
+                            <h3 class="text-xl font-bold text-amber-500 uppercase tracking-wider">Catalog & Releases</h3>
+                            <span class="text-xs text-zinc-400">Click title to stream on YouTube</span>
                         </div>
-                        <div class="bg-amber-900 p-5 text-center">
-                            <h3 class="text-xl font-bold text-white leading-snug">ANDER</h3>
-                            <p class="text-xs text-amber-200 font-medium mt-1">ANDER Official Site</p>
+
+                        <div class="space-y-2">
+                            <!-- LAGU 1 -->
+                            <a href="https://www.youtube.com/results?search_query=3H3D+music" target="_blank" class="group flex items-center justify-between p-3.5 bg-zinc-900/80 hover:bg-zinc-800 border border-zinc-800/80 hover:border-amber-600/60 rounded-lg transition duration-300">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-8 h-8 rounded bg-amber-900/50 text-amber-400 flex items-center justify-center font-bold text-xs group-hover:bg-amber-600 group-hover:text-white transition">
+                                        <i class="fa-brands fa-youtube text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-sm font-bold text-white group-hover:text-amber-400 transition">Judul Lagu 1</h4>
+                                        <p class="text-xs text-zinc-400">3H3D &bull; Single &bull; 2026</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs font-semibold text-amber-500/80 group-hover:text-amber-400 flex items-center gap-1">
+                                    Listen <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                </span>
+                            </a>
+
+                            <!-- LAGU 2 -->
+                            <a href="https://www.youtube.com/results?search_query=3H3D+music" target="_blank" class="group flex items-center justify-between p-3.5 bg-zinc-900/80 hover:bg-zinc-800 border border-zinc-800/80 hover:border-amber-600/60 rounded-lg transition duration-300">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-8 h-8 rounded bg-amber-900/50 text-amber-400 flex items-center justify-center font-bold text-xs group-hover:bg-amber-600 group-hover:text-white transition">
+                                        <i class="fa-brands fa-youtube text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-sm font-bold text-white group-hover:text-amber-400 transition">Judul Lagu 2</h4>
+                                        <p class="text-xs text-zinc-400">3H3D &bull; Single &bull; 2026</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs font-semibold text-amber-500/80 group-hover:text-amber-400 flex items-center gap-1">
+                                    Listen <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                </span>
+                            </a>
+
+                            <!-- LAGU 3 -->
+                            <a href="https://www.youtube.com/results?search_query=3H3D+music" target="_blank" class="group flex items-center justify-between p-3.5 bg-zinc-900/80 hover:bg-zinc-800 border border-zinc-800/80 hover:border-amber-600/60 rounded-lg transition duration-300">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-8 h-8 rounded bg-amber-900/50 text-amber-400 flex items-center justify-center font-bold text-xs group-hover:bg-amber-600 group-hover:text-white transition">
+                                        <i class="fa-brands fa-youtube text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-sm font-bold text-white group-hover:text-amber-400 transition">Judul Lagu 3</h4>
+                                        <p class="text-xs text-zinc-400">3H3D &bull; Single &bull; 2026</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs font-semibold text-amber-500/80 group-hover:text-amber-400 flex items-center gap-1">
+                                    Listen <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                </span>
+                            </a>
+
+                            <!-- LAGU 4 -->
+                            <a href="https://www.youtube.com/results?search_query=3H3D+music" target="_blank" class="group flex items-center justify-between p-3.5 bg-zinc-900/80 hover:bg-zinc-800 border border-zinc-800/80 hover:border-amber-600/60 rounded-lg transition duration-300">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-8 h-8 rounded bg-amber-900/50 text-amber-400 flex items-center justify-center font-bold text-xs group-hover:bg-amber-600 group-hover:text-white transition">
+                                        <i class="fa-brands fa-youtube text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-sm font-bold text-white group-hover:text-amber-400 transition">Judul Lagu 4</h4>
+                                        <p class="text-xs text-zinc-400">3H3D &bull; Single &bull; 2026</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs font-semibold text-amber-500/80 group-hover:text-amber-400 flex items-center gap-1">
+                                    Listen <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                </span>
+                            </a>
                         </div>
                     </div>
 
@@ -336,11 +428,43 @@
             </footer>
         </section>
 
-        <!-- HALAMAN 5: FAQ -->
+        <!-- HALAMAN 5: FAQ & DEMO SUBMISSIONS -->
         <section id="page-faq" class="page-section w-full flex-col justify-between px-6 md:px-12 py-10 bg-black">
-            <div class="max-w-3xl mx-auto space-y-4 text-center pt-8 pb-12 animate-fade-in">
-                <span class="text-xs font-bold tracking-widest text-amber-600 uppercase">Questions</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-white">Frequently Asked Questions</h2>
+            <div class="max-w-3xl mx-auto space-y-8 text-center pt-8 pb-12 animate-fade-in">
+                <div>
+                    <span class="text-xs font-bold tracking-widest text-amber-600 uppercase">A&R & Support</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mt-1">Frequently Asked Questions</h2>
+                </div>
+
+                <!-- KONTEN DEMO SUBMISSION -->
+                <div class="space-y-6 text-sm md:text-base pt-6 border-t border-zinc-900 text-left">
+                    <div class="border-b border-zinc-900 pb-4 text-center">
+                        <span class="text-xs font-bold tracking-widest text-amber-600 uppercase">Submissions</span>
+                        <h2 class="text-2xl md:text-3xl font-bold text-white mt-1">Demo Submission</h2>
+                    </div>
+                    <div class="space-y-4 text-zinc-300 leading-relaxed font-light">
+                        <p>
+                            Ferwapmusic is constantly seeking innovative, passionate, and visionary talent to join our independent roster. Whether you are an emerging artist, vocalist, or music producer, we provide a collaborative space to develop your catalog and refine your sound.
+                        </p>
+                        <h3 class="font-bold text-white uppercase text-xs tracking-wider pt-2">Submission Guidelines:</h3>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li><strong>Format:</strong> We only accept private streaming links (SoundCloud, Google Drive, or Dropbox). Please do not attach raw MP3/WAV files directly via email, as those messages will be automatically filtered out.</li>
+                            <li><strong>Track Selection:</strong> Send 2 to 3 of your best unreleased tracks. Make sure your audio links are set to accessible permissions (with stream enabled).</li>
+                            <li><strong>Metadata & Info:</strong> Include your official artist name, a short biography, active social media links, and clear contact information.</li>
+                        </ul>
+                        <h3 class="font-bold text-white uppercase text-xs tracking-wider pt-2">What We Look For:</h3>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Originality and a strong artistic identity.</li>
+                            <li>Solid songwriting, production potential, and high-quality arrangements.</li>
+                            <li>Dedication to long-term catalog development and strategic collaboration.</li>
+                        </ul>
+                        <p class="pt-2">
+                            Due to the high volume of submissions, our A&R team manually reviews every entry. If your music fits our upcoming projects or roster strategy, we will reach out to you within 2–3 weeks via <a href="mailto:ferwapmusic.info@gmail.com" class="underline text-amber-400 font-medium hover:text-amber-300 transition">ferwapmusic.info@gmail.com</a>.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- KONTEN MUSIC LICENSING -->
                 <div id="home-licensing" class="space-y-6 text-sm md:text-base pt-6 border-t border-zinc-900 text-left">
                     <div class="border-b border-zinc-900 pb-4 text-center">
                         <span class="text-xs font-bold tracking-widest text-amber-600 uppercase">Commercial Services</span>
@@ -477,7 +601,7 @@
             {
                 name: "ANDER",
                 image: "ANDER.jpg",
-                link: "#"
+                link: "https://open.spotify.com/artist/4M9kCzOOtJrz94ZlqyiZ5g"
             }
         ];
 
