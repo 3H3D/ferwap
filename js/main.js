@@ -32,15 +32,20 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateSlide(index) {
         const currentArtist = artists[index];
         
+        // Animasi pudar (fade) saat gambar berganti
+        if (artistImgEl) {
+            artistImgEl.style.opacity = 0;
+            setTimeout(() => {
+                artistImgEl.src = currentArtist.image;
+                artistImgEl.style.opacity = 1;
+            }, 200);
+        }
+        
         // Ganti teks nama artis
         if (artistNameEl) artistNameEl.textContent = currentArtist.name;
         
-        // Ganti gambar foto artis
-        if (artistImgEl) artistImgEl.src = currentArtist.image;
-        
         // Ganti link web resmi jika gambar diklik
         if (artistLinkEl) artistLinkEl.href = currentArtist.link;
-
         // Perbarui titik indikator (dots) aktif
         dots.forEach((dot, i) => {
             if (i === index) {
