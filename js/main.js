@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
             link: "https://3h3d.github.io/ANDER"
         },
         {
-            name: "Ferrson",
+            name: "FERRSON",
             image: "Ferrson.F.jpeg", // Ubah/tambahkan file foto artis berikutnya jika ada
             link: "https://3h3d.github.io/Ferrson"
         }
