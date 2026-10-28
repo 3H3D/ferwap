@@ -37,43 +37,43 @@ body {
     padding: 20px 0 40px 0;
 }
 
-/* --- TATA LETAK: Logo & Navigasi Berdekatan di Kiri Atas --- */
+/* --- TATA LETAK: Logo Besar & Navigasi Sejajar di Kiri --- */
 .hero-overlay-nav {
     position: absolute;
     top: 30px;
-    left: 40px;
+    left: 60px;
     display: flex;
-    align-items: center;
-    gap: 35px; /* Jarak dekat antara logo dan menu navigasi */
+    align-items: center; /* Menjajarkan logo besar dan menu secara vertikal */
+    gap: 45px; /* Jarak pas antara logo dan menu navigasi */
     z-index: 10;
 }
 
 .brand-group-left {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
+    align-items: center;
+    gap: 8px;
 }
 
-/* Memperbesar Ukuran Logo Titik Merah */
+/* Logo Titik Merah Diperbesar Seperti Sony Music */
 .red-dot-grid-logo {
     display: grid;
-    grid-template-columns: repeat(4, 7px); /* Memperbesar ukuran kotak titik */
-    gap: 4px;
+    grid-template-columns: repeat(4, 12px);
+    gap: 6px;
     width: max-content;
 }
 
 .red-dot-grid-logo span {
-    width: 7px;  /* Lebar titik diperbesar */
-    height: 7px; /* Tinggi titik diperbesar */
+    width: 12px;
+    height: 12px;
     background-color: #e11d48;
     border-radius: 50%;
 }
 
 .sub-brand-text {
-    font-size: 0.75rem; /* Teks FERWAP MUSIC diperjelas sedikit */
-    letter-spacing: 1.5px;
-    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    font-weight: 800;
     color: #ffffff;
 }
 
@@ -95,7 +95,7 @@ body {
 }
 
 .main-nav > a:hover {
-    background-color: #1d4ed8; /* Efek kotak biru saat kursor diarahkan */
+    background-color: #1d4ed8; /* Kotak biru saat kursor diarahkan */
     opacity: 1;
 }
 
@@ -166,7 +166,7 @@ body {
 
 .artist-label-text {
     position: absolute;
-    left: 40px;
+    left: 60px;
     font-size: 2rem;
     font-weight: 600;
     z-index: 5;
