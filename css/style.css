@@ -38,7 +38,7 @@ body {
     padding: 40px 0;
 }
 
-/* --- MENU NAVIGASI & LOGO BERDAMPINGAN DI ATAS TENGAH --- */
+/* --- LOGO & MENU NAVIGASI BERDAMPINGAN DALAM SATU BARIS --- */
 .main-nav {
     position: absolute;
     top: 35px;
@@ -46,7 +46,7 @@ body {
     transform: translateX(-50%);
     display: flex;
     align-items: center;
-    gap: 35px; /* Jarak antara logo ferwap music dan menu About */
+    gap: 30px; /* Jarak pas antara logo Ferwap Music dan tulisan About */
     z-index: 10;
 }
 
@@ -59,21 +59,21 @@ body {
 
 .red-dot-grid-logo {
     display: grid;
-    grid-template-columns: repeat(4, 8px);
-    gap: 4px;
+    grid-template-columns: repeat(4, 7px);
+    gap: 3px;
     width: max-content;
 }
 
 .red-dot-grid-logo span {
-    width: 8px;
-    height: 8px;
+    width: 7px;
+    height: 7px;
     background-color: #e11d48;
     border-radius: 50%;
 }
 
 .sub-brand-text {
-    font-size: 0.65rem;
-    letter-spacing: 1.5px;
+    font-size: 0.6rem;
+    letter-spacing: 1px;
     font-weight: 800;
     color: #ffffff;
 }
