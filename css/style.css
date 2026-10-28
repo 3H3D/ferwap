@@ -30,19 +30,19 @@ body {
 .hero-container {
     position: relative;
     width: 100%;
-    min-height: 82vh;
+    min-height: 85vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px 0 40px 0;
+    padding: 40px 0;
 }
 
-/* --- TATA LETAK UTAMA (Gaya Sony Music) --- */
+/* --- TATA LETAK: Sejajar dengan Garis Atas Foto --- */
 
-/* 1. Logo Besar di Kiri */
+/* 1. Logo Besar di Kiri (Diturunkan posisinya) */
 .hero-overlay-nav {
     position: absolute;
-    top: 35px;
+    top: 90px; /* Diturunkan sejajar dengan tepi atas foto */
     left: 60px;
     z-index: 10;
 }
@@ -75,10 +75,10 @@ body {
     color: #ffffff;
 }
 
-/* 2. Menu Navigasi di Atas Tengah (Sejajar dengan bagian atas foto) */
+/* 2. Menu Navigasi di Atas Tengah (Diturunkan sejajar garis atas foto) */
 .main-nav {
     position: absolute;
-    top: 40px;
+    top: 95px; /* Diturunkan sejajar dengan tepi atas foto */
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -165,6 +165,7 @@ body {
     position: relative;
     max-width: 1000px;
     width: 100%;
+    margin-top: 40px;
 }
 
 .artist-label-text {
