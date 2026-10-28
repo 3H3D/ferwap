@@ -1,59 +1,89 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ferwap - Official Website</title>
-    <!-- Penghubung ke CSS Eksternal -->
     <link rel="stylesheet" href="css/style.css">
-    <!-- FontAwesome untuk Ikon Panah & Sosial Media -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- Header / Navbar -->
-    <header class="site-header">
-        <div class="nav-brand">
-            <img src="https://ferwap.com/favicon.ico" alt="Ferwap Logo" class="brand-logo" onerror="this.src='https://via.placeholder.com/30/b91c1c/ffffff?text=W'">
-            <span class="brand-text">FERWAP</span>
+    <!-- Top Header Bar -->
+    <header class="top-header">
+        <div class="brand-top-right">
+            <span class="sony-logo">FERWAP</span>
         </div>
-        <nav class="nav-menu">
-            <div class="dropdown">
-                <a href="#" class="dropbtn">About <i class="fa-solid fa-chevron-down"></i></a>
-            </div>
-            <div class="dropdown">
-                <a href="#" class="dropbtn">News <i class="fa-solid fa-chevron-down"></i></a>
-            </div>
-            <a href="#" class="nav-link">Artists</a>
-            <a href="#" class="nav-link">FAQ</a>
-        </nav>
     </header>
 
-    <!-- Main Hero / Carousel Section -->
-    <main class="hero-section">
-        <!-- Tombol Navigasi Kiri -->
-        <button class="carousel-btn prev-btn" id="prevBtn" aria-label="Previous">
+    <!-- Hero Main Section -->
+    <section class="hero-container">
+        <!-- Overlay Navigation & Logo Kiri Atas -->
+        <div class="hero-overlay-nav">
+            <div class="brand-group-left">
+                <div class="red-dot-grid-logo">
+                    <span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span>
+                </div>
+                <span class="sub-brand-text">FERWAP MUSIC</span>
+            </div>
+            <!-- Menu Navigasi Disesuaikan -->
+            <nav class="main-nav">
+                <a href="#">About</a>
+                <a href="#">News</a>
+                <a href="#">Artists</a>
+                <a href="#">FAQ</a>
+            </nav>
+        </div>
+
+        <!-- Slider Arrow Left -->
+        <button class="slider-arrow arrow-left" id="prevBtn" aria-label="Previous">
             <i class="fa-solid fa-chevron-left"></i>
         </button>
 
-        <!-- Konten Tengah (Slider Item) -->
-        <div class="carousel-container">
-            <div class="artist-slide active">
-                <div class="artist-info">
-                    <h2 class="artist-name">3H3D</h2>
-                </div>
-                <div class="artist-image-wrapper">
-                    <!-- Ganti path gambar sesuai file kamu di assets/images/ -->
-                    <img src="assets/images/artist-3h3d.png" alt="3H3D" class="artist-img" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80'">
+        <!-- Main Slide Content -->
+        <div class="slide-content">
+            <div class="artist-label-text">3H3D</div>
+            <div class="hero-image-box">
+                <!-- Ganti path foto artis sesuai file kamu -->
+                <img src="assets/images/artist-3h3d.jpg" alt="3H3D" class="hero-img" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80'">
+                
+                <!-- Hero Dots -->
+                <div class="hero-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
                 </div>
             </div>
         </div>
 
-        <!-- Tombol Navigasi Kanan -->
-        <button class="carousel-btn next-btn" id="nextBtn" aria-label="Next">
+        <!-- Slider Arrow Right -->
+        <button class="slider-arrow arrow-right" id="nextBtn" aria-label="Next">
             <i class="fa-solid fa-chevron-right"></i>
         </button>
-    </main>
+    </section>
+
+    <!-- Labels Section (White Background) -->
+    <section class="labels-section">
+        <h2 class="labels-title">Labels</h2>
+        <div class="labels-grid">
+            <div class="label-item">ALAMO RECORDS</div>
+            <div class="label-item">ARISTA</div>
+            <div class="label-item">AWAL</div>
+            <div class="label-item border-box">COLUMBIA</div>
+            <div class="label-item cursive">Epic</div>
+            <div class="label-item">FERWAP MUSIC</div>
+        </div>
+    </section>
 
     <!-- Footer Section -->
     <footer class="site-footer">
@@ -62,21 +92,14 @@
             <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
             <a href="#" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
         </div>
-        <div class="footer-dots">
-            <span class="dot active"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-        </div>
-        <p class="copyright">&copy; 2026 Ferwap Music Entertainment
+        <p class="copyright">&copy; 2026 Ferwap Music Entertainment. All Rights Reserved.</p>
         <div class="footer-links">
-            <a href="privacy.html">Privacy Policy</a> |
-            <a href="terms.html">Terms of Service</a> |
+            <a href="privacy.html">Privacy Policy</a> | 
+            <a href="terms.html">Terms of Service</a> | 
             <a href="copyright.html">Copyright</a>
         </div>
     </footer>
 
-    <!-- Penghubung ke JavaScript Eksternal -->
     <script src="js/main.js"></script>
 </body>
 </html>
