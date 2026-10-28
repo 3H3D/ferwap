@@ -37,15 +37,15 @@ body {
     padding: 20px 0 40px 0;
 }
 
-/* Overlay Navigation & Logo Kiri Atas */
+/* --- TATA LETAK UTAMA ALAT NAVIGASI --- */
 .hero-overlay-nav {
     position: absolute;
-    top: 10px;
+    top: 25px;
     left: 40px;
     right: 40px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between; /* Membuat logo di kiri dan menu tersebar rapi */
     z-index: 10;
 }
 
@@ -77,12 +77,14 @@ body {
     color: #ffffff;
 }
 
-/* --- Styling Menu Navigasi & Dropdown --- */
+/* --- Menu Navigasi di Tengah --- */
 .main-nav {
     display: flex;
-    gap: 30px;
-    margin-right: 170px;
+    gap: 45px;
     align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* Memastikan menu benar-benar di tengah absolut */
 }
 
 .main-nav > a {
@@ -112,7 +114,7 @@ body {
     transition: opacity 0.2s;
 }
 
-/* Sembunyikan kotak dropdown secara default */
+/* Kotak Dropdown */
 .dropdown-content {
     display: none; 
     position: absolute;
@@ -141,7 +143,7 @@ body {
     color: #ffffff;
 }
 
-/* Tampilkan dropdown HANYA SAAT kursor diarahkan ke tulisan About */
+/* Munculkan saat kursor diarahkan ke About */
 .dropdown:hover .dropdown-content {
     display: block;
 }
@@ -329,12 +331,11 @@ body {
         right: 20px;
     }
     .main-nav {
-        margin-right: 0;
+        position: relative;
+        left: 0;
+        transform: none;
         gap: 15px;
         flex-wrap: wrap;
-    }
-    .main-nav > a {
-        font-size: 0.85rem;
     }
     .hero-image-box {
         width: 85vw;
