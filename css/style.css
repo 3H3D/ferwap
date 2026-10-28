@@ -56,6 +56,7 @@ body {
     gap: 4px;
 }
 
+/* Red Dot Grid Logo */
 .red-dot-grid-logo {
     display: grid;
     grid-template-columns: repeat(4, 4px);
@@ -80,7 +81,7 @@ body {
 .main-nav {
     display: flex;
     gap: 30px;
-    margin-right: 170px;
+    margin-right: 150px; /* Menyesuaikan agar berada di tengah persis seperti referensi */
 }
 
 .main-nav a {
@@ -129,6 +130,7 @@ body {
     object-fit: cover;
 }
 
+/* Hero Dots (Banyak Titik di Bawah Foto) */
 .hero-dots {
     position: absolute;
     bottom: 15px;
