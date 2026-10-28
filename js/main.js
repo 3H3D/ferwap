@@ -75,9 +75,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Fitur Otomatis Bergeser Sendiri Setiap 4 Detik
+    // Fitur Otomatis Bergeser Sendiri Setiap 10 Detik
     setInterval(() => {
         currentIndex = (currentIndex + 1) % artists.length;
         updateSlide(currentIndex);
-    }, 4000);
+    }, 10000);
 });
