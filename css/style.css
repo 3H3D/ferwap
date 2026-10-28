@@ -37,14 +37,14 @@ body {
     padding: 20px 0 40px 0;
 }
 
-/* --- TATA LETAK UTAMA: Logo Kiri & Menu Bersebelahan --- */
+/* --- TATA LETAK: Logo & Navigasi Berdekatan di Kiri Atas --- */
 .hero-overlay-nav {
     position: absolute;
-    top: 35px;
-    left: 60px;
+    top: 30px;
+    left: 40px;
     display: flex;
     align-items: center;
-    gap: 40px; /* Jarak pas antara blok logo kiri dan menu navigasi */
+    gap: 35px; /* Jarak dekat antara logo dan menu navigasi */
     z-index: 10;
 }
 
@@ -52,26 +52,27 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 4px;
+    gap: 6px;
 }
 
+/* Memperbesar Ukuran Logo Titik Merah */
 .red-dot-grid-logo {
     display: grid;
-    grid-template-columns: repeat(4, 4px);
-    gap: 3px;
+    grid-template-columns: repeat(4, 7px); /* Memperbesar ukuran kotak titik */
+    gap: 4px;
     width: max-content;
 }
 
 .red-dot-grid-logo span {
-    width: 4px;
-    height: 4px;
+    width: 7px;  /* Lebar titik diperbesar */
+    height: 7px; /* Tinggi titik diperbesar */
     background-color: #e11d48;
     border-radius: 50%;
 }
 
 .sub-brand-text {
-    font-size: 0.65rem;
-    letter-spacing: 1px;
+    font-size: 0.75rem; /* Teks FERWAP MUSIC diperjelas sedikit */
+    letter-spacing: 1.5px;
     font-weight: 700;
     color: #ffffff;
 }
@@ -79,7 +80,7 @@ body {
 /* --- Menu Navigasi di Samping Logo --- */
 .main-nav {
     display: flex;
-    gap: 25px;
+    gap: 20px;
     align-items: center;
 }
 
@@ -94,7 +95,7 @@ body {
 }
 
 .main-nav > a:hover {
-    background-color: #1d4ed8; /* Efek kotak biru seperti referensi */
+    background-color: #1d4ed8; /* Efek kotak biru saat kursor diarahkan */
     opacity: 1;
 }
 
@@ -116,7 +117,7 @@ body {
 }
 
 .drop-btn:hover {
-    background-color: #1d4ed8; /* Efek kotak biru pada About */
+    background-color: #1d4ed8;
 }
 
 /* Kotak Dropdown */
@@ -148,7 +149,7 @@ body {
     color: #ffffff;
 }
 
-/* Munculkan dropdown saat kursor diarahkan ke About */
+/* Tampilkan dropdown saat About disorot */
 .dropdown:hover .dropdown-content {
     display: block;
 }
@@ -165,7 +166,7 @@ body {
 
 .artist-label-text {
     position: absolute;
-    left: 60px;
+    left: 40px;
     font-size: 2rem;
     font-weight: 600;
     z-index: 5;
