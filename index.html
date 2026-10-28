@@ -16,19 +16,21 @@
         </div>
     </header>
 
-    <!-- Overlay Navigation & Logo Kiri -->
-        <div class="hero-overlay-nav">
-            <!-- Logo & Teks di Kiri -->
-            <div class="brand-group-left">
-                <div class="red-dot-grid-logo">
-                    <span></span><span></span><span></span><span></span>
-                    <span></span><span></span><span></span><span></span>
-                    <span></span><span></span><span></span><span></span>
+<!-- Hero Main Section -->
+        <section class="hero-container">
+            <!-- Overlay Navigation & Logo Kiri Atas -->
+            <div class="hero-overlay-nav">
+                <div class="brand-group-left">
+                    <div class="red-dot-grid-logo">
+                        <span></span><span></span><span></span><span></span>
+                        <span></span><span></span><span></span><span></span>
+                        <span></span><span></span><span></span><span></span>
+                    </div>
+                    <span class="sub-brand-text">FERWAP MUSIC</span>
                 </div>
-                <span class="sub-brand-text">FERWAP MUSIC</span>
             </div>
 
-            <!-- Menu Navigasi di Sebelah Kanan Logo -->
+            <!-- Menu Navigasi di Atas Tengah -->
             <nav class="main-nav">
                 <div class="dropdown">
                     <a href="#" class="drop-btn">About <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem; margin-left: 4px;"></i></a>
@@ -45,34 +47,22 @@
                 <a href="#">Artists</a>
                 <a href="#">FAQ</a>
             </nav>
-        </div>
 
-        <!-- Slider Arrow Left -->
-        <button class="slider-arrow arrow-left" id="prevBtn" aria-label="Previous">
-            <i class="fa-solid fa-chevron-left"></i>
-        </button>
-
-        <!-- Main Slide Content -->
-        <div class="slide-content">
-            <div class="artist-label-text">3H3D</div>
-            <div class="hero-image-box">
-                <!-- Ganti path gambar sesuai dengan foto di assets/images/ -->
-                <img src="assets/images/artist-3h3d.jpg" alt="3H3D" class="hero-img" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80'">
-                
-                <!-- Banyak Dots Indikator di Bawah Foto -->
-                <div class="hero-dots">
-                    <span class="dot active"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
+            <!-- Slide Content (Gambar & Teks Artist di Tengah) -->
+            <div class="slide-content">
+                <button class="slider-arrow arrow-left">&#10094;</button>
+                <div class="artist-label-text">3H3D</div>
+                <div class="hero-image-box">
+                    <img src="img/artist.jpg" alt="3H3D" class="hero-img">
+                    <div class="hero-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
                 </div>
+                <button class="slider-arrow arrow-right">&#10095;</button>
             </div>
-        </div>
-
-        <!-- Slider Arrow Right -->
-        <button class="slider-arrow arrow-right" id="nextBtn" aria-label="Next">
-            <i class="fa-solid fa-chevron-right"></i>
-        </button>
-    </section>
+        </section>
 
     <!-- Labels Section (White Background) -->
     <section class="labels-section">
