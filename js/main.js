@@ -7,14 +7,14 @@ document.addEventListener('DOMContentLoaded', () => {
             link: "https://3h3dofficial.web.id"
         },
         {
-            name: "FERRSON",
-            image: "img/artist2.jpg", // Ubah/tambahkan file foto artis berikutnya di folder img jika ada
-            link: "#"
+            name: "ANDER",
+            image: "ANDER.jpg", // Ubah/tambahkan file foto artis berikutnya di folder img jika ada
+            link: "https://3h3d.github.io/ANDER"
         },
         {
-            name: "ARTIS KETIGA",
-            image: "img/artist3.jpg", // Ubah/tambahkan file foto artis berikutnya jika ada
-            link: "#"
+            name: "Ferrson",
+            image: "Ferrson.F.jpg", // Ubah/tambahkan file foto artis berikutnya jika ada
+            link: "https://3h3d.github.io/Ferrson"
         }
     ];
 
