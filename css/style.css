@@ -56,7 +56,6 @@ body {
     gap: 4px;
 }
 
-/* Red Dot Grid Logo */
 .red-dot-grid-logo {
     display: grid;
     grid-template-columns: repeat(4, 4px);
@@ -78,13 +77,15 @@ body {
     color: #ffffff;
 }
 
+/* --- Styling Menu Navigasi & Dropdown --- */
 .main-nav {
     display: flex;
     gap: 30px;
-    margin-right: 150px; /* Menyesuaikan agar berada di tengah persis seperti referensi */
+    margin-right: 170px;
+    align-items: center;
 }
 
-.main-nav a {
+.main-nav > a {
     color: #ffffff;
     text-decoration: none;
     font-size: 0.95rem;
@@ -92,7 +93,60 @@ body {
     transition: opacity 0.2s;
 }
 
-.main-nav a:hover {
+.main-nav > a:hover {
+    opacity: 0.7;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.drop-btn {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    transition: opacity 0.2s;
+}
+
+/* Sembunyikan kotak dropdown secara default */
+.dropdown-content {
+    display: none; 
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #18181b;
+    min-width: 240px;
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.8);
+    border-radius: 4px;
+    z-index: 100;
+    padding: 10px 0;
+    border: 1px solid #27272a;
+}
+
+.dropdown-content a {
+    color: #d1d5db;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.9rem;
+    transition: background 0.2s, color 0.2s;
+}
+
+.dropdown-content a:hover {
+    background-color: #27272a;
+    color: #ffffff;
+}
+
+/* Tampilkan dropdown HANYA SAAT kursor diarahkan ke tulisan About */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .drop-btn {
     opacity: 0.7;
 }
 
@@ -130,7 +184,6 @@ body {
     object-fit: cover;
 }
 
-/* Hero Dots (Banyak Titik di Bawah Foto) */
 .hero-dots {
     position: absolute;
     bottom: 15px;
@@ -280,7 +333,7 @@ body {
         gap: 15px;
         flex-wrap: wrap;
     }
-    .main-nav a {
+    .main-nav > a {
         font-size: 0.85rem;
     }
     .hero-image-box {
@@ -296,51 +349,4 @@ body {
     .labels-section {
         padding: 40px 20px;
     }
-}/* Styling Menu Dropdown */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.drop-btn {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 0.95rem;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    transition: opacity 0.2s;
-}
-
-/* Sembunyikan dulu kotak dropdown secara default */
-.dropdown-content {
-    display: none; 
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #18181b;
-    min-width: 240px;
-    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.8);
-    border-radius: 4px;
-    z-index: 100;
-    padding: 10px 0;
-    border: 1px solid #27272a;
-}
-
-.dropdown-content a {
-    color: #d1d5db;
-    padding: 10px 20px;
-    text-decoration: none;
-    display: block;
-    font-size: 0.9rem;
-}
-
-.dropdown-content a:hover {
-    background-color: #27272a;
-    color: #ffffff;
-}
-
-/* Tampilkan dropdown HANYA SAAT kursor diarahkan ke tulisan About */
-.dropdown:hover .dropdown-content {
-    display: block;
 }
