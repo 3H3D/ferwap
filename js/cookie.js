@@ -1,9 +1,20 @@
-// Memuat Banner Cookie Keamanan Secara Otomatis
+// Memuat Banner Cookie Keamanan Secara Otomatis (Multi-Language Support)
 document.addEventListener('DOMContentLoaded', function() {
     // Cek apakah pengunjung sudah pernah menyetujui cookie sebelumnya
     if (localStorage.getItem('ferwap_cookie_accepted') === 'true') {
         return; // Jika sudah setuju, jangan tampilkan banner
     }
+
+    // Deteksi bahasa browser pengunjung (misal: 'id', 'en', 'en-US')
+    const userLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+    const isIndonesian = userLang.startsWith('id');
+
+    // Teks berdasarkan bahasa
+    const textNotice = isIndonesian
+        ? 'Kami menggunakan cookie untuk memastikan pengalaman terbaik di situs resmi Ferwap Music. Dengan terus menjelajahi situs ini, Anda menyetujui <a href="privacy.html" style="color: #3b82f6; text-decoration: underline;">Kebijakan Privasi</a> kami.'
+        : 'We use cookies to ensure the best experience on the official Ferwap Music website. By continuing to browse this site, you agree to our <a href="privacy.html" style="color: #3b82f6; text-decoration: underline;">Privacy Policy</a>.';
+
+    const btnText = isIndonesian ? 'Setuju' : 'Accept';
 
     // Buat elemen banner secara dinamis
     const banner = document.createElement('div');
@@ -28,17 +39,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
     banner.innerHTML = `
         <div style="font-size: 0.85rem; line-height: 1.4; max-width: 800px; padding-right: 15px;">
-            Kami menggunakan cookie untuk memastikan pengalaman terbaik di situs resmi Ferwap Music. Dengan terus menjelajahi situs ini, Anda menyetujui <a href="privacy.html" style="color: #3b82f6; text-decoration: underline;">Kebijakan Privasi</a> kami.
+            ${textNotice}
         </div>
         <div style="display: flex; gap: 10px; flex-shrink: 0;">
-            <button id="accept-cookie-btn" style="background-color: #cc0000; color: #ffffff; border: none; padding: 8px 18px; border-radius: 4px; font-weight: bold; cursor: pointer; font-size: 0.85rem; transition: background 0.2s;">Setuju</button>
+            <button id="accept-cookie-btn" style="background-color: #cc0000; color: #ffffff; border: none; padding: 8px 18px; border-radius: 4px; font-weight: bold; cursor: pointer; font-size: 0.85rem; transition: background 0.2s;">${btnText}</button>
         </div>
     `;
 
     // Tempelkan banner ke dalam halaman
     document.body.appendChild(banner);
 
-    // Event listener untuk tombol Setuju
+    // Event listener untuk tombol Setuju / Accept
     document.getElementById('accept-cookie-btn').addEventListener('click', function() {
         localStorage.setItem('ferwap_cookie_accepted', 'true');
         banner.style.display = 'none';
