@@ -144,10 +144,10 @@ body {
     margin-top: 50px;
 }
 
-/* Ukuran Teks Nama Artis di Laptop/Desktop */
+/* Ukuran & Posisi Teks Nama Artis di Laptop/Desktop (Digeser ke Kanan) */
 .artist-label-text {
     position: absolute;
-    left: 20px;
+    left: 55px; 
     font-size: 1.4rem; 
     font-weight: 600;
     z-index: 5;
@@ -309,9 +309,9 @@ body {
     .hero-image-box::after {
         border-radius: 20px;
     }
-    /* Ukuran teks nama artis khusus HP */
+    /* Ukuran & Posisi teks nama artis khusus HP (Digeser ke kanan) */
     .artist-label-text {
-        left: 15px;
+        left: 35px;
         font-size: 1.0rem; 
     }
     .arrow-left { left: -10px; }
