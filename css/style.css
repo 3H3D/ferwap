@@ -237,7 +237,11 @@ body {
 .labels-section {
     background-color: #ffffff;
     color: #000000;
-    padding: 90px 300px;
+    padding: 60px 5%;    /* Padding samping pakai persen (%) supaya fleksibel mengikuti layar */
+    width: 100%;         /* Lebar penuh */
+    max-width: 100%;     /* Membuang batas maksimal agar bisa melebar full */
+    margin: 40px auto;
+    box-sizing: border-box; /* Agar padding tidak membuat halaman jebol ke samping */
 }
 
 .labels-title {
