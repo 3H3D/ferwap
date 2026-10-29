@@ -27,14 +27,16 @@ body {
 }
 
 /* Hero Container */
-.main-container {
+.hero-container {
     width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    max-width: 1200px;  /* Batas lebar area tengah */
+    margin: 0 auto;     /* <-- INI KUNCINYA: Membuat posisi slider otomatis persis di tengah */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Memastikan isi di dalamnya rata tengah */
     box-sizing: border-box;
 }
-
 /* --- LOGO & MENU NAVIGASI BERDAMPINGAN DALAM SATU BARIS --- */
 .main-nav {
     position: absolute;
@@ -166,13 +168,13 @@ body {
 
 .hero-image-box {
     position: relative;
-    width: 90%;          /* Melebar luas secara proporsional mengikuti layar */
-    max-width: 1000px;   /* Batas maksimal agar tetap rapi dan tidak terlalu besar di layar komputer */
-    height: 500px;       /* Tinggi kotak foto artis */
+    width: 90%;          
+    max-width: 1000px;   
+    height: 500px;       
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 10px 40px rgba(0,0,0,0.9);
-    margin: 0 auto;      /* Posisi otomatis di tengah */
+    margin: 0 auto;      /* Hanya ditulis sekali agar posisinya di tengah */
 }
 
 .hero-img {
