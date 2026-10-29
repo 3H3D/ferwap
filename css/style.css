@@ -27,15 +27,12 @@ body {
 }
 
 /* Hero Container */
-.hero-container {
+.main-container {
     width: 100%;
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 20px 20px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
 /* --- LOGO & MENU NAVIGASI BERDAMPINGAN DALAM SATU BARIS --- */
@@ -242,12 +239,17 @@ body {
 .labels-section {
     background-color: #ffffff;
     color: #000000;
-    padding: 60px 40px;  /* Jarak dalam (atas-bawah 60px, samping kiri-kanan 40px) */
-    width: 100%;         /* Membentang selebar layar penuh */
-    max-width: 100%;     /* Menghilangkan batas maksimal */
-    margin: 40px 0 0 0;  /* Menempel rata tanpa ada jarak kosong di kiri-kanan */
-    border-radius: 0;    /* Membuat sudutnya siku-siku agar menyatu rata dengan layar */
-    box-sizing: border-box; /* Agar padding tidak membuat layarnya jebol ke samping */
+    width: 100vw;        /* Lebar penuh memenuhi layar */
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;  /* Keluar dari jalur container agar bisa full */
+    margin-right: -50vw;
+    margin-top: 50px;
+    margin-bottom: 0;
+    padding: 60px 8%;    /* Jarak atas-bawah 60px, samping kiri-kanan 8% */
+    border-radius: 0;    /* Siku rata tanpa lengkungan */
+    box-sizing: border-box;
 }
 .labels-title {
     font-size: 2.2rem;
