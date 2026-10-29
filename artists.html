@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Featured Artists - Ferwap Music</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Gaya Khusus Halaman Artists Latar Belakang Hitam */
+        body {
+            background-color: #000000; /* Latar belakang hitam penuh */
+            color: #ffffff;            /* Teks utama putih */
+            margin: 0;
+            font-family: sans-serif;
+        }
+
+        .artists-section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .artists-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .artists-header h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        /* Grid Kartu Artis */
+        .artists-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+        }
+
+        .artist-card {
+            background-color: #111111;
+            text-decoration: none;
+            display: block;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+            border-radius: 4px;
+        }
+
+        .artist-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
+        }
+
+        .artist-card-img {
+            width: 100%;
+            height: 340px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Kotak Merah di Bawah Foto */
+        .artist-card-info {
+            background-color: #cc0000; /* Warna merah khas label */
+            color: #fff;
+            padding: 18px 15px;
+            text-align: center;
+        }
+
+        .artist-card-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+        }
+
+        .artist-card-sub {
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+    <script src="js/cookie.js"></script>
+<body>
+
+    <!-- Top Header Bar (Logo SONY di Kanan Atas) -->
+    <header class="top-header">
+        <div class="brand-top-right">
+            <span class="sony-logo">Ferwap</span>
+        </div>
+    </header>
+
+    <!-- Hero Main Section & Navigasi -->
+    <section class="hero-container">
+        <nav class="main-nav">
+            <!-- Logo Ferwap Music di sebelah kiri -->
+            <div class="brand-group-left">
+                <a href="index.html" style="display: flex; flex-direction: column; align-items: center; text-decoration: none;">
+                    <img src="Ferwap.jpeg" alt="Ferwap Music Logo" style="height: 90px; width: 90px; border-radius: 50%; object-fit: cover; border: 2px solid #ff0000;">
+                    <span class="sub-brand-text" style="color: #fff; font-weight: bold; letter-spacing: 1px; margin-top: 5px; font-size: 0.85rem;">FERWAP MUSIC</span>
+                </a>
+            </div>
+
+            <!-- Menu Navigasi -->
+            <div class="dropdown">
+                <a href="#" class="drop-btn">About <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem; margin-left: 4px;"></i></a>
+                <div class="dropdown-content">
+                    <a href="artists.html">Featured Artists</a>
+                    <a href="executives.html">Executives</a>
+                    <a href="contacts.html">Contacts</a>
+                </div>
+            </div>
+            <a href="news">News</a>
+            <a href="artists.html">Artists</a>
+            <a href="faq.html">FAQ</a>
+        </nav>
+    </section>
+
+    <!-- Konten Utama Halaman Featured Artists -->
+    <main class="artists-section">
+        <div class="artists-header">
+            <h1>Featured Artists</h1>
+        </div>
+
+        <div class="artists-grid">
+            
+            <!-- Artis 1: 3H3D -->
+            <a href="https://3h3dofficial.web.id" target="_blank" class="artist-card">
+                <img src="3H3D.jpeg" alt="3H3D" class="artist-card-img">
+                <div class="artist-card-info">
+                    <div class="artist-card-name">3H3D</div>
+                    <div class="artist-card-sub">3H3D Official Site</div>
+                </div>
+            </a>
+
+            <!-- Artis 2: ANDER -->
+            <a href="https://3h3d.github.io/ANDER" target="_blank" class="artist-card">
+                <img src="ANDER.jpg" alt="ANDER" class="artist-card-img">
+                <div class="artist-card-info">
+                    <div class="artist-card-name">ANDER</div>
+                    <div class="artist-card-sub">ANDER Official Site</div>
+                </div>
+            </a>
+
+            <!-- Artis 3: Ferrson -->
+            <a href="https://3h3d.github.io/Ferrson" target="_blank" class="artist-card">
+                <img src="Ferrson.F.jpeg" alt="Ferrson" class="artist-card-img">
+                <div class="artist-card-info">
+                    <div class="artist-card-name">Ferrson</div>
+                    <div class="artist-card-sub">Ferrson Official Site</div>
+                </div>
+            </a>
+
+        </div>
+    </main>
+
+     <!-- Footer Section -->
+    <footer class="site-footer">
+        <div class="social-icons">
+            <a href="https://www.facebook.com/ferwapmusic" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/ferwapmusic" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="ferwapmusic.info@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+        <p class="copyright">&copy; 2026 Ferwap Music Entertainment. All Rights Reserved.</p>
+        <div class="footer-links">
+            <a href="privacy.html">Privacy Policy</a> | 
+            <a href="terms.html">Terms of Service</a> | 
+            <a href="copyright.html">Copyright</a>
+        </div>
+    </footer>
+</body>
+</html>
