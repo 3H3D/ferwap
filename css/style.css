@@ -1,4 +1,4 @@
-- {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -93,7 +93,7 @@ body {
     align-items: center;
     padding: 6px 12px;
     border-radius: 4px;
-    transition: background-color 0.2s;
+    transition: background-color: 0.2s;
 }
 
 .drop-btn:hover {
@@ -153,17 +153,17 @@ body {
     letter-spacing: 1.5px;
 }
 
-/* --- WADAH & EFEK GELAP SUDUT GAMBAR (DIOPTIMALKAN) --- */
+/* --- WADAH & EFEK GELAP SUDUT GAMBAR (DIOPTIMALKAN TOTAL) --- */
 .hero-image-box {
     position: relative;
     width: 90%;          
     max-width: 1000px;   
     height: 500px;       
-    border-radius: 16px;
+    border-radius: 24px; /* Membuat sudut kotak wadahnya lebih melengkung halus */
     overflow: hidden;
-    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.95);
     margin: 0 auto;      
     display: block;
+    background-color: #000000; /* Pastikan background wadahnya hitam */
 }
 
 .hero-img {
@@ -171,10 +171,11 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 24px; /* Sudut gambar ikut melengkung */
     transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
-/* Lapisan Blus/Vignette Gelap Lebih Pekat Agar Sudut Hilang Sempurna */
+/* Lapisan Vignette/Blus Hitam Pekat di Seluruh Sisi & Sudut */
 .hero-image-box::after {
     content: "";
     position: absolute;
@@ -182,9 +183,10 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    /* Mulai transparan lebih cepat di tengah, dan langsung pekat hitam total di sudut */
-    background: radial-gradient(circle, rgba(0,0,0,0) 25%, rgba(0,0,0,0.6) 65%, rgba(0,0,0,0.98) 100%);
+    /* Gradasi dibuat lebih tebal di bagian pinggir/sudut agar kotak perseginya lenyap total */
+    background: radial-gradient(circle, rgba(0,0,0,0) 15%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,1) 90%);
     pointer-events: none;
+    border-radius: 24px;
 }
 
 .hero-dots {
@@ -299,6 +301,13 @@ body {
     .hero-image-box {
         width: 95vw;
         height: 350px;
+        border-radius: 20px;
+    }
+    .hero-img {
+        border-radius: 20px;
+    }
+    .hero-image-box::after {
+        border-radius: 20px;
     }
     .artist-label-text {
         left: 10px;
