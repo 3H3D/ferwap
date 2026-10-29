@@ -168,13 +168,13 @@ body {
 
 .hero-image-box {
     position: relative;
-    width: 90%;          
-    max-width: 1000px;   
-    height: 500px;       
+    width: 90%;          /* Lebar proporsional */
+    max-width: 1000px;   /* Batas maksimal agar rapi di komputer */
+    height: 500px;       /* Tinggi kotak foto */
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 10px 40px rgba(0,0,0,0.9);
-    margin: 0 auto;      /* Hanya ditulis sekali agar posisinya di tengah */
+    margin: 0 auto;      /* KUNCI UTAMA: Membuat posisinya otomatis di tengah */
 }
 
 .hero-img {
