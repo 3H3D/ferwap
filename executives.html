@@ -1,22 +1,33 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Executives - Ferwap Music Entertainment</title>
     <link rel="stylesheet" href="css/style.css">
-    <!-- FontAwesome untuk ikon sosial media -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* CSS Tambahan Khusus Halaman Executives */
+        .legal-container {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 0 20px;
+            color: #d1d5db;
+            line-height: 1.7;
+        }
+        .legal-container h1 {
+            color: #ffffff;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
         .executives-grid {
             display: flex;
             flex-direction: column;
             gap: 30px;
             width: 100%;
             max-width: 350px;
+            margin-top: 30px;
         }
-
         .exec-card {
             background-color: #18181b;
             border-radius: 8px;
@@ -24,46 +35,48 @@
             border: 1px solid #27272a;
             box-shadow: 0 8px 20px rgba(0,0,0,0.5);
         }
-
         .exec-img-box {
             width: 100%;
             height: 380px;
         }
-
         .exec-img-box img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             display: block;
         }
-
         .exec-info-box {
             background-color: #8c4222;
             padding: 20px;
             text-align: center;
             color: #ffffff;
         }
-
         .exec-info-box h2 {
             font-size: 1.2rem;
             font-weight: 700;
             margin-bottom: 4px;
         }
-
         .exec-info-box p.title-role {
             font-size: 0.85rem;
             font-weight: 600;
             margin-bottom: 4px;
             opacity: 0.9;
         }
-
         .exec-info-box p.company-name {
             font-size: 0.75rem;
             opacity: 0.8;
         }
     </style>
 </head>
+<script src="js/cookie.js"></script>
 <body>
+
+    <!-- Top Header Bar (Logo Ferwap di Kanan Atas) -->
+    <header class="top-header">
+        <div class="brand-top-right">
+            <span class="sony-logo">Ferwap</span>
+        </div>
+    </header>
 
     <!-- Hero Main Section -->
     <section class="hero-container">
@@ -95,9 +108,11 @@
         </nav>
     </section>
 
-    <!-- Konten Utama Halaman Executives -->
-    <main class="hero-container" style="align-items: flex-start; max-width: 1000px; margin-top: 40px;">
-        <h1 style="font-size: 2rem; font-weight: 700; margin-bottom: 30px; letter-spacing: 1px;">Executives</h1>
+    <!-- Main Content Area -->
+    <main class="legal-container">
+        
+        <h1>Executives</h1>
+        <p>Meet the leadership team behind Ferwap Music Entertainment, guiding the label's creative vision, digital infrastructure, and independent artist management.</p>
 
         <!-- Daftar Profil Eksekutif (Berjajar ke bawah dengan gaya kartu) -->
         <div class="executives-grid">
@@ -127,6 +142,7 @@
             </div>
 
         </div>
+
     </main>
 
     <!-- Footer Section -->
