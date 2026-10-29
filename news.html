@@ -17,7 +17,7 @@
         .legal-container h1 {
             color: #ffffff;
             font-size: 2.2rem;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
             font-weight: 800;
         }
         .legal-container p.intro-text {
@@ -25,77 +25,132 @@
             font-size: 0.95rem;
             margin-bottom: 30px;
         }
-        .news-grid {
+
+        /* Layout Grid Utama (Daftar Berita di Kiri, Sidebar Video di Kanan) */
+        .news-layout {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+            grid-template-columns: 1fr 320px;
+            gap: 50px;
             width: 100%;
         }
-        .news-card {
+
+        /* Daftar Berita Gaya Minimalis List */
+        .news-list {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .news-item {
+            padding-bottom: 25px;
+            border-bottom: 1px solid #27272a;
+        }
+
+        .news-item h3 a {
+            color: #ffffff;
+            font-size: 1.15rem;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 6px;
+            transition: color 0.2s ease;
+        }
+
+        .news-item h3 a:hover {
+            color: #8c4222;
+        }
+
+        .news-date {
+            font-size: 0.8rem;
+            color: #a1a1aa;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .news-snippet {
+            font-size: 0.9rem;
+            color: #a1a1aa;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .read-more-link {
+            display: inline-block;
+            color: #8c4222;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .read-more-link:hover {
+            color: #a64f28;
+            text-decoration: underline;
+        }
+
+        /* Sidebar Kanan (Featured Video) */
+        .news-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .sidebar-section-title {
+            color: #ff4d4d;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .featured-video-box {
             background-color: #18181b;
             border: 1px solid #27272a;
             border-radius: 8px;
             overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            transition: background-color 0.2s ease;
+            padding-bottom: 10px;
         }
-        .news-card:hover {
-            background-color: #202023;
-        }
-        .news-img-box {
+
+        .video-placeholder {
             width: 100%;
-            height: 200px;
+            height: 175px;
             background-color: #121215;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             overflow: hidden;
         }
-        .news-img-box img {
+
+        .video-placeholder img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            opacity: 0.8;
         }
-        .news-content {
-            padding: 20px;
+
+        .play-btn-overlay {
+            position: absolute;
+            font-size: 2.5rem;
+            color: #ffffff;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
             display: flex;
-            flex-direction: column;
-            flex: 1;
+            align-items: center;
+            justify-content: center;
         }
-        .news-date {
+
+        .video-caption {
+            padding: 12px 15px 0 15px;
             font-size: 0.8rem;
             color: #a1a1aa;
-            margin-bottom: 8px;
-            font-weight: 500;
         }
-        .news-content h3 {
-            color: #ffffff;
-            font-size: 1.15rem;
-            margin-bottom: 12px;
-            font-weight: 700;
-            line-height: 1.4;
-        }
-        .news-content p {
-            color: #a1a1aa;
-            font-size: 0.9rem;
-            line-height: 1.5;
-            margin-bottom: 20px;
-            flex: 1;
-        }
-        .btn-news {
-            display: inline-block;
-            background-color: #8c4222;
-            color: #ffffff;
-            text-decoration: none;
-            padding: 8px 16px;
-            border-radius: 6px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            text-align: center;
-            transition: background-color 0.2s ease;
-            align-self: flex-start;
-        }
-        .btn-news:hover {
-            background-color: #a64f28;
+
+        @media (max-width: 900px) {
+            .news-layout {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -125,7 +180,7 @@
                     <a href="artists.html">Featured Artists</a>
                     <a href="#">Labels & Creative Divisions</a>
                     <a href="executives.html">Executives</a>
-                    <a href="#">Contacts</a>
+                    <a href="contacts.html">Contacts</a>
                     <a href="#">Diversity, Equity & Inclusion</a>
                     <a href="#">Giving Back</a>
                 </div>
@@ -139,49 +194,52 @@
     <!-- Main Content Area -->
     <main class="legal-container">
         
-        <h1>Latest News</h1>
-        <p class="intro-text">Stay updated with the latest announcements, music releases, artist updates, and digital infrastructure developments from Ferwap Music Entertainment.</p>
+        <h1>News</h1>
+        <p class="intro-text">Official statements and announcements from Ferwap Music Entertainment.</p>
         
-        <div class="news-grid">
+        <div class="news-layout">
             
-            <!-- Berita 1 -->
-            <article class="news-card">
-                <div class="news-img-box">
-                    <img src="Ferwap.jpeg" alt="News Release">
-                </div>
-                <div class="news-content">
+            <!-- Kolom Kiri: Daftar Berita (List) -->
+            <div class="news-list">
+                
+                <article class="news-item">
+                    <h3><a href="#">Ferwap Music Launches Updated Digital Infrastructure & Release Catalog Management Across Streaming Platforms</a></h3>
                     <span class="news-date">October 29, 2026</span>
-                    <h3>New Official Release Catalog Updates Across Streaming Platforms</h3>
-                    <p>Ferwap Music Entertainment officially rolls out updated metadata tracking and digital infrastructure enhancements for all independent artist catalogs.</p>
-                    <a href="#" class="btn-news">READ MORE »</a>
-                </div>
-            </article>
+                    <p class="news-snippet">Ferwap Music Entertainment officially rolls out updated metadata tracking and digital infrastructure enhancements for all independent artist catalogs, ensuring seamless global distribution...</p>
+                    <a href="#" class="read-more-link">Read More &gt;</a>
+                </article>
 
-            <!-- Berita 2 -->
-            <article class="news-card">
-                <div class="news-img-box">
-                    <img src="3H3D.jpeg" alt="News Artist">
-                </div>
-                <div class="news-content">
+                <article class="news-item">
+                    <h3><a href="#">Artist Spotlight: 3H3D and Independent Production Workflows in Modern Music</a></h3>
                     <span class="news-date">October 15, 2026</span>
-                    <h3>Artist Spotlight: 3H3D and Independent Production Workflows</h3>
-                    <p>An inside look at how raw audio recording setups and independent distribution models empower solo singer-songwriters in today's digital landscape.</p>
-                    <a href="#" class="btn-news">READ MORE »</a>
-                </div>
-            </article>
+                    <p class="news-snippet">An inside look at how raw audio recording setups and independent distribution models empower solo singer-songwriters in today's digital landscape without relying on standard studio barriers...</p>
+                    <a href="#" class="read-more-link">Read More &gt;</a>
+                </article>
 
-            <!-- Berita 3 -->
-            <article class="news-card">
-                <div class="news-img-box">
-                    <img src="Ferrson.F.jpeg" alt="News Label">
-                </div>
-                <div class="news-content">
+                <article class="news-item">
+                    <h3><a href="#">Expanding Global Digital Distribution & Copyright Standards for Independent Creators</a></h3>
                     <span class="news-date">October 01, 2026</span>
-                    <h3>Expanding Global Digital Distribution & Copyright Standards</h3>
-                    <p>Ensuring professional metadata integrity, identifier registrations, and copyright protection across independent music releases worldwide.</p>
-                    <a href="#" class="btn-news">READ MORE »</a>
+                    <p class="news-snippet">Ensuring professional metadata integrity, identifier registrations (ISNI/MusicBrainz), and copyright protection across independent music releases worldwide under Ferwap Music Entertainment...</p>
+                    <a href="#" class="read-more-link">Read More &gt;</a>
+                </article>
+
+            </div>
+
+            <!-- Kolom Kanan: Sidebar Featured Video -->
+            <div class="news-sidebar">
+                <div class="sidebar-section-title">Featured Video</div>
+                <div class="featured-video-box">
+                    <div class="video-placeholder">
+                        <img src="3H3D.jpeg" alt="Featured Video">
+                        <div class="play-btn-overlay">
+                            <i class="fa-solid fa-play" style="font-size: 1.5rem; margin-left: 3px;"></i>
+                        </div>
+                    </div>
+                    <div class="video-caption">
+                        <strong>3H3D &amp; Ferrson</strong> - Official Independent Music Showcase &amp; Release Updates...
+                    </div>
                 </div>
-            </article>
+            </div>
 
         </div>
 
