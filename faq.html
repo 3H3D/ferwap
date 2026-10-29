@@ -5,146 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FAQ - Ferwap Music Entertainment</title>
     <link rel="stylesheet" href="css/style.css">
-    <!-- FontAwesome for social icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Custom CSS for Black Background FAQ */
-        .faq-section-title {
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin: 30px 0 15px 0;
+        .legal-container {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 0 20px;
+            color: #d1d5db;
+            line-height: 1.7;
+        }
+        .legal-container h1 {
             color: #ffffff;
-            letter-spacing: 0.5px;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 800;
         }
-
-        .faq-container-box {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            width: 100%;
+        .legal-container h2 {
+            color: #ffffff;
+            font-size: 1.3rem;
+            margin: 30px 0 15px 0;
+            font-weight: 700;
         }
-
-        .faq-item {
+        .legal-container p {
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+        .faq-box {
             background-color: #18181b;
             border: 1px solid #27272a;
             border-radius: 8px;
-            overflow: hidden;
-            transition: background-color 0.2s ease;
+            padding: 20px;
+            margin-bottom: 15px;
+            transition: background-color 0.2s;
         }
-
-        .faq-item:hover {
+        .faq-box:hover {
             background-color: #202023;
         }
-
-        /* Menggunakan detail & summary agar murni HTML tanpa JS */
-        .faq-question {
-            width: 100%;
-            padding: 18px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: none;
-            border: none;
+        .faq-box h3 {
             color: #ffffff;
-            font-size: 0.95rem;
+            font-size: 1.05rem;
+            margin-bottom: 8px;
             font-weight: 600;
-            text-align: left;
-            cursor: pointer;
-            gap: 15px;
-            list-style: none;
         }
-
-        .faq-question::-webkit-details-marker {
-            display: none;
-        }
-
-        .faq-answer {
-            background-color: #121215;
-            color: #a1a1aa;
-            font-size: 0.9rem;
-            line-height: 1.6;
-            padding: 15px 20px 20px 20px;
-            border-top: 1px solid #27272a;
-        }
-
-        .faq-icon {
-            font-size: 1.1rem;
-            transition: transform 0.3s ease;
+        .faq-box p {
+            margin-bottom: 0;
+            font-size: 0.95rem;
             color: #a1a1aa;
         }
-
-        details[open] .faq-icon {
-            transform: rotate(45deg);
+        .legal-container strong {
             color: #ffffff;
-        }
-
-        /* FAQ Layout Grid (Left Content & Right Sidebar) */
-        .faq-layout {
-            display: grid;
-            grid-template-columns: 1fr 320px;
-            gap: 50px;
-            width: 100%;
-            margin-top: 20px;
-        }
-
-        .faq-sidebar {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-        }
-
-        .sidebar-card {
-            background-color: #18181b;
-            border: 1px solid #27272a;
-            border-radius: 8px;
-            padding: 25px 20px;
-            text-align: center;
-        }
-
-        .sidebar-card h3 {
-            color: #8c4222;
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-
-        .sidebar-card p {
-            color: #a1a1aa;
-            font-size: 0.85rem;
-            line-height: 1.5;
-            margin-bottom: 20px;
-        }
-
-        .btn-faq {
-            display: inline-block;
-            background-color: #8c4222;
-            color: #ffffff;
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 6px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            transition: background-color 0.2s ease;
-        }
-
-        .btn-faq:hover {
-            background-color: #a64f28;
-        }
-
-        @media (max-width: 900px) {
-            .faq-layout {
-                grid-template-columns: 1fr;
-            }
         }
     </style>
 </head>
+<script src="js/cookie.js"></script>
 <body>
+
+    <!-- Top Header Bar (Logo Ferwap di Kanan Atas) -->
+    <header class="top-header">
+        <div class="brand-top-right">
+            <span class="sony-logo">Ferwap</span>
+        </div>
+    </header>
 
     <!-- Hero Main Section -->
     <section class="hero-container">
         <!-- Header Navigasi & Logo Bersanding dalam Satu Baris -->
         <nav class="main-nav">
+            <!-- Logo Ferwap Music diletakkan di sebelah kiri About -->
             <div class="brand-group-left">
                 <a href="index.html" style="display: flex; flex-direction: column; align-items: center; text-decoration: none;">
                     <img src="Ferwap.jpeg" alt="Ferwap Music Logo" style="height: 90px; width: 90px; border-radius: 50%; object-fit: cover; border: 2px solid #ff0000;">
@@ -170,92 +97,41 @@
         </nav>
     </section>
 
-    <!-- Main FAQ Content -->
-    <main class="hero-container" style="align-items: flex-start; max-width: 1050px; margin-top: 40px;">
-        <h1 style="font-size: 2.2rem; font-weight: 700; margin-bottom: 10px; letter-spacing: 1px;">FAQ</h1>
-        <p style="color: #a1a1aa; font-size: 0.95rem; margin-bottom: 30px;">
-            Find general information about Ferwap Music Entertainment, demo submission guidelines, copyright, and independent distribution services.
-        </p>
-
-        <div class="faq-layout">
-            
-            <!-- Left Column: Accordion Questions -->
-            <div class="faq-content">
-                
-                <!-- Category 1 -->
-                <div class="faq-section-title">General Company Information</div>
-                <div class="faq-container-box">
-                    
-                    <details class="faq-item">
-                        <summary class="faq-question">
-                            What is Ferwap Music Entertainment?
-                            <i class="fa-solid fa-plus faq-icon"></i>
-                        </summary>
-                        <div class="faq-answer">
-                            Ferwap Music Entertainment is an independent record label and digital infrastructure ecosystem supporting independent musicians in managing releases, distribution, and metadata professionally.
-                        </div>
-                    </details>
-
-                    <details class="faq-item">
-                        <summary class="faq-question">
-                            Where is Ferwap Music Entertainment located?
-                            <i class="fa-solid fa-plus faq-icon"></i>
-                        </summary>
-                        <div class="faq-answer">
-                            Ferwap Music Entertainment operates digitally with management based in Indonesia, handling global music releases and metadata administration across major digital streaming platforms.
-                        </div>
-                    </details>
-
-                    <details class="faq-item">
-                        <summary class="faq-question">
-                            Which artists are signed under Ferwap Music Entertainment?
-                            <i class="fa-solid fa-plus faq-icon"></i>
-                        </summary>
-                        <div class="faq-answer">
-                            Our release catalog and collaborative network include independent artists such as 3H3D, Ferrson, ANDER, and various independent music projects.
-                        </div>
-                    </details>
-
-                </div>
-
-                <!-- Category 2 -->
-                <div class="faq-section-title">For Artists & Creators</div>
-                <div class="faq-container-box">
-                    
-                    <details class="faq-item">
-                        <summary class="faq-question">
-                            How do I submit a demo to Ferwap Music Entertainment?
-                            <i class="fa-solid fa-plus faq-icon"></i>
-                        </summary>
-                        <div class="faq-answer">
-                            You can send private streaming links (such as Soundcloud Private or Google Drive) along with brief information about your music project to our official management email at <strong>ferwapmusic.info@gmail.com</strong>.
-                        </div>
-                    </details>
-
-                    <details class="faq-item">
-                        <summary class="faq-question">
-                            Who should I contact regarding copyright, royalties, or ISNI / MBI registration?
-                            <i class="fa-solid fa-plus faq-icon"></i>
-                        </summary>
-                        <div class="faq-answer">
-                            For inquiries regarding release metadata administration, identifier registrations (ISNI/MusicBrainz), or catalog administration, please contact our label management team via email.
-                        </div>
-                    </details>
-
-                </div>
-
-            </div>
-
-            <!-- Right Column: Sidebar / Help Card -->
-            <div class="faq-sidebar">
-                <div class="sidebar-card">
-                    <h3>Have a Question for Ferwap Music?</h3>
-                    <p>Need direct assistance regarding licensing, demo submission policy, or press contacts?</p>
-                    <a href="mailto:ferwapmusic.info@gmail.com" class="btn-faq">CONTACT US »</a>
-                </div>
-            </div>
-
+    <!-- Main Content Area -->
+    <main class="legal-container">
+        
+        <h1>FAQ</h1>
+        <p>Find general information about Ferwap Music Entertainment, demo submission guidelines, copyright, and independent distribution services.</p>
+        
+        <h2>General Company Information</h2>
+        
+        <div class="faq-box">
+            <h3>What is Ferwap Music Entertainment?</h3>
+            <p>Ferwap Music Entertainment is an independent record label and digital infrastructure ecosystem supporting independent musicians in managing releases, distribution, and metadata professionally.</p>
         </div>
+
+        <div class="faq-box">
+            <h3>Where is Ferwap Music Entertainment located?</h3>
+            <p>Ferwap Music Entertainment operates digitally with management based in Indonesia, handling global music releases and metadata administration across major digital streaming platforms.</p>
+        </div>
+
+        <div class="faq-box">
+            <h3>Which artists are signed under Ferwap Music Entertainment?</h3>
+            <p>Our release catalog and collaborative network include independent artists such as 3H3D, Ferrson, ANDER, and various independent music projects.</p>
+        </div>
+
+        <h2>For Artists & Creators</h2>
+
+        <div class="faq-box">
+            <h3>How do I submit a demo to Ferwap Music Entertainment?</h3>
+            <p>You can send private streaming links (such as Soundcloud Private or Google Drive) along with brief information about your music project to our official management email at <strong>ferwapmusic.info@gmail.com</strong>.</p>
+        </div>
+
+        <div class="faq-box">
+            <h3>Who should I contact regarding copyright, royalties, or ISNI / MBI registration?</h3>
+            <p>For inquiries regarding release metadata administration, identifier registrations (ISNI/MusicBrainz), or catalog administration, please contact our label management team via email.</p>
+        </div>
+
     </main>
 
     <!-- Footer Section -->
