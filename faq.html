@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FAQ - Ferwap Music Entertainment</title>
     <link rel="stylesheet" href="css/style.css">
-    <!-- FontAwesome for social icons & accordion -->
+    <!-- FontAwesome for social icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Custom CSS for Black Background Accordion FAQ */
+        /* Custom CSS for Black Background FAQ */
         .faq-section-title {
             font-size: 1.1rem;
             font-weight: 700;
@@ -36,6 +36,7 @@
             background-color: #202023;
         }
 
+        /* Menggunakan detail & summary agar murni HTML tanpa JS */
         .faq-question {
             width: 100%;
             padding: 18px 20px;
@@ -50,22 +51,20 @@
             text-align: left;
             cursor: pointer;
             gap: 15px;
+            list-style: none;
+        }
+
+        .faq-question::-webkit-details-marker {
+            display: none;
         }
 
         .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease, padding 0.3s ease;
             background-color: #121215;
             color: #a1a1aa;
             font-size: 0.9rem;
             line-height: 1.6;
-            padding: 0 20px;
-        }
-
-        .faq-item.active .faq-answer {
             padding: 15px 20px 20px 20px;
-            max-height: 300px;
+            border-top: 1px solid #27272a;
         }
 
         .faq-icon {
@@ -74,8 +73,8 @@
             color: #a1a1aa;
         }
 
-        .faq-item.active .faq-icon {
-            transform: rotate(45deg); /* Turns + into x when open */
+        details[open] .faq-icon {
+            transform: rotate(45deg);
             color: #ffffff;
         }
 
@@ -103,7 +102,7 @@
         }
 
         .sidebar-card h3 {
-            color: #8c4222; /* Ferwap orange/brown accent color */
+            color: #8c4222;
             font-size: 1.1rem;
             font-weight: 700;
             margin-bottom: 12px;
@@ -143,33 +142,33 @@
 <body>
 
     <!-- Hero Main Section -->
-        <section class="hero-container">
-            <!-- Header Navigasi & Logo Bersanding dalam Satu Baris -->
-            <nav class="main-nav">
-                <!-- Logo Ferwap Music diletakkan di sebelah kiri About -->
-                <div class="brand-group-left">
+    <section class="hero-container">
+        <!-- Header Navigasi & Logo Bersanding dalam Satu Baris -->
+        <nav class="main-nav">
+            <div class="brand-group-left">
                 <a href="index.html" style="display: flex; flex-direction: column; align-items: center; text-decoration: none;">
                     <img src="Ferwap.jpeg" alt="Ferwap Music Logo" style="height: 90px; width: 90px; border-radius: 50%; object-fit: cover; border: 2px solid #ff0000;">
                     <span class="sub-brand-text" style="color: #fff; font-weight: bold; letter-spacing: 1px; margin-top: 5px; font-size: 0.85rem;">FERWAP MUSIC</span>
                 </a>
             </div>
 
-                <!-- Menu Navigasi -->
-                <div class="dropdown">
-                    <a href="#" class="drop-btn">About <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem; margin-left: 4px;"></i></a>
-                    <div class="dropdown-content">
-                        <a href="artists.html">Featured Artists</a>
-                        <a href="#">Labels & Creative Divisions</a>
-                        <a href="executives.html">Executives</a>
-                        <a href="#">Contacts</a>
-                        <a href="#">Diversity, Equity & Inclusion</a>
-                        <a href="#">Giving Back</a>
-                    </div>
+            <!-- Menu Navigasi -->
+            <div class="dropdown">
+                <a href="#" class="drop-btn">About <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem; margin-left: 4px;"></i></a>
+                <div class="dropdown-content">
+                    <a href="artists.html">Featured Artists</a>
+                    <a href="#">Labels & Creative Divisions</a>
+                    <a href="executives.html">Executives</a>
+                    <a href="#">Contacts</a>
+                    <a href="#">Diversity, Equity & Inclusion</a>
+                    <a href="#">Giving Back</a>
                 </div>
-                <a href="#">News</a>
-                <a href="artists.html">Artists</a>
-                <a href="faq.html">FAQ</a>
-            </nav>
+            </div>
+            <a href="#">News</a>
+            <a href="artists.html">Artists</a>
+            <a href="faq.html">FAQ</a>
+        </nav>
+    </section>
 
     <!-- Main FAQ Content -->
     <main class="hero-container" style="align-items: flex-start; max-width: 1050px; margin-top: 40px;">
@@ -187,35 +186,35 @@
                 <div class="faq-section-title">General Company Information</div>
                 <div class="faq-container-box">
                     
-                    <div class="faq-item">
-                        <button class="faq-question">
+                    <details class="faq-item">
+                        <summary class="faq-question">
                             What is Ferwap Music Entertainment?
                             <i class="fa-solid fa-plus faq-icon"></i>
-                        </button>
+                        </summary>
                         <div class="faq-answer">
                             Ferwap Music Entertainment is an independent record label and digital infrastructure ecosystem supporting independent musicians in managing releases, distribution, and metadata professionally.
                         </div>
-                    </div>
+                    </details>
 
-                    <div class="faq-item">
-                        <button class="faq-question">
+                    <details class="faq-item">
+                        <summary class="faq-question">
                             Where is Ferwap Music Entertainment located?
                             <i class="fa-solid fa-plus faq-icon"></i>
-                        </button>
+                        </summary>
                         <div class="faq-answer">
                             Ferwap Music Entertainment operates digitally with management based in Indonesia, handling global music releases and metadata administration across major digital streaming platforms.
                         </div>
-                    </div>
+                    </details>
 
-                    <div class="faq-item">
-                        <button class="faq-question">
+                    <details class="faq-item">
+                        <summary class="faq-question">
                             Which artists are signed under Ferwap Music Entertainment?
                             <i class="fa-solid fa-plus faq-icon"></i>
-                        </button>
+                        </summary>
                         <div class="faq-answer">
                             Our release catalog and collaborative network include independent artists such as 3H3D, Ferrson, ANDER, and various independent music projects.
                         </div>
-                    </div>
+                    </details>
 
                 </div>
 
@@ -223,25 +222,25 @@
                 <div class="faq-section-title">For Artists & Creators</div>
                 <div class="faq-container-box">
                     
-                    <div class="faq-item">
-                        <button class="faq-question">
+                    <details class="faq-item">
+                        <summary class="faq-question">
                             How do I submit a demo to Ferwap Music Entertainment?
                             <i class="fa-solid fa-plus faq-icon"></i>
-                        </button>
+                        </summary>
                         <div class="faq-answer">
                             You can send private streaming links (such as Soundcloud Private or Google Drive) along with brief information about your music project to our official management email at <strong>ferwapmusic.info@gmail.com</strong>.
                         </div>
-                    </div>
+                    </details>
 
-                    <div class="faq-item">
-                        <button class="faq-question">
+                    <details class="faq-item">
+                        <summary class="faq-question">
                             Who should I contact regarding copyright, royalties, or ISNI / MBI registration?
                             <i class="fa-solid fa-plus faq-icon"></i>
-                        </button>
+                        </summary>
                         <div class="faq-answer">
                             For inquiries regarding release metadata administration, identifier registrations (ISNI/MusicBrainz), or catalog administration, please contact our label management team via email.
                         </div>
-                    </div>
+                    </details>
 
                 </div>
 
@@ -249,24 +248,22 @@
 
             <!-- Right Column: Sidebar / Help Card -->
             <div class="faq-sidebar">
-                
                 <div class="sidebar-card">
                     <h3>Have a Question for Ferwap Music?</h3>
                     <p>Need direct assistance regarding licensing, demo submission policy, or press contacts?</p>
                     <a href="mailto:ferwapmusic.info@gmail.com" class="btn-faq">CONTACT US »</a>
                 </div>
-
             </div>
 
         </div>
     </main>
 
-     <!-- Footer Section -->
+    <!-- Footer Section -->
     <footer class="site-footer">
         <div class="social-icons">
             <a href="https://www.facebook.com/ferwapmusic" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="https://www.instagram.com/ferwapmusic" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="ferwapmusic.info@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+            <a href="mailto:ferwapmusic.info@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
         </div>
         <p class="copyright">&copy; 2026 Ferwap Music Entertainment. All Rights Reserved.</p>
         <div class="footer-links">
@@ -275,25 +272,6 @@
             <a href="copyright.html">Copyright</a>
         </div>
     </footer>
-
-    <!-- Interactive Accordion JavaScript (+ / -) -->
-    <script>
-        document.querySelectorAll('.faq-question').forEach(button => {
-            button.addEventListener('click', () => {
-                const faqItem = button.parentElement;
-                
-                // Close other items when one is opened
-                document.querySelectorAll('.faq-item').forEach(item => {
-                    if (item !== faqItem) {
-                        item.classList.remove('active');
-                    }
-                });
-
-                // Toggle open/close state of clicked item
-                faqItem.classList.toggle('active');
-            });
-        });
-    </script>
 
 </body>
 </html>
