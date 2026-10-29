@@ -7,10 +7,12 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Gaya Khusus Halaman Artists ala Sony Music */
+        /* Gaya Khusus Halaman Artists Latar Belakang Hitam */
         body {
-            background-color: #fff; /* Latar belakang bersih/putih */
-            color: #111;
+            background-color: #000000; /* Latar belakang hitam penuh */
+            color: #ffffff;            /* Teks utama putih */
+            margin: 0;
+            font-family: sans-serif;
         }
 
         .artists-section {
@@ -28,7 +30,7 @@
             font-size: 2.8rem;
             font-weight: 800;
             letter-spacing: 1px;
-            color: #111;
+            color: #ffffff;
             margin-bottom: 10px;
         }
 
@@ -40,17 +42,18 @@
         }
 
         .artist-card {
-            background-color: #fff;
+            background-color: #111111;
             text-decoration: none;
             display: block;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             overflow: hidden;
+            border-radius: 4px;
         }
 
         .artist-card:hover {
             transform: translateY(-6px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
         }
 
         .artist-card-img {
@@ -60,7 +63,7 @@
             display: block;
         }
 
-        /* Kotak Merah di Bawah Foto ala Label Besar */
+        /* Kotak Merah di Bawah Foto */
         .artist-card-info {
             background-color: #cc0000; /* Warna merah khas label */
             color: #fff;
@@ -92,34 +95,34 @@
         </div>
     </header>
 
-<!-- Hero Main Section -->
-        <section class="hero-container">
-            <!-- Header Navigasi & Logo Bersanding dalam Satu Baris -->
-            <nav class="main-nav">
-                <!-- Logo Ferwap Music diletakkan di sebelah kiri About -->
-                <div class="brand-group-left">
+    <!-- Hero Main Section & Navigasi -->
+    <section class="hero-container">
+        <nav class="main-nav">
+            <!-- Logo Ferwap Music di sebelah kiri -->
+            <div class="brand-group-left">
                 <a href="index.html" style="display: flex; flex-direction: column; align-items: center; text-decoration: none;">
                     <img src="Ferwap.jpeg" alt="Ferwap Music Logo" style="height: 90px; width: 90px; border-radius: 50%; object-fit: cover; border: 2px solid #ff0000;">
                     <span class="sub-brand-text" style="color: #fff; font-weight: bold; letter-spacing: 1px; margin-top: 5px; font-size: 0.85rem;">FERWAP MUSIC</span>
                 </a>
             </div>
 
-                <!-- Menu Navigasi -->
-                <div class="dropdown">
-                    <a href="#" class="drop-btn">About <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem; margin-left: 4px;"></i></a>
-                    <div class="dropdown-content">
-                        <a href="artists.html">Featured Artists</a>
-                        <a href="#">Labels & Creative Divisions</a>
-                        <a href="#">Executives</a>
-                        <a href="#">Contacts</a>
-                        <a href="#">Diversity, Equity & Inclusion</a>
-                        <a href="#">Giving Back</a>
-                    </div>
+            <!-- Menu Navigasi -->
+            <div class="dropdown">
+                <a href="#" class="drop-btn">About <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem; margin-left: 4px;"></i></a>
+                <div class="dropdown-content">
+                    <a href="artists.html">Featured Artists</a>
+                    <a href="#">Labels & Creative Divisions</a>
+                    <a href="#">Executives</a>
+                    <a href="#">Contacts</a>
+                    <a href="#">Diversity, Equity & Inclusion</a>
+                    <a href="#">Giving Back</a>
                 </div>
-                <a href="#">News</a>
-                <a href="artists.html">Artists</a>
-                <a href="#">FAQ</a>
-            </nav>
+            </div>
+            <a href="#">News</a>
+            <a href="artists.html">Artists</a>
+            <a href="#">FAQ</a>
+        </nav>
+    </section>
 
     <!-- Konten Utama Halaman Featured Artists -->
     <main class="artists-section">
