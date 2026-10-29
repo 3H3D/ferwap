@@ -28,14 +28,14 @@ body {
 
 /* Hero Container */
 .hero-container {
-    position: relative;
     width: 100%;
-    min-height: 85vh;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px 20px;
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 40px 0;
 }
 
 /* --- LOGO & MENU NAVIGASI BERDAMPINGAN DALAM SATU BARIS --- */
@@ -169,11 +169,13 @@ body {
 
 .hero-image-box {
     position: relative;
-    width: 1480px;
-    height: 490px;
-    border-radius: 4px;
+    width: 90%;          /* Mengambil sebagian besar lebar layar secara proporsional */
+    max-width: 900px;    /* Batas maksimal agar di layar komputer tetap rapi dan tidak terlalu raksasa */
+    height: 520px;       /* Sesuaikan tingginya agar fotonya tetap seimbang */
+    border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 10px 40px rgba(0,0,0,0.9);
+    margin: 0 auto;      /* Otomatis berada di tengah */
 }
 
 .hero-img {
