@@ -8,25 +8,31 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         .legal-container {
-            max-width: 800px;
-            margin: 60px auto;
+            max-width: 1200px;
+            margin: 40px auto;
             padding: 0 20px;
             color: #d1d5db;
             line-height: 1.7;
         }
         .legal-container h1 {
             color: #ffffff;
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
             font-weight: 800;
         }
+        .legal-container p.intro-text {
+            color: #a1a1aa;
+            font-size: 0.95rem;
+            margin-bottom: 30px;
+        }
+
+        /* Layout Grid Berjajar Ke Samping seperti Featured Artists */
         .executives-grid {
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
             width: 100%;
-            max-width: 350px;
-            margin-top: 30px;
+            margin-top: 20px;
         }
         .exec-card {
             background-color: #18181b;
@@ -34,6 +40,8 @@
             overflow: hidden;
             border: 1px solid #27272a;
             box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
         }
         .exec-img-box {
             width: 100%;
@@ -45,26 +53,28 @@
             object-fit: cover;
             display: block;
         }
+        /* Kotak Keterangan Warna Merah seperti Artist Cards */
         .exec-info-box {
-            background-color: #8c4222;
+            background-color: #ff0000;
             padding: 20px;
             text-align: center;
             color: #ffffff;
         }
         .exec-info-box h2 {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             font-weight: 700;
             margin-bottom: 4px;
+            letter-spacing: 0.5px;
         }
         .exec-info-box p.title-role {
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             font-weight: 600;
             margin-bottom: 4px;
-            opacity: 0.9;
+            opacity: 0.95;
         }
         .exec-info-box p.company-name {
-            font-size: 0.75rem;
-            opacity: 0.8;
+            font-size: 0.8rem;
+            opacity: 0.9;
         }
     </style>
 </head>
@@ -109,9 +119,9 @@
     <main class="legal-container">
         
         <h1>Executives</h1>
-        <p>Meet the leadership team behind Ferwap Music Entertainment, guiding the label's creative vision, digital infrastructure, and independent artist management.</p>
+        <p class="intro-text">Meet the leadership team behind Ferwap Music Entertainment, guiding the label's creative vision, digital infrastructure, and independent artist management.</p>
 
-        <!-- Daftar Profil Eksekutif (Berjajar ke bawah dengan gaya kartu) -->
+        <!-- Daftar Profil Eksekutif (Berjajar ke Samping) -->
         <div class="executives-grid">
             
             <!-- Profil 1: Efer Totouw -->
