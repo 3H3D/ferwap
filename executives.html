@@ -7,82 +7,134 @@
     <link rel="stylesheet" href="css/style.css">
     <!-- FontAwesome untuk ikon sosial media -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* CSS Tambahan Khusus Halaman Executives */
+        .executives-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            width: 100%;
+            max-width: 350px;
+        }
+
+        .exec-card {
+            background-color: #18181b;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #27272a;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+        }
+
+        .exec-img-box {
+            width: 100%;
+            height: 380px;
+        }
+
+        .exec-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .exec-info-box {
+            background-color: #8c4222;
+            padding: 20px;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .exec-info-box h2 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .exec-info-box p.title-role {
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+            opacity: 0.9;
+        }
+
+        .exec-info-box p.company-name {
+            font-size: 0.75rem;
+            opacity: 0.8;
+        }
+    </style>
 </head>
 <body>
 
     <!-- Hero Main Section -->
-        <section class="hero-container">
-            <!-- Header Navigasi & Logo Bersanding dalam Satu Baris -->
-            <nav class="main-nav">
-                <!-- Logo Ferwap Music diletakkan di sebelah kiri About -->
-                <div class="brand-group-left">
+    <section class="hero-container">
+        <!-- Header Navigasi & Logo Bersanding dalam Satu Baris -->
+        <nav class="main-nav">
+            <!-- Logo Ferwap Music diletakkan di sebelah kiri About -->
+            <div class="brand-group-left">
                 <a href="index.html" style="display: flex; flex-direction: column; align-items: center; text-decoration: none;">
                     <img src="Ferwap.jpeg" alt="Ferwap Music Logo" style="height: 90px; width: 90px; border-radius: 50%; object-fit: cover; border: 2px solid #ff0000;">
                     <span class="sub-brand-text" style="color: #fff; font-weight: bold; letter-spacing: 1px; margin-top: 5px; font-size: 0.85rem;">FERWAP MUSIC</span>
                 </a>
             </div>
 
-                <!-- Menu Navigasi -->
-                <div class="dropdown">
-                    <a href="#" class="drop-btn">About <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem; margin-left: 4px;"></i></a>
-                    <div class="dropdown-content">
-                        <a href="artists.html">Featured Artists</a>
-                        <a href="#">Labels & Creative Divisions</a>
-                        <a href="executives.html">Executives</a>
-                        <a href="#">Contacts</a>
-                        <a href="#">Diversity, Equity & Inclusion</a>
-                        <a href="#">Giving Back</a>
-                    </div>
+            <!-- Menu Navigasi -->
+            <div class="dropdown">
+                <a href="#" class="drop-btn">About <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem; margin-left: 4px;"></i></a>
+                <div class="dropdown-content">
+                    <a href="artists.html">Featured Artists</a>
+                    <a href="#">Labels & Creative Divisions</a>
+                    <a href="executives.html">Executives</a>
+                    <a href="#">Contacts</a>
+                    <a href="#">Diversity, Equity & Inclusion</a>
+                    <a href="#">Giving Back</a>
                 </div>
-                <a href="#">News</a>
-                <a href="artists.html">Artists</a>
-                <a href="faq.html">FAQ</a>
-            </nav>
+            </div>
+            <a href="#">News</a>
+            <a href="artists.html">Artists</a>
+            <a href="faq.html">FAQ</a>
+        </nav>
+    </section>
 
     <!-- Konten Utama Halaman Executives -->
     <main class="hero-container" style="align-items: flex-start; max-width: 1000px; margin-top: 40px;">
         <h1 style="font-size: 2rem; font-weight: 700; margin-bottom: 30px; letter-spacing: 1px;">Executives</h1>
 
         <!-- Daftar Profil Eksekutif (Berjajar ke bawah dengan gaya kartu) -->
-        <div style="display: flex; flex-direction: column; gap: 30px; width: 100%; max-width: 350px;">
+        <div class="executives-grid">
             
             <!-- Profil 1: Efer Totouw -->
-            <div style="background-color: #18181b; border-radius: 8px; overflow: hidden; border: 1px solid #27272a; box-shadow: 0 8px 20px rgba(0,0,0,0.5);">
-                <!-- Foto -->
-                <div style="width: 100%; height: 380px;">
-                    <img src="Ferrson.F.jpeg" alt="Efer Totouw" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            <div class="exec-card">
+                <div class="exec-img-box">
+                    <img src="Ferrson.F.jpeg" alt="Efer Totouw">
                 </div>
-                <!-- Kotak Keterangan di Bawah Foto -->
-                <div style="background-color: #8c4222; padding: 20px; text-align: center; color: #ffffff;">
-                    <h2 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 4px;">Efer Totouw</h2>
-                    <p style="font-size: 0.85rem; font-weight: 600; margin-bottom: 4px; opacity: 0.9;">Founder & Executive Director</p>
-                    <p style="font-size: 0.75rem; opacity: 0.8;">Ferwap Music Entertainment</p>
+                <div class="exec-info-box">
+                    <h2>Efer Totouw</h2>
+                    <p class="title-role">Founder & Executive Director</p>
+                    <p class="company-name">Ferwap Music Entertainment</p>
                 </div>
             </div>
 
             <!-- Profil 2: Abednego Totouw -->
-            <div style="background-color: #18181b; border-radius: 8px; overflow: hidden; border: 1px solid #27272a; box-shadow: 0 8px 20px rgba(0,0,0,0.5);">
-                <!-- Foto -->
-                <div style="width: 100%; height: 380px;">
-                    <img src="3H3D.jpeg" alt="Abednego Totouw" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            <div class="exec-card">
+                <div class="exec-img-box">
+                    <img src="3H3D.jpeg" alt="Abednego Totouw">
                 </div>
-                <!-- Kotak Keterangan di Bawah Foto -->
-                <div style="background-color: #8c4222; padding: 20px; text-align: center; color: #ffffff;">
-                    <h2 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 4px;">Abednego Totouw</h2>
-                    <p style="font-size: 0.85rem; font-weight: 600; margin-bottom: 4px; opacity: 0.9;">Executive Management</p>
-                    <p style="font-size: 0.75rem; opacity: 0.8;">Ferwap Music Entertainment</p>
+                <div class="exec-info-box">
+                    <h2>Abednego Totouw</h2>
+                    <p class="title-role">Executive Management</p>
+                    <p class="company-name">Ferwap Music Entertainment</p>
                 </div>
             </div>
 
         </div>
     </main>
 
-     <!-- Footer Section -->
+    <!-- Footer Section -->
     <footer class="site-footer">
         <div class="social-icons">
             <a href="https://www.facebook.com/ferwapmusic" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="https://www.instagram.com/ferwapmusic" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="ferwapmusic.info@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+            <a href="mailto:ferwapmusic.info@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
         </div>
         <p class="copyright">&copy; 2026 Ferwap Music Entertainment. All Rights Reserved.</p>
         <div class="footer-links">
@@ -91,5 +143,6 @@
             <a href="copyright.html">Copyright</a>
         </div>
     </footer>
+
 </body>
 </html>
