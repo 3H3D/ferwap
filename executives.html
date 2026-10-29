@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Executives - Ferwap Music Entertainment</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .legal-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            color: #d1d5db;
+            line-height: 1.7;
+        }
+        .legal-container h1 {
+            color: #ffffff;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+        .legal-container p.intro-text {
+            color: #a1a1aa;
+            font-size: 0.95rem;
+            margin-bottom: 30px;
+        }
+
+        /* Layout Grid Berjajar Ke Samping seperti Featured Artists */
+        .executives-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            width: 100%;
+            margin-top: 20px;
+        }
+        .exec-card {
+            background-color: #18181b;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #27272a;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+        }
+        .exec-img-box {
+            width: 100%;
+            height: 380px;
+        }
+        .exec-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        /* Kotak Keterangan Warna Merah seperti Artist Cards */
+        .exec-info-box {
+            background-color: #ff0000;
+            padding: 20px;
+            text-align: center;
+            color: #ffffff;
+        }
+        .exec-info-box h2 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+            letter-spacing: 0.5px;
+        }
+        .exec-info-box p.title-role {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+            opacity: 0.95;
+        }
+        .exec-info-box p.company-name {
+            font-size: 0.8rem;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<script src="js/cookie.js"></script>
+<body>
+
+    <!-- Top Header Bar (Logo Ferwap di Kanan Atas) -->
+    <header class="top-header">
+        <div class="brand-top-right">
+            <span class="sony-logo">Ferwap</span>
+        </div>
+    </header>
+
+    <!-- Hero Main Section -->
+    <section class="hero-container">
+        <!-- Header Navigasi & Logo Bersanding dalam Satu Baris -->
+        <nav class="main-nav">
+            <!-- Logo Ferwap Music diletakkan di sebelah kiri About -->
+            <div class="brand-group-left">
+                <a href="index.html" style="display: flex; flex-direction: column; align-items: center; text-decoration: none;">
+                    <img src="Ferwap.jpeg" alt="Ferwap Music Logo" style="height: 90px; width: 90px; border-radius: 50%; object-fit: cover; border: 2px solid #ff0000;">
+                    <span class="sub-brand-text" style="color: #fff; font-weight: bold; letter-spacing: 1px; margin-top: 5px; font-size: 0.85rem;">FERWAP MUSIC</span>
+                </a>
+            </div>
+
+            <!-- Menu Navigasi -->
+            <div class="dropdown">
+                <a href="#" class="drop-btn">About <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem; margin-left: 4px;"></i></a>
+                <div class="dropdown-content">
+                    <a href="artists.html">Featured Artists</a>
+                    <a href="executives.html">Executives</a>
+                    <a href="contacts.html">Contacts</a>
+                </div>
+            </div>
+            <a href="news.html">News</a>
+            <a href="artists.html">Artists</a>
+            <a href="faq.html">FAQ</a>
+        </nav>
+    </section>
+
+    <!-- Main Content Area -->
+    <main class="legal-container">
+        
+        <h1>Executives</h1>
+        <p class="intro-text">Meet the leadership team behind Ferwap Music Entertainment, guiding the label's creative vision, digital infrastructure, and independent artist management.</p>
+
+        <!-- Daftar Profil Eksekutif (Berjajar ke Samping) -->
+        <div class="executives-grid">
+            
+            <!-- Profil 1: Efer Totouw -->
+            <div class="exec-card">
+                <div class="exec-img-box">
+                    <img src="Ferrson.F.jpeg" alt="Efer Totouw">
+                </div>
+                <div class="exec-info-box">
+                    <h2>Efer Totouw</h2>
+                    <p class="title-role">Founder & Executive Director</p>
+                    <p class="company-name">Ferwap Music Entertainment</p>
+                </div>
+            </div>
+
+            <!-- Profil 2: Abednego Totouw -->
+            <div class="exec-card">
+                <div class="exec-img-box">
+                    <img src="3H3D.jpeg" alt="Abednego Totouw">
+                </div>
+                <div class="exec-info-box">
+                    <h2>Abednego Totouw</h2>
+                    <p class="title-role">Executive Management</p>
+                    <p class="company-name">Ferwap Music Entertainment</p>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="site-footer">
+        <div class="social-icons">
+            <a href="https://www.facebook.com/ferwapmusic" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/ferwapmusic" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="mailto:ferwapmusic.info@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+        <p class="copyright">&copy; 2026 Ferwap Music Entertainment. All Rights Reserved.</p>
+        <div class="footer-links">
+            <a href="privacy.html">Privacy Policy</a> | 
+            <a href="terms.html">Terms of Service</a> | 
+            <a href="copyright.html">Copyright</a>
+        </div>
+    </footer>
+
+</body>
+</html>
