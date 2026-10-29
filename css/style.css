@@ -169,11 +169,15 @@ body {
 
 .hero-image-box {
     position: relative;
+    width: 90%;          /* Mengambil sebagian besar lebar layar secara proporsional */
+    max-width: 900px;    /* Batas maksimal agar di layar komputer tetap rapi dan tidak terlalu raksasa */
+    height: 520px;       /* Sesuaikan tingginya agar fotonya tetap seimbang */
     width: 750px;   /* Perbesar lebarnya */
     height: 480px;  /* Perbesar tingginya */
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 10px 40px rgba(0,0,0,0.9);
+    margin: 0 auto;      /* Otomatis berada di tengah */
     margin: 0 auto;
 }
 
