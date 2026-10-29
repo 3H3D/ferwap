@@ -242,13 +242,13 @@ body {
 .labels-section {
     background-color: #ffffff;
     color: #000000;
-    padding: 60px 5%;    /* Padding samping pakai persen (%) supaya fleksibel mengikuti layar */
-    width: 100%;         /* Lebar penuh */
-    max-width: 100%;     /* Membuang batas maksimal agar bisa melebar full */
-    margin: 40px auto;
-    box-sizing: border-box; /* Agar padding tidak membuat halaman jebol ke samping */
+    padding: 60px 40px;  /* Jarak dalam (atas-bawah 60px, samping kiri-kanan 40px) */
+    width: 100%;         /* Membentang selebar layar penuh */
+    max-width: 100%;     /* Menghilangkan batas maksimal */
+    margin: 40px 0 0 0;  /* Menempel rata tanpa ada jarak kosong di kiri-kanan */
+    border-radius: 0;    /* Membuat sudutnya siku-siku agar menyatu rata dengan layar */
+    box-sizing: border-box; /* Agar padding tidak membuat layarnya jebol ke samping */
 }
-
 .labels-title {
     font-size: 2.2rem;
     font-weight: 800;
