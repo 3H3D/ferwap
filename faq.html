@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Ferwap Music Entertainment</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- FontAwesome untuk ikon sosial media & accordion -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* CSS Khusus Tampilan Accordion FAQ Berlatar Belakang Hitam */
+        .faq-section-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin: 30px 0 15px 0;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+        }
+
+        .faq-container-box {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            width: 100%;
+        }
+
+        .faq-item {
+            background-color: #18181b;
+            border: 1px solid #27272a;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: background-color 0.2s ease;
+        }
+
+        .faq-item:hover {
+            background-color: #202023;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 18px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: none;
+            border: none;
+            color: #ffffff;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-align: left;
+            cursor: pointer;
+            gap: 15px;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            background-color: #121215;
+            color: #a1a1aa;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            padding: 0 20px;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 15px 20px 20px 20px;
+            max-height: 300px;
+        }
+
+        .faq-icon {
+            font-size: 1.1rem;
+            transition: transform 0.3s ease;
+            color: #a1a1aa;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg); /* Mengubah tanda + menjadi x saat terbuka */
+            color: #ffffff;
+        }
+
+        /* Layout Grid Halaman FAQ (Konten Kiri & Sidebar Kanan) */
+        .faq-layout {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 50px;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .faq-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .sidebar-card {
+            background-color: #18181b;
+            border: 1px solid #27272a;
+            border-radius: 8px;
+            padding: 25px 20px;
+            text-align: center;
+        }
+
+        .sidebar-card h3 {
+            color: #8c4222; /* Aksena warna oranye/cokelat Ferwap */
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .sidebar-card p {
+            color: #a1a1aa;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .btn-faq {
+            display: inline-block;
+            background-color: #8c4222;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-faq:hover {
+            background-color: #a64f28;
+        }
+
+        @media (max-width: 900px) {
+            .faq-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigasi Atas -->
+    <header class="top-header">
+        <div class="sony-logo">FERWAP</div>
+    </header>
+
+    <nav class="main-nav">
+        <div class="brand-group-left">
+            <a href="index.html">
+                <img src="Ferwap.jpeg" alt="Ferwap Logo" style="width: 35px; height: 35px; border-radius: 50%; object-fit: cover;">
+            </a>
+            <span class="sub-brand-text">FERWAP MUSIC</span>
+        </div>
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+            <a href="#" class="drop-btn">About <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem; margin-left: 5px;"></i></a>
+            <div class="dropdown-content">
+                <a href="executives.html">Executives</a>
+                <a href="#">Company Profile</a>
+            </div>
+        </div>
+        <a href="artists.html">Artists</a>
+        <a href="#">News</a>
+        <a href="faq.html">FAQ</a>
+    </nav>
+
+    <!-- Konten Utama FAQ -->
+    <main class="hero-container" style="align-items: flex-start; max-width: 1050px; margin-top: 40px;">
+        <h1 style="font-size: 2.2rem; font-weight: 700; margin-bottom: 10px; letter-spacing: 1px;">FAQ</h1>
+        <p style="color: #a1a1aa; font-size: 0.95rem; margin-bottom: 30px;">
+            Temukan informasi umum mengenai Ferwap Music Entertainment, panduan pengiriman demo, hak cipta, dan layanan distribusi independen.
+        </p>
+
+        <div class="faq-layout">
+            
+            <!-- Kolom Kiri: Pertanyaan Accordion -->
+            <div class="faq-content">
+                
+                <!-- Kategori 1 -->
+                <div class="faq-section-title">General Company Information</div>
+                <div class="faq-container-box">
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Apa itu Ferwap Music Entertainment?
+                            <i class="fa-solid fa-plus faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            Ferwap Music Entertainment adalah label musik independen dan penyedia ekosistem infrastruktur digital yang mendukung para musisi mandiri dalam mengelola rilis karya, distribusi, serta metadata secara profesional.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Di mana lokasi operasional Ferwap Music Entertainment?
+                            <i class="fa-solid fa-plus faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            Ferwap Music Entertainment beroperasi secara digital dengan basis manajemen di Indonesia, melayani rilis serta tata kelola musik secara global melalui platform streaming digital utama.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Siapa saja artis yang bernaung di bawah Ferwap Music Entertainment?
+                            <i class="fa-solid fa-plus faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            Katalog rilis dan jaringan kolaborasi kami mencakup musisi independen seperti 3H3D, Ferrson, ANDER, serta berbagai proyek musik independen lainnya.
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Kategori 2 -->
+                <div class="faq-section-title">For Artists & Creators</div>
+                <div class="faq-container-box">
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Bagaimana cara mengirimkan demo musik ke Ferwap Music Entertainment?
+                            <i class="fa-solid fa-plus faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            Anda dapat mengirimkan tautan streaming private (seperti Soundcloud Private atau Google Drive) beserta informasi singkat proyek musik Anda ke email resmi manajemen di <strong>ferwapmusic.info@gmail.com</strong>.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Siapa yang harus dihubungi terkait hak cipta, royalti, atau pendaftaran ISNI / MBI?
+                            <i class="fa-solid fa-plus faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            Untuk pertanyaan mengenai tata kelola metadata rilis, pendaftaran identifier (ISNI/MusicBrainz), atau administrasi katalog, silakan hubungi tim manajemen operasional label kami via email.
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Kolom Kanan: Sidebar Keterangan / Bantuan -->
+            <div class="faq-sidebar">
+                
+                <div class="sidebar-card">
+                    <h3>Have a Question for Ferwap Music?</h3>
+                    <p>Butuh bantuan langsung mengenai lisensi, kebijakan kirim demo, atau kontak pers?</p>
+                    <a href="mailto:ferwapmusic.info@gmail.com" class="btn-faq">HUBUNGI KAMI »</a>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="social-icons">
+            <a href="https://www.facebook.com/ferwapmusic" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/ferwapmusic" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="mailto:ferwapmusic.info@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+        <p class="copyright">&copy; 2026 Ferwap Music Entertainment. All Rights Reserved.</p>
+        <div class="footer-links">
+            <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a>
+        </div>
+    </footer>
+
+    <!-- JavaScript Interaktif Accordion (+ / -) -->
+    <script>
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                
+                // Tutup item lain jika ada yang terbuka (opsional)
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if (item !== faqItem) {
+                        item.classList.remove('active');
+                    }
+                });
+
+                // Toggle status buka/tutup item yang diklik
+                faqItem.classList.toggle('active');
+            });
+        });
+    </script>
+
+</body>
+</html>
