@@ -1,4 +1,4 @@
-- {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -55,20 +55,6 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 4px;
-}
-
-.red-dot-grid-logo {
-    display: grid;
-    grid-template-columns: repeat(4, 7px);
-    gap: 3px;
-    width: max-content;
-}
-
-.red-dot-grid-logo span {
-    width: 7px;
-    height: 7px;
-    background-color: #e11d48;
-    border-radius: 50%;
 }
 
 .sub-brand-text {
@@ -174,7 +160,7 @@ body {
     height: 500px;       
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.95), 0 0 20px rgba(0, 0, 0, 0.8); /* Efek shadow hitam pekat di sudut & sekeliling */
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.95), 0 0 20px rgba(0, 0, 0, 0.8);
     margin: 0 auto;      
 }
 
@@ -234,53 +220,6 @@ body {
     right: -70px;
 }
 
-/* Labels Section (White Background Lebar Global) */
-.labels-section {
-    background-color: #ffffff;
-    color: #000000;
-    width: 100vw;          
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%); 
-    margin-top: 50px;
-    margin-bottom: 0;
-    padding: 60px 8px;     
-    border-radius: 0;     
-    box-sizing: border-box;
-}
-
-.labels-title {
-    font-size: 2.2rem;
-    font-weight: 800;
-    margin-bottom: 40px;
-}
-
-.labels-grid {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 30px;
-}
-
-.label-item {
-    font-weight: 800;
-    font-size: 1.2rem;
-    letter-spacing: 1px;
-    color: #111111;
-}
-
-.label-item.border-box {
-    border: 2px solid #000;
-    padding: 5px 15px;
-}
-
-.label-item.cursive {
-    font-family: 'Georgia', serif;
-    font-style: italic;
-    font-size: 1.8rem;
-}
-
 /* Footer Styling */
 .site-footer {
     display: flex;
@@ -290,6 +229,7 @@ body {
     gap: 12px;
     background-color: #000000;
     border-top: 1px solid #111;
+    margin-top: 80px;
 }
 
 .social-icons {
@@ -328,7 +268,7 @@ body {
     text-decoration: underline;
 }
 
-/* Responsif HP (Tampilan disamakan rapi seperti laptop tanpa turun ke bawah) */
+/* Responsif HP */
 @media (max-width: 900px) {
     .main-nav {
         gap: 12px;
@@ -350,7 +290,4 @@ body {
     }
     .arrow-left { left: -10px; }
     .arrow-right { right: -10px; }
-    .labels-section {
-        padding: 40px 15px;
-    }
 }
