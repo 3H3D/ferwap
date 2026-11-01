@@ -9,12 +9,12 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             name: "ANDER",
             image: "ANDER.jpg", // Ubah/tambahkan file foto artis berikutnya di folder img jika ada
-            link: "https://3h3d.github.io/ANDER"
+            link: "https://ander.ferwap.com"
         },
         {
             name: "FERRSON",
             image: "Ferrson.F.jpeg", // Ubah/tambahkan file foto artis berikutnya jika ada
-            link: "https://3h3d.github.io/Ferrson"
+            link: "https://ferrson.ferwap.com"
         }
     ];
 
