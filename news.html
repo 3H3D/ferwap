@@ -27,87 +27,18 @@
             margin-bottom: 30px;
         }
 
-        /* Daftar Berita Gaya Minimalis List Penuh */
-        .news-list {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-            width: 100%;
-        }
-
-        .news-item {
-            padding-bottom: 25px;
-            border-bottom: 1px solid #27272a;
-        }
-
-        .news-item h3 a {
-            color: #ffffff;
-            font-size: 1.15rem;
-            font-weight: 700;
-            text-decoration: none;
-            display: inline-block;
-            margin-bottom: 6px;
-            transition: color 0.2s ease;
-        }
-
-        .news-item h3 a:hover {
-            color: #8c4222;
-        }
-
-        .news-date {
-            font-size: 0.8rem;
+        /* Pesan Kosong Saat Belum Ada Berita */
+        .no-news-message {
+            padding: 40px 20px;
+            background: #111827;
+            border: 1px solid #27272a;
+            border-radius: 8px;
+            text-align: center;
             color: #a1a1aa;
-            margin-bottom: 10px;
-            display: block;
-        }
-
-        .news-snippet {
-            font-size: 0.9rem;
-            color: #a1a1aa;
-            line-height: 1.6;
-            margin-bottom: 10px;
-        }
-
-        /* Styling Tombol Read More Buka Ke Bawah */
-        details.news-expand {
-            cursor: pointer;
-        }
-        
-        details.news-expand summary {
-            list-style: none; /* Menghilangkan segitiga bawaan browser */
-            display: inline-block;
-            color: #8c4222;
-            font-size: 0.85rem;
-            font-weight: 700;
-            transition: color 0.2s ease;
-            outline: none;
-            user-select: none;
-        }
-
-        details.news-expand summary::-webkit-details-marker {
-            display: none;
-        }
-
-        details.news-expand summary:hover {
-            color: #a64f28;
-            text-decoration: underline;
-        }
-
-        /* Teks Berita Penuh saat Terbuka */
-        .full-news-content {
-            margin-top: 15px;
-            padding-top: 15px;
-            border-top: 1px dashed #27272a;
-            font-size: 0.9rem;
-            color: #d1d5db;
-            line-height: 1.8;
-        }
-
-        .full-news-content p {
-            margin-bottom: 12px;
+            font-size: 0.95rem;
         }
     </style>
-    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="98681b56-e768-4ba2-be02-112eac0b8308"  type="text/javascript"></script>
+    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="98681b56-e768-4ba2-be02-112eac0b8308" type="text/javascript"></script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PMJVQNVLZD"></script>
     <script>
@@ -157,54 +88,9 @@
         <h1>News</h1>
         <p class="intro-text">Official statements and announcements from Ferwap Music Entertainment.</p>
         
-        <!-- Daftar Berita (List Penuh Tanpa Sidebar Video) -->
-        <div class="news-list">
-            
-            <!-- Berita 1 -->
-            <article class="news-item">
-                <h3><a href="#">Ferwap Music Launches Updated Digital Infrastructure & Release Catalog Management Across Streaming Platforms</a></h3>
-                <span class="news-date">October 29, 2026</span>
-                <p class="news-snippet">Ferwap Music Entertainment officially rolls out updated metadata tracking and digital infrastructure enhancements for all independent artist catalogs, ensuring seamless global distribution...</p>
-                
-                <details class="news-expand">
-                    <summary>Read More &gt;</summary>
-                    <div class="full-news-content">
-                        <p>With a continuous commitment to precision and professional data management, Ferwap Music Entertainment integrates robust open-source metadata standards, digital rights tracking, and direct aggregator pipelines to optimize track visibility worldwide.</p>
-                        <p>This initiative reflects Ferwap Music's dedication to providing independent creators with robust digital infrastructure, ensuring that every release is accurately indexed, verified, and protected across the global music ecosystem.</p>
-                    </div>
-                </details>
-            </article>
-
-            <!-- Berita 2 -->
-            <article class="news-item">
-                <h3><a href="#">Artist Spotlight: 3H3D and Independent Production Workflows in Modern Music</a></h3>
-                <span class="news-date">October 15, 2026</span>
-                <p class="news-snippet">An inside look at how raw audio recording setups and independent distribution models empower solo singer-songwriters in today's digital landscape without relying on standard studio barriers...</p>
-                
-                <details class="news-expand">
-                    <summary>Read More &gt;</summary>
-                    <div class="full-news-content">
-                        <p>Solo artist 3H3D demonstrates an autonomous approach to music production, writing, producing, and managing track metadata directly through FL Studio and open databases like MusicBrainz and ISNI.</p>
-                        <p>By leveraging direct distribution and precise copyright indexing, independent creators can maintain total creative freedom while scaling their presence globally under Ferwap Music Entertainment.</p>
-                    </div>
-                </details>
-            </article>
-
-            <!-- Berita 3 -->
-            <article class="news-item">
-                <h3><a href="#">Expanding Global Digital Distribution & Copyright Standards for Independent Creators</a></h3>
-                <span class="news-date">October 01, 2026</span>
-                <p class="news-snippet">Ensuring professional metadata integrity, identifier registrations, and copyright protection across independent music releases worldwide under Ferwap Music Entertainment...</p>
-                
-                <details class="news-expand">
-                    <summary>Read More &gt;</summary>
-                    <div class="full-news-content">
-                        <p>Ferwap Music Entertainment continues to elevate independent publishing standards by pairing catalog releases with registered ISRC, UPC, and IPI codes across global performance rights organizations.</p>
-                        <p>This framework guarantees that artists remain fully credited and monetized across streaming networks, digital registries, and broadcast platforms globally.</p>
-                    </div>
-                </details>
-            </article>
-
+        <!-- Pesan ketika belum ada berita resmi -->
+        <div class="no-news-message">
+            <p>No official news or announcements available at this time. Please check back later for future updates.</p>
         </div>
 
     </main>
