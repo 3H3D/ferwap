@@ -9,6 +9,9 @@ body {
     background-color: #000000;
     color: #ffffff;
     overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    text-align: left;
 }
 
 /* Top Right Logo Bar */
@@ -286,6 +289,32 @@ body {
     text-decoration: underline;
 }
 
+/* --- PERBAIKAN TATA LETAK HALAMAN KONTEN KHUSUS (ARTISTS, EXECUTIVES, FAQ, NEWS, LEGAL) --- */
+.artists-section, 
+.executives-section, 
+.legal-container, 
+.faq-container,
+.news-section {
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+    text-align: left !important;
+    border: none !important;
+}
+
+/* Memastikan semua judul dan header halaman konten rata kiri presisi */
+h1, h2, h3, 
+.artists-header, 
+.executives-header, 
+.faq-header {
+    text-align: left !important;
+    width: 100%;
+    border: none !important;
+}
+
 /* Responsif HP */
 @media (max-width: 900px) {
     .main-nav {
@@ -309,41 +338,10 @@ body {
     .hero-image-box::after {
         border-radius: 20px;
     }
-    /* Ukuran & Posisi teks nama artis khusus HP (Digeser ke kanan) */
     .artist-label-text {
         left: 35px;
         font-size: 1.0rem; 
     }
     .arrow-left { left: -10px; }
     .arrow-right { right: -10px; }
-}
-/* Perbaikan Layout Menyeluruh agar Lurus dan Rapi di Tengah */
-body {
-  margin: 0;
-  padding: 0;
-  text-align: left;
-}
-
-/* Membungkus dan meratakan seluruh halaman agar memiliki batas lebar yang rapi */
-.artists-section, 
-.executives-section, 
-.legal-container, 
-.faq-container,
-.news-section,
-section {
-  max-width: 1100px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 20px;
-  padding-right: 20px;
-  box-sizing: border-box;
-}
-
-/* Memastikan semua judul section rata kiri secara presisi */
-h1, h2, h3, 
-.artists-header, 
-.executives-header, 
-.faq-header {
-  text-align: left !important;
-  width: 100%;
 }
