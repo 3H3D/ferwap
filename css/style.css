@@ -317,33 +317,33 @@ body {
     .arrow-left { left: -10px; }
     .arrow-right { right: -10px; }
 }
-
-/* Perbaikan Tata Letak Menyeluruh untuk Semua Layar (HP & Komputer) */
+/* Perbaikan Layout Menyeluruh agar Lurus dan Rapi di Tengah */
 body {
   margin: 0;
   padding: 0;
-  text-align: left !important;
+  text-align: left;
 }
 
-/* Membatasi lebar kontainer utama agar selalu di tengah dengan rapi di semua perangkat */
+/* Membungkus dan meratakan seluruh halaman agar memiliki batas lebar yang rapi */
 .artists-section, 
 .executives-section, 
 .legal-container, 
 .faq-container,
-.news-section {
+.news-section,
+section {
   max-width: 1100px;
-  margin: 0 auto;
-  padding: 40px 20px;
-  text-align: left !important;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
 }
 
-/* Memastikan semua judul section rata kiri di semua jenis layar */
+/* Memastikan semua judul section rata kiri secara presisi */
+h1, h2, h3, 
 .artists-header, 
 .executives-header, 
-.legal-container h1, 
 .faq-header {
   text-align: left !important;
   width: 100%;
-  margin-left: 0;
-  margin-right: auto;
 }
