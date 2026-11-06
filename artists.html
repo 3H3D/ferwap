@@ -9,54 +9,84 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         <style>
-    /* Gaya Halaman Artists (Rapi di Tengah & Ukuran Proporsional) */
-    body {
-        background-color: #000000;
-        color: #ffffff;
-        margin: 0;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    }
+     /* Gaya Khusus Halaman Artists Latar Belakang Hitam */
+        body {
+            background-color: #000000; /* Latar belakang hitam penuh */
+            color: #ffffff;            /* Teks utama putih */
+            margin: 0;
+            font-family: sans-serif;
+        }
+        
 
-    .artists-section {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 40px 20px;
-        box-sizing: border-box;
-    }
+        .artists-section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-    .artists-header {
-        text-align: left !important;
-        margin-bottom: 30px;
-        width: 100%;
-    }
+        .artists-header {
+            text-align: left;
+            margin-bottom: 50px;
+        }
 
-    .artists-header h1 {
-        font-size: 1.6rem;
-        font-weight: 700;
-        letter-spacing: 1px;
-        color: #ffffff;
-        margin: 0;
-    }
+        .artists-header h1 {
+            font-size: 2.rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
 
-    /* Grid Kartu Artis */
-    .artists-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
-    }
+        /* Grid Kartu Artis */
+        .artists-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+        }
 
-    .artist-card {
-        background-color: #111111;
-        text-decoration: none;
-        display: block;
-        border-radius: 8px;
-        overflow: hidden;
-        transition: transform 0.3s ease;
-    }
+        .artist-card {
+            background-color: #111111;
+            text-decoration: none;
+            display: block;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+            border-radius: 4px;
+        }
 
-    .artist-card:hover {
-        transform: translateY(-5px);
-    }
+        .artist-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
+        }
+
+        .artist-card-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Kotak Merah di Bawah Foto */
+        .artist-card-info {
+            background-color: #cc0000; /* Warna merah khas label */
+            color: #fff;
+            padding: 18px 15px;
+            text-align: center;
+        }
+
+        .artist-card-name {
+            font-size: 1.rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+        }
+
+        .artist-card-sub {
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+            opacity: 0.9;
+        }
 </style>
     </style>
     <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="98681b56-e768-4ba2-be02-112eac0b8308"  type="text/javascript"></script>
