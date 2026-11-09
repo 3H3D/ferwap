@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             name: "FERRSON",
             image: "Ferrson.F.jpeg", // Ubah/tambahkan file foto artis berikutnya jika ada
-            link: "https://ferrson.ferwap.com"
+            link: "https://ferrsonproduction.ferwap.com"
         }
     ];
 
