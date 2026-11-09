@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             name: "ANDER",
             image: "ANDER.jpg", // Ubah/tambahkan file foto artis berikutnya di folder img jika ada
-            link: "https://ander.ferwap.com"
+            link: "https://anderld.ferwap.com"
         },
         {
             name: "FERRSON",
